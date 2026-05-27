@@ -1,13 +1,33 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import { Geist } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
+
+import { Providers } from "@/components/providers";
+import { siteTitle } from "@/config/site";
+import { defaultLocale, getDictionary, htmlLang } from "@/i18n";
 import { cn } from "@/lib/utils";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+const defaultDescription = getDictionary(defaultLocale).meta.description;
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+};
+
+const geistSans = Geist({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
+
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+});
 
 export const metadata: Metadata = {
-  title: "Francine",
-  description: "Portfolio",
+  title: siteTitle,
+  description: defaultDescription,
 };
 
 export default function RootLayout({
@@ -16,8 +36,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className={cn("font-sans", geist.variable)}>
-      <body>{children}</body>
+    <html
+      lang={htmlLang[defaultLocale]}
+      suppressHydrationWarning
+      className={cn(
+        "dark font-sans antialiased",
+        geistSans.variable,
+        geistMono.variable,
+      )}
+    >
+      <body className="overflow-x-hidden bg-[#050506] text-foreground">
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }
