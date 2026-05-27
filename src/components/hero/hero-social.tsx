@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 import { Mail } from "lucide-react";
 
 import { GitHubIcon, LinkedInIcon } from "@/components/icons/social";
+import { HoverLift } from "@/components/primitives/hover-lift";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
+import { useHeroMotionContext } from "@/hooks/use-hero-motion";
 import { useTranslations } from "@/i18n/context";
-import { spring } from "@/lib/motion";
 import { cn } from "@/lib/utils";
-import type { Variants } from "framer-motion";
 
 const socialIcons = {
   github: GitHubIcon,
@@ -29,13 +29,9 @@ const socialLinks: {
   { key: "email", href: `mailto:${siteConfig.email}`, external: false },
 ];
 
-type HeroSocialProps = {
-  reducedMotion: boolean;
-  variants: { item: Variants };
-};
-
-export function HeroSocial({ reducedMotion, variants }: HeroSocialProps) {
+export function HeroSocial() {
   const t = useTranslations();
+  const { variants } = useHeroMotionContext();
 
   return (
     <motion.div variants={variants.item} className="mt-[44px] lg:mt-[48px]">
@@ -49,11 +45,7 @@ export function HeroSocial({ reducedMotion, variants }: HeroSocialProps) {
 
           return (
             <li key={key}>
-              <motion.div
-                whileHover={reducedMotion ? {} : { y: -1 }}
-                whileTap={reducedMotion ? {} : { scale: 0.95 }}
-                transition={spring}
-              >
+              <HoverLift offset={1} enableTap>
                 <Button
                   nativeButton={false}
                   variant="ghost"
@@ -77,7 +69,7 @@ export function HeroSocial({ reducedMotion, variants }: HeroSocialProps) {
                 >
                   <Icon />
                 </Button>
-              </motion.div>
+              </HoverLift>
             </li>
           );
         })}

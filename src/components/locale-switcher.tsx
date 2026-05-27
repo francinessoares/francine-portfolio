@@ -1,10 +1,10 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 
 import { locales, type Locale } from "@/i18n";
 import { useLocale } from "@/i18n/context";
-import { spring } from "@/lib/motion";
+import { spring, useMotionPrefs } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 
 const localeAria: Record<Locale, string> = {
@@ -14,7 +14,7 @@ const localeAria: Record<Locale, string> = {
 
 export function LocaleSwitcher() {
   const { locale, setLocale, dictionary } = useLocale();
-  const reducedMotion = useReducedMotion() ?? false;
+  const { reducedMotion } = useMotionPrefs();
   const labels = dictionary.localeSwitcher;
 
   return (
@@ -37,10 +37,10 @@ export function LocaleSwitcher() {
               whileTap={reducedMotion || active ? {} : { scale: 0.96 }}
               transition={spring}
               className={cn(
-                "font-mono-label relative rounded-[7px] px-[10px] py-[5px] text-[10px] transition-premium",
+                "focus-ring text-label relative rounded-[7px] px-[10px] py-[5px] transition-premium",
                 active
-                  ? "bg-white/[0.1] text-white/85"
-                  : "text-white/35 hover:bg-white/[0.04] hover:text-white/55",
+                  ? "bg-surface-glass-active text-fg-interactive-hover"
+                  : "text-fg-subtle hover:bg-surface-glass-hover hover:text-fg-body",
               )}
               aria-pressed={active}
               aria-label={localeAria[code]}

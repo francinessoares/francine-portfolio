@@ -1,9 +1,9 @@
 "use client";
 
-import { motion, useInView, useReducedMotion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
-import { ease } from "@/lib/motion";
+import { ease, useMotionPrefs } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 
 type ScrollRevealProps = {
@@ -19,7 +19,7 @@ export function ScrollReveal({
 }: ScrollRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-72px" });
-  const reducedMotion = useReducedMotion() ?? false;
+  const { reducedMotion } = useMotionPrefs();
 
   return (
     <motion.div

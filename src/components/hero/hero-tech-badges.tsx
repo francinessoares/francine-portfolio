@@ -2,20 +2,12 @@
 
 import { motion } from "framer-motion";
 
+import { useHeroMotionContext } from "@/hooks/use-hero-motion";
 import { useTranslations } from "@/i18n/context";
-import { ease } from "@/lib/motion";
-import type { Variants } from "framer-motion";
 
-type HeroTechBadgesProps = {
-  reducedMotion: boolean;
-  variants: {
-    badgeContainer: Variants;
-    badge: Variants;
-  };
-};
-
-export function HeroTechBadges({ reducedMotion, variants }: HeroTechBadgesProps) {
+export function HeroTechBadges() {
   const t = useTranslations();
+  const { reducedMotion, ease, variants } = useHeroMotionContext();
 
   return (
     <motion.div

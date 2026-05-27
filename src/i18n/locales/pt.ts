@@ -5,6 +5,9 @@ export const pt: Dictionary = {
     description:
       "Front-End Engineer especializada em experiências digitais modernas, produto e interfaces escaláveis.",
   },
+  a11y: {
+    skipToContent: "Pular para o conteúdo",
+  },
   hero: {
     subtitle:
       "Front-End Engineer especializada em experiências digitais modernas, produto e interfaces escaláveis.",

@@ -9,6 +9,8 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
+import { GlassCard } from "@/components/primitives/glass-card";
+import { IconBox } from "@/components/primitives/icon-box";
 import { ScrollReveal } from "@/components/tech-stack/scroll-reveal";
 import { TechItemCard } from "@/components/tech-stack/tech-item-card";
 import { categoryById, type StackCategoryId } from "@/data/tech-stack";
@@ -36,28 +38,15 @@ export function CategoryCard({ categoryId, index }: CategoryCardProps) {
 
   return (
     <ScrollReveal delay={index * 0.06}>
-      <section
-        className={cn(
-          "glass-panel relative overflow-hidden rounded-[14px]",
-          "shadow-[0_0_0_1px_rgba(255,255,255,0.04),0_24px_48px_-24px_rgba(0,0,0,0.5)]",
-        )}
-      >
-        <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/[0.12] to-transparent" />
+      <GlassCard variant="category">
         <header className="border-b border-white/[0.05] px-[20px] py-[18px] sm:px-[24px]">
           <div className="flex items-start gap-[14px]">
-            <span
-              className={cn(
-                "flex size-[40px] shrink-0 items-center justify-center rounded-[10px]",
-                "border border-white/[0.07] bg-white/[0.03] text-white/50",
-              )}
-            >
-              <Icon className="size-[18px]" strokeWidth={1.5} />
-            </span>
+            <IconBox icon={Icon} />
             <div>
-              <h3 className="text-[18px] font-medium tracking-[-0.03em] text-white/[0.95]">
+              <h3 className="text-card-title-lg">
                 {meta.title}
               </h3>
-              <p className="mt-[6px] max-w-[480px] text-[13px] leading-[20px] text-white/36">
+              <p className="text-card-desc mt-[6px] max-w-[480px]">
                 {meta.description}
               </p>
             </div>
@@ -71,20 +60,11 @@ export function CategoryCard({ categoryId, index }: CategoryCardProps) {
               : "sm:grid-cols-2",
           )}
         >
-          {category.techIds.map((techId) => {
-            const tech = t.techStack.techs[techId];
-            return (
-              <TechItemCard
-                key={techId}
-                techId={techId}
-                name={tech.name}
-                description={tech.description}
-                tags={tech.tags}
-              />
-            );
-          })}
+          {category.techIds.map((techId) => (
+            <TechItemCard key={techId} techId={techId} />
+          ))}
         </div>
-      </section>
+      </GlassCard>
     </ScrollReveal>
   );
 }

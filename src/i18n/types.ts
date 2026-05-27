@@ -27,6 +27,9 @@ export type Dictionary = {
   meta: {
     description: string;
   };
+  a11y: {
+    skipToContent: string;
+  };
   hero: {
     subtitle: string;
     viewWork: string;

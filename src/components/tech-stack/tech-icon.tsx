@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import {
   SiAngular,
   SiDocker,
@@ -19,11 +20,8 @@ import {
   SiVercel,
 } from "react-icons/si";
 
-import {
-  techBrandColors,
-  type TechId,
-} from "@/data/tech-stack";
-import { useMotionPrefs } from "@/lib/motion";
+import { techBrandColors, type TechId } from "@/data/tech-stack";
+import { ease, useMotionPrefs } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 
 const iconMap = {
@@ -52,12 +50,16 @@ type TechIconProps = {
 };
 
 export function TechIcon({ techId, className, size = 22 }: TechIconProps) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, { once: false, margin: "48px" });
   const Icon = iconMap[techId];
   const color = techBrandColors[techId];
   const { reducedMotion } = useMotionPrefs();
+  const shouldAnimate = !reducedMotion && inView;
 
   return (
     <motion.span
+      ref={ref}
       className={cn(
         "flex size-[44px] shrink-0 items-center justify-center rounded-[10px]",
         "border border-white/[0.06] bg-white/[0.03]",
@@ -71,14 +73,14 @@ export function TechIcon({ techId, className, size = 22 }: TechIconProps) {
               boxShadow: `0 0 24px -4px ${color}40`,
             }
       }
-      transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 0.35, ease }}
     >
       <motion.span
-        animate={reducedMotion ? {} : { y: [0, -1, 0] }}
+        animate={shouldAnimate ? { y: [0, -1, 0] } : {}}
         transition={
-          reducedMotion
-            ? { duration: 0 }
-            : { duration: 3, repeat: Infinity, ease: "easeInOut" }
+          shouldAnimate
+            ? { duration: 3, repeat: Infinity, ease: "easeInOut" }
+            : { duration: 0 }
         }
       >
         <Icon size={size} style={{ color }} aria-hidden />

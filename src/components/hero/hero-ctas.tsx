@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 import { ArrowRight, Download } from "lucide-react";
 
 import { HeroCvDownloadLink } from "@/components/hero/hero-cv-download-link";
+import { HoverLift } from "@/components/primitives/hover-lift";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
+import { useHeroMotionContext } from "@/hooks/use-hero-motion";
 import { useTranslations } from "@/i18n/context";
-import { spring } from "@/lib/motion";
 import { cn } from "@/lib/utils";
-import type { Variants } from "framer-motion";
 
 const primaryButtonClass = cn(
   "transition-premium h-[42px] w-full rounded-[10px] border-0 px-[22px]",
@@ -26,32 +26,9 @@ const outlineButtonClass = cn(
   "sm:min-w-[140px] sm:w-auto",
 );
 
-type HeroCtasProps = {
-  reducedMotion: boolean;
-  variants: { item: Variants };
-};
-
-function CtaWrapper({
-  reducedMotion,
-  children,
-}: {
-  reducedMotion: boolean;
-  children: React.ReactNode;
-}) {
-  return (
-    <motion.div
-      className="w-full sm:w-auto"
-      whileHover={reducedMotion ? {} : { y: -1 }}
-      whileTap={reducedMotion ? {} : { scale: 0.985 }}
-      transition={spring}
-    >
-      {children}
-    </motion.div>
-  );
-}
-
-export function HeroCtas({ reducedMotion, variants }: HeroCtasProps) {
+export function HeroCtas() {
   const t = useTranslations();
+  const { variants } = useHeroMotionContext();
 
   return (
     <motion.div
@@ -62,7 +39,7 @@ export function HeroCtas({ reducedMotion, variants }: HeroCtasProps) {
         "lg:mt-[44px] lg:justify-start",
       )}
     >
-      <CtaWrapper reducedMotion={reducedMotion}>
+      <HoverLift offset={1} className="w-full sm:w-auto" enableTap>
         <Button
           nativeButton={false}
           size="lg"
@@ -75,9 +52,9 @@ export function HeroCtas({ reducedMotion, variants }: HeroCtasProps) {
             strokeWidth={1.75}
           />
         </Button>
-      </CtaWrapper>
+      </HoverLift>
 
-      <CtaWrapper reducedMotion={reducedMotion}>
+      <HoverLift offset={1} className="w-full sm:w-auto" enableTap>
         <Button
           nativeButton={false}
           size="lg"
@@ -88,9 +65,9 @@ export function HeroCtas({ reducedMotion, variants }: HeroCtasProps) {
           {t.hero.downloadCv}
           <Download className="size-[14px]" strokeWidth={1.75} />
         </Button>
-      </CtaWrapper>
+      </HoverLift>
 
-      <CtaWrapper reducedMotion={reducedMotion}>
+      <HoverLift offset={1} className="w-full sm:w-auto" enableTap>
         <Button
           nativeButton={false}
           size="lg"
@@ -100,7 +77,7 @@ export function HeroCtas({ reducedMotion, variants }: HeroCtasProps) {
         >
           {t.hero.getInTouch}
         </Button>
-      </CtaWrapper>
+      </HoverLift>
     </motion.div>
   );
 }
