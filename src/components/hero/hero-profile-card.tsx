@@ -7,7 +7,7 @@ import { siteConfig } from "@/config/site";
 import { useTranslations } from "@/i18n/context";
 import { cn } from "@/lib/utils";
 
-const ease = [0.16, 1, 0.3, 1] as const;
+import { ease } from "@/lib/motion";
 
 type HeroProfileCardProps = {
   className?: string;
@@ -64,7 +64,7 @@ export function HeroProfileCard({ className }: HeroProfileCardProps) {
             {t.profileCard.profile}
           </span>
         </div>
-        <div className="relative aspect-square w-full overflow-hidden bg-[#070708]">
+        <div className="relative aspect-square w-full overflow-hidden bg-surface-elevated">
           <motion.div
             className="relative size-full"
             whileHover={reducedMotion ? {} : { scale: 1.015 }}

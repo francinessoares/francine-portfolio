@@ -4,8 +4,6 @@ import { motion } from "framer-motion";
 
 import { cn } from "@/lib/utils";
 
-const ease = [0.16, 1, 0.3, 1] as const;
-
 type HeroBackgroundProps = {
   reducedMotion: boolean;
 };
@@ -16,7 +14,7 @@ export function HeroBackground({ reducedMotion }: HeroBackgroundProps) {
       className="pointer-events-none absolute inset-0 overflow-hidden"
       aria-hidden
     >
-      <div className="absolute inset-0 bg-[#050506]" />
+      <div className="absolute inset-0 bg-surface" />
 
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_55%_at_50%_-15%,rgba(255,255,255,0.045),transparent_52%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_45%_40%_at_8%_55%,rgba(255,255,255,0.02),transparent_48%)]" />
@@ -66,7 +64,7 @@ export function HeroBackground({ reducedMotion }: HeroBackgroundProps) {
 
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_100%_80%_at_50%_50%,transparent_40%,rgba(5,5,6,0.4)_100%)]" />
       <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/[0.07] to-transparent" />
-      <div className="absolute inset-x-0 bottom-0 h-[140px] bg-gradient-to-t from-[#050506] to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 h-[140px] bg-gradient-to-t from-surface to-transparent" />
     </div>
   );
 }

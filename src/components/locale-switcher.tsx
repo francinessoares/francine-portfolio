@@ -4,9 +4,8 @@ import { motion, useReducedMotion } from "framer-motion";
 
 import { locales, type Locale } from "@/i18n";
 import { useLocale } from "@/i18n/context";
+import { spring } from "@/lib/motion";
 import { cn } from "@/lib/utils";
-
-const spring = { type: "spring" as const, stiffness: 420, damping: 32 };
 
 const localeAria: Record<Locale, string> = {
   pt: "Português",

@@ -45,7 +45,7 @@ export default function RootLayout({
         geistMono.variable,
       )}
     >
-      <body className="overflow-x-hidden bg-[#050506] text-foreground">
+      <body className="overflow-x-hidden bg-surface text-foreground">
         <Providers>{children}</Providers>
       </body>
     </html>

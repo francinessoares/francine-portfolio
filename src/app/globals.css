@@ -5,6 +5,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+    --color-surface: #050506;
+    --color-surface-elevated: #070708;
     --font-heading: var(--font-sans);
     --font-sans: var(--font-sans);
     --font-mono: var(--font-mono);
@@ -195,6 +197,15 @@
     }
   }
 
+  @media (min-width: 768px) {
+    .hero-safe-padding {
+      padding-top: max(96px, env(safe-area-inset-top, 0px) + 80px);
+      padding-bottom: max(128px, env(safe-area-inset-bottom, 0px) + 112px);
+      padding-left: max(40px, env(safe-area-inset-left, 0px) + 32px);
+      padding-right: max(40px, env(safe-area-inset-right, 0px) + 32px);
+    }
+  }
+
   @media (min-width: 1024px) {
     .hero-safe-padding {
       padding-top: max(80px, env(safe-area-inset-top, 0px) + 64px);
@@ -202,10 +213,22 @@
     }
   }
 
+  .page-safe-padding {
+    padding-top: max(16px, env(safe-area-inset-top, 0px) + 8px);
+    padding-bottom: max(48px, env(safe-area-inset-bottom, 0px) + 32px);
+    padding-left: max(16px, env(safe-area-inset-left, 0px) + 12px);
+    padding-right: max(16px, env(safe-area-inset-right, 0px) + 12px);
+  }
+
+  @media (min-width: 640px) {
+    .page-safe-padding {
+      padding-left: max(32px, env(safe-area-inset-left, 0px) + 24px);
+      padding-right: max(32px, env(safe-area-inset-right, 0px) + 24px);
+    }
+  }
+
   @media (min-width: 768px) {
-    .hero-safe-padding {
-      padding-top: max(96px, env(safe-area-inset-top, 0px) + 80px);
-      padding-bottom: max(128px, env(safe-area-inset-bottom, 0px) + 112px);
+    .page-safe-padding {
       padding-left: max(40px, env(safe-area-inset-left, 0px) + 32px);
       padding-right: max(40px, env(safe-area-inset-right, 0px) + 32px);
     }
