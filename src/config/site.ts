@@ -6,7 +6,7 @@ export const siteConfig = {
   linkedInProfile:
     process.env.NEXT_PUBLIC_LINKEDIN_URL ??
     "https://www.linkedin.com/in/francine-soares-5ba112124/",
-  email: process.env.NEXT_PUBLIC_EMAIL ?? "hello@francinesoares.dev",
+  email: process.env.NEXT_PUBLIC_EMAIL ?? "francinesoares22@gmail.com",
   cvDownloadUrl:
     process.env.NEXT_PUBLIC_CV_URL ?? "/cv/francine-soares-cv.pdf",
   cvFileName: "Francine-Soares-CV.pdf",

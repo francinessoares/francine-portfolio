@@ -195,13 +195,20 @@ export const en: Dictionary = {
     },
     experience: {
       eyebrow: "Track record",
-      title: "Production experience",
-      items: {
-        years: "3+ years building production applications",
-        architecture: "Scalable frontend architecture",
-        uiEngineering: "Modern UI engineering",
-        performance: "Performance-focused development",
-      },
+      title: "Professional experience",
+      highlights: [
+        "6+ years building production applications",
+        "Scalable frontend architecture and modern UI engineering",
+        "Performance-focused development with strong user experience",
+      ],
+      systemsTitle: "Experience across systems for:",
+      systems: [
+        "environmental and land management",
+        "supermarket retail",
+        "container navigation and logistics",
+        "government access management",
+        "legal solutions for PGE-RJ (Rio de Janeiro State Prosecutor's Office)",
+      ],
     },
   },
 };

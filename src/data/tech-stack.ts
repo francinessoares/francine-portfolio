@@ -70,19 +70,6 @@ export const expertiseIds: ExpertiseId[] = [
   "productThinking",
 ];
 
-export type ExperienceId =
-  | "years"
-  | "architecture"
-  | "uiEngineering"
-  | "performance";
-
-export const experienceIds: ExperienceId[] = [
-  "years",
-  "architecture",
-  "uiEngineering",
-  "performance",
-];
-
 export const techBrandColors: Record<TechId, string> = {
   react: "#61DAFB",
   nextjs: "#FFFFFF",

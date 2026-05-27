@@ -4,8 +4,8 @@ import { GlassCard } from "@/components/primitives/glass-card";
 import { SectionHeader } from "@/components/primitives/section-header";
 import { ExperienceListItem } from "@/components/tech-stack/experience-list-item";
 import { ScrollReveal } from "@/components/tech-stack/scroll-reveal";
-import { experienceIds } from "@/data/tech-stack";
 import { useTranslations } from "@/i18n/context";
+import { cn } from "@/lib/utils";
 
 export function ExperienceSection() {
   const t = useTranslations();
@@ -26,9 +26,30 @@ export function ExperienceSection() {
             />
 
             <ul className="mt-[32px] flex flex-col gap-[14px]">
-              {experienceIds.map((id, index) => (
-                <ExperienceListItem key={id} index={index}>
-                  {copy.items[id]}
+              {copy.highlights.map((item, index) => (
+                <ExperienceListItem key={item} index={index}>
+                  {item}
+                </ExperienceListItem>
+              ))}
+            </ul>
+
+            <p
+              className={cn(
+                "text-label-ghost mt-[28px]",
+                "sm:mt-[32px]",
+              )}
+            >
+              {copy.systemsTitle}
+            </p>
+
+            <ul className="mt-[16px] flex flex-col gap-[12px]">
+              {copy.systems.map((item, index) => (
+                <ExperienceListItem
+                  key={item}
+                  index={copy.highlights.length + index}
+                  variant="domain"
+                >
+                  {item}
                 </ExperienceListItem>
               ))}
             </ul>

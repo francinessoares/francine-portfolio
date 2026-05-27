@@ -1,9 +1,4 @@
-import type {
-  ExperienceId,
-  ExpertiseId,
-  StackCategoryId,
-  TechId,
-} from "@/data/tech-stack";
+import type { ExpertiseId, StackCategoryId, TechId } from "@/data/tech-stack";
 
 export type Locale = "pt" | "en";
 
@@ -74,7 +69,9 @@ export type Dictionary = {
     experience: {
       eyebrow: string;
       title: string;
-      items: Record<ExperienceId, string>;
+      highlights: string[];
+      systemsTitle: string;
+      systems: string[];
     };
   };
 };

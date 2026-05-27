@@ -195,13 +195,20 @@ export const pt: Dictionary = {
     },
     experience: {
       eyebrow: "Trajetória",
-      title: "Experiência em produção",
-      items: {
-        years: "6+ anos construindo aplicações em produção",
-        architecture: "Arquitetura frontend escalável",
-        uiEngineering: "Engenharia de UI moderna",
-        performance: "Desenvolvimento orientado a performance",
-      },
+      title: "Experiência profissional",
+      highlights: [
+        "6+ anos desenvolvendo aplicações em produção",
+        "Arquitetura frontend escalável e engenharia de UI moderna",
+        "Desenvolvimento orientado a performance e experiência do usuário",
+      ],
+      systemsTitle: "Experiência em sistemas de:",
+      systems: [
+        "Gestão ambiental e fundiária",
+        "Varejo supermercadista",
+        "Navegação e logística de containers",
+        "Gerenciamento de acessos governamentais",
+        "Soluções jurídicas para a PGE-RJ",
+      ],
     },
   },
 };
