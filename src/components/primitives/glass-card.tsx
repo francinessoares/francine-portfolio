@@ -10,9 +10,8 @@ const variantStyles = {
     "shadow-[0_0_0_1px_rgba(255,255,255,0.04),0_24px_48px_-24px_rgba(0,0,0,0.5)]",
   ),
   expertise: cn(
-    "glass-panel group transition-premium relative overflow-hidden rounded-[12px]",
-    "shadow-[0_0_0_1px_rgba(255,255,255,0.03)]",
-    "hover:border-border-strong hover:shadow-[0_0_40px_-16px_rgba(139,92,246,0.12)]",
+    "glass-panel group transition-premium relative overflow-hidden rounded-[10px]",
+    "hover:border-border-strong",
   ),
   experience: cn(
     "glass-panel relative mx-auto max-w-[720px] overflow-hidden rounded-[14px]",

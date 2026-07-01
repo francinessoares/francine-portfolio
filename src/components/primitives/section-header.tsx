@@ -6,10 +6,10 @@ type SectionHeaderProps = {
   title: string;
   subtitle?: string;
   align?: "center" | "left";
-  size?: "hero" | "section" | "compact";
   titleId?: string;
   titleGradient?: boolean;
-  eyebrowDot?: "emerald" | "violet";
+  showDot?: boolean;
+  className?: string;
 };
 
 export function SectionHeader({
@@ -17,30 +17,27 @@ export function SectionHeader({
   title,
   subtitle,
   align = "center",
-  size = "section",
   titleId,
   titleGradient = false,
-  eyebrowDot,
+  showDot = true,
+  className,
 }: SectionHeaderProps) {
   const isCenter = align === "center";
-  const isHero = size === "hero";
-  const isCompact = size === "compact";
 
   return (
-    <div className={cn(isCenter && "mx-auto max-w-[560px] text-center")}>
+    <div
+      className={cn(
+        isCenter && "mx-auto max-w-[600px] text-center",
+        className,
+      )}
+    >
       {eyebrow ? (
-        <Eyebrow dot={eyebrowDot}>
-          {eyebrow}
-        </Eyebrow>
+        <Eyebrow dot={showDot ? "accent" : undefined}>{eyebrow}</Eyebrow>
       ) : null}
 
       <h2
         id={titleId}
-        className={cn(
-          isHero && "text-display-section-hero",
-          isCompact && "text-display-compact",
-          !isHero && !isCompact && "text-display-section",
-        )}
+        className={cn("text-display-section mt-[16px]", !isCenter && "text-left")}
       >
         {titleGradient ? (
           <span className="text-gradient-display">{title}</span>
@@ -52,12 +49,8 @@ export function SectionHeader({
       {subtitle ? (
         <p
           className={cn(
-            isHero
-              ? cn(
-                  "text-body-hero mx-auto mt-[24px] max-w-[560px]",
-                  "sm:mt-[28px]",
-                )
-              : "text-body-section",
+            "text-subtitle mt-[16px]",
+            isCenter && "mx-auto max-w-[560px]",
           )}
         >
           {subtitle}

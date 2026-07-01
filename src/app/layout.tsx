@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist } from "next/font/google";
 
 import { Providers } from "@/components/providers";
 import { siteTitle } from "@/config/site";
@@ -20,11 +20,6 @@ const geistSans = Geist({
   variable: "--font-sans",
 });
 
-const geistMono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-});
-
 export const metadata: Metadata = {
   title: siteTitle,
   description: defaultDescription,
@@ -39,11 +34,7 @@ export default function RootLayout({
     <html
       lang={htmlLang[defaultLocale]}
       suppressHydrationWarning
-      className={cn(
-        "dark font-sans antialiased",
-        geistSans.variable,
-        geistMono.variable,
-      )}
+      className={cn("dark font-sans antialiased", geistSans.variable)}
     >
       <body className="overflow-x-hidden bg-surface text-foreground">
         <Providers>{children}</Providers>

@@ -5,30 +5,33 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-    --color-surface: #050506;
-    --color-surface-elevated: #070708;
-    --color-fg-primary: rgb(255 255 255 / 97%);
-    --color-fg-secondary: rgb(255 255 255 / 95%);
-    --color-fg-tertiary: rgb(255 255 255 / 90%);
-    --color-fg-body: rgb(255 255 255 / 62%);
-    --color-fg-body-muted: rgb(255 255 255 / 58%);
-    --color-fg-muted: rgb(255 255 255 / 38%);
-    --color-fg-subtle: rgb(255 255 255 / 35%);
-    --color-fg-faint: rgb(255 255 255 / 30%);
-    --color-fg-ghost: rgb(255 255 255 / 28%);
-    --color-fg-disabled: rgb(255 255 255 / 22%);
-    --color-fg-interactive: rgb(255 255 255 / 70%);
-    --color-fg-interactive-hover: rgb(255 255 255 / 90%);
-    --color-border-subtle: rgb(255 255 255 / 3.5%);
-    --color-border-default: rgb(255 255 255 / 7%);
-    --color-border-strong: rgb(255 255 255 / 10%);
-    --color-border-hover: rgb(255 255 255 / 11%);
-    --color-surface-glass: rgb(255 255 255 / 3%);
-    --color-surface-glass-hover: rgb(255 255 255 / 4.5%);
-    --color-surface-glass-active: rgb(255 255 255 / 10%);
+    --color-surface: #07070a;
+    --color-surface-elevated: #0f0f14;
+    --color-surface-card: rgba(255 255 255 / 4%);
+    --color-accent: #8b5cf6;
+    --color-accent-light: #a78bfa;
+    --color-accent-muted: rgb(139 92 246 / 14%);
+    --color-fg-primary: #f5f5f7;
+    --color-fg-secondary: rgb(245 245 247 / 88%);
+    --color-fg-tertiary: rgb(245 245 247 / 72%);
+    --color-fg-body: #a1a1aa;
+    --color-fg-body-muted: rgb(161 161 170 / 80%);
+    --color-fg-muted: rgb(161 161 170 / 70%);
+    --color-fg-subtle: rgb(161 161 170 / 55%);
+    --color-fg-faint: rgb(161 161 170 / 42%);
+    --color-fg-ghost: rgb(161 161 170 / 32%);
+    --color-fg-disabled: rgb(161 161 170 / 24%);
+    --color-fg-interactive: rgb(245 245 247 / 80%);
+    --color-fg-interactive-hover: #f5f5f7;
+    --color-border-subtle: rgb(255 255 255 / 5%);
+    --color-border-default: rgb(255 255 255 / 8%);
+    --color-border-strong: rgb(255 255 255 / 12%);
+    --color-border-hover: rgb(255 255 255 / 14%);
+    --color-surface-glass: rgb(255 255 255 / 4%);
+    --color-surface-glass-hover: rgb(255 255 255 / 6%);
+    --color-surface-glass-active: rgb(139 92 246 / 18%);
     --font-heading: var(--font-sans);
     --font-sans: var(--font-sans);
-    --font-mono: var(--font-mono);
     --color-sidebar-ring: var(--sidebar-ring);
     --color-sidebar-border: var(--sidebar-border);
     --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -160,14 +163,7 @@
   .font-heading {
     font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
     font-feature-settings: "ss01", "cv11";
-    font-variation-settings: "wght" 500;
-  }
-
-  .font-mono-label {
-    font-family: var(--font-mono), ui-monospace, monospace;
-    font-feature-settings: "ss01";
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+    letter-spacing: -0.02em;
   }
 
   .transition-premium {
@@ -180,205 +176,278 @@
     background-image: linear-gradient(
       168deg,
       #ffffff 0%,
-      #d4d4d8 42%,
-      #71717a 100%
+      #d8d0f8 45%,
+      #8b5cf6 100%
     );
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
-  .glass-panel {
-    border: 1px solid var(--color-border-default);
-    background: linear-gradient(
-      165deg,
-      rgba(255, 255, 255, 0.05) 0%,
-      rgba(255, 255, 255, 0.02) 40%,
-      rgba(255, 255, 255, 0.01) 100%
-    );
+  .glass-nav {
+    position: relative;
+    background: rgba(15, 15, 20, 0.65);
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 22px;
+    box-shadow:
+      0 8px 40px rgba(0, 0, 0, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  }
+
+  .glass-nav-menu {
+    position: relative;
+    background: rgba(10, 10, 14, 0.96);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 22px;
+    box-shadow:
+      0 16px 48px rgba(0, 0, 0, 0.55),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
+
+  .glass-nav-menu::after {
+    content: "";
+    position: absolute;
+    left: 24px;
+    right: 24px;
+    bottom: 0;
+    height: 1px;
+    border-radius: 9999px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(139, 92, 246, 0.55) 50%,
+      transparent 100%
+    );
+    box-shadow: 0 0 14px rgba(139, 92, 246, 0.35);
+    pointer-events: none;
+  }
+
+  .glass-nav::after {
+    content: "";
+    position: absolute;
+    left: 24px;
+    right: 24px;
+    bottom: 0;
+    height: 1px;
+    border-radius: 9999px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(139, 92, 246, 0.55) 50%,
+      transparent 100%
+    );
+    box-shadow: 0 0 14px rgba(139, 92, 246, 0.35);
+    pointer-events: none;
+  }
+
+  .glass-panel {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
   }
 
   .glass-pill {
-    border: 1px solid var(--color-border-default);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 9999px;
-    background: var(--color-surface-glass);
+    background: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.02);
+    padding: 9px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--color-fg-primary);
+    white-space: nowrap;
+    transition-property: color, background-color, border-color, box-shadow, opacity, transform;
+    transition-duration: 0.35s;
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .nav-cta:hover {
+    border-color: rgba(167, 139, 250, 0.35);
+    background: rgba(139, 92, 246, 0.06);
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.12);
   }
 
   .focus-ring {
-    @apply outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-surface;
+    @apply outline-none focus-visible:ring-2 focus-visible:ring-accent/40 focus-visible:ring-offset-2 focus-visible:ring-offset-surface;
+  }
+
+  .section-padding {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    padding-left: max(20px, env(safe-area-inset-left, 0px) + 16px);
+    padding-right: max(20px, env(safe-area-inset-right, 0px) + 16px);
+  }
+
+  @media (min-width: 640px) {
+    .section-padding {
+      padding-top: 96px;
+      padding-bottom: 96px;
+      padding-left: max(32px, env(safe-area-inset-left, 0px) + 24px);
+      padding-right: max(32px, env(safe-area-inset-right, 0px) + 24px);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .section-padding {
+      padding-top: 112px;
+      padding-bottom: 112px;
+    }
   }
 
   .text-display-hero {
-    font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
-    font-feature-settings: "ss01", "cv11";
-    font-variation-settings: "wght" 500;
-    @apply w-full text-balance font-medium text-fg-primary;
-    font-size: 40px;
-    line-height: 1;
-    letter-spacing: -0.044em;
-  }
-
-  @media (min-width: 390px) {
-    .text-display-hero {
-      font-size: 46px;
-      line-height: 1.01;
-    }
-  }
-
-  @media (min-width: 640px) {
-    .text-display-hero {
-      font-size: 54px;
-      letter-spacing: -0.048em;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .text-display-hero {
-      font-size: 56px;
-    }
-  }
-
-  @media (min-width: 1280px) {
-    .text-display-hero {
-      font-size: 62px;
-      letter-spacing: -0.05em;
-    }
-  }
-
-  .text-display-section-hero {
-    font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
-    font-feature-settings: "ss01", "cv11";
-    font-variation-settings: "wght" 500;
-    @apply mt-[24px] text-balance font-medium text-fg-primary;
+    @apply font-heading w-full text-balance font-medium text-fg-primary;
     font-size: 36px;
     line-height: 1.05;
-    letter-spacing: -0.042em;
-  }
-
-  @media (min-width: 640px) {
-    .text-display-section-hero {
-      font-size: 48px;
-      letter-spacing: -0.048em;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .text-display-section-hero {
-      font-size: 56px;
-      letter-spacing: -0.05em;
-    }
-  }
-
-  .text-display-section {
-    font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
-    font-feature-settings: "ss01", "cv11";
-    font-variation-settings: "wght" 500;
-    @apply mt-[12px] font-medium text-fg-secondary;
-    font-size: 28px;
     letter-spacing: -0.04em;
   }
 
   @media (min-width: 640px) {
-    .text-display-section {
-      font-size: 36px;
+    .text-display-hero {
+      font-size: 48px;
       letter-spacing: -0.045em;
     }
   }
 
-  .text-display-compact {
-    font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
-    font-feature-settings: "ss01", "cv11";
-    font-variation-settings: "wght" 500;
-    @apply mt-[10px] font-medium text-fg-secondary;
-    font-size: 24px;
-    letter-spacing: -0.038em;
-  }
-
-  @media (min-width: 640px) {
-    .text-display-compact {
-      font-size: 32px;
-      letter-spacing: -0.042em;
+  @media (min-width: 1024px) {
+    .text-display-hero {
+      font-size: 56px;
+      letter-spacing: -0.048em;
     }
   }
 
+  .text-display-section,
+  .text-display-compact,
+  .text-display-section-hero {
+    @apply font-heading text-balance font-medium text-fg-primary;
+    font-size: 28px;
+    line-height: 1.1;
+    letter-spacing: -0.035em;
+  }
+
+  .text-display-compact,
+  .text-display-section-hero {
+    @apply mt-[10px];
+  }
+
+  .text-display-section-hero {
+    @apply mt-[24px];
+  }
+
+  @media (min-width: 640px) {
+    .text-display-section,
+    .text-display-compact,
+    .text-display-section-hero {
+      font-size: 36px;
+      letter-spacing: -0.04em;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .text-display-section,
+    .text-display-compact,
+    .text-display-section-hero {
+      font-size: 40px;
+    }
+  }
+
+  .text-subtitle,
   .text-body-hero {
-    @apply text-pretty text-fg-muted;
+    @apply text-pretty text-fg-body;
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: -0.01em;
+  }
+
+  @media (min-width: 640px) {
+    .text-subtitle,
+    .text-body-hero {
+      font-size: 17px;
+      line-height: 30px;
+    }
+  }
+
+  .text-body,
+  .text-body-section {
+    @apply text-pretty text-fg-body;
     font-size: 15px;
     line-height: 26px;
-  }
-
-  @media (min-width: 640px) {
-    .text-body-hero {
-      font-size: 16px;
-      line-height: 27px;
-    }
+    letter-spacing: -0.008em;
   }
 
   .text-body-section {
-    @apply mt-[14px] text-pretty text-fg-muted;
-    font-size: 14px;
-    line-height: 24px;
+    @apply mt-[14px];
   }
 
-  @media (min-width: 640px) {
-    .text-body-section {
-      font-size: 15px;
-    }
+  .text-eyebrow {
+    @apply font-medium text-fg-faint uppercase;
+    font-size: 11px;
+    letter-spacing: 0.14em;
   }
 
-  .text-label {
-    @apply text-fg-faint;
-    font-family: var(--font-mono), ui-monospace, monospace;
-    font-feature-settings: "ss01";
-    font-size: 10px;
+  .text-label,
+  .font-mono-label {
+    @apply text-fg-faint uppercase;
+    font-size: 11px;
     letter-spacing: 0.12em;
-    text-transform: uppercase;
   }
 
   .text-label-ghost {
-    @apply text-fg-ghost;
-    font-family: var(--font-mono), ui-monospace, monospace;
-    font-feature-settings: "ss01";
-    font-size: 10px;
+    @apply text-fg-ghost uppercase;
+    font-size: 11px;
     letter-spacing: 0.12em;
-    text-transform: uppercase;
   }
 
   .text-caption {
     @apply text-fg-subtle;
-    font-size: 10px;
+    font-size: 12px;
+    line-height: 18px;
   }
 
   .text-card-title-lg {
     @apply font-medium text-fg-secondary;
     font-size: 18px;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.025em;
+    line-height: 1.3;
   }
 
   .text-card-title {
     @apply font-medium text-fg-tertiary;
     font-size: 16px;
-    letter-spacing: -0.025em;
+    letter-spacing: -0.02em;
   }
 
   .text-card-title-sm {
     @apply font-medium text-fg-tertiary;
     font-size: 14px;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.015em;
   }
 
   .text-card-desc {
-    @apply text-fg-muted;
-    font-size: 13px;
-    line-height: 20px;
+    @apply text-fg-body;
+    font-size: 14px;
+    line-height: 22px;
   }
 
   .text-metric-value {
     @apply text-right text-fg-body-muted;
-    font-size: 11px;
-    line-height: 1.45;
+    font-size: 12px;
+    line-height: 1.5;
     letter-spacing: -0.01em;
   }
 
@@ -387,55 +456,39 @@
   }
 
   .hero-safe-padding {
-    padding-top: max(72px, env(safe-area-inset-top, 0px) + 56px);
-    padding-bottom: max(96px, env(safe-area-inset-bottom, 0px) + 80px);
-    padding-left: max(16px, env(safe-area-inset-left, 0px) + 12px);
-    padding-right: max(16px, env(safe-area-inset-right, 0px) + 12px);
+    padding-top: max(112px, env(safe-area-inset-top, 0px) + 96px);
+    padding-bottom: max(80px, env(safe-area-inset-bottom, 0px) + 64px);
+    padding-left: max(20px, env(safe-area-inset-left, 0px) + 16px);
+    padding-right: max(20px, env(safe-area-inset-right, 0px) + 16px);
   }
 
   @media (min-width: 640px) {
     .hero-safe-padding {
-      padding-top: max(88px, env(safe-area-inset-top, 0px) + 72px);
-      padding-bottom: max(112px, env(safe-area-inset-bottom, 0px) + 96px);
+      padding-top: max(112px, env(safe-area-inset-top, 0px) + 88px);
+      padding-bottom: max(96px, env(safe-area-inset-bottom, 0px) + 80px);
       padding-left: max(32px, env(safe-area-inset-left, 0px) + 24px);
       padding-right: max(32px, env(safe-area-inset-right, 0px) + 24px);
     }
   }
 
-  @media (min-width: 768px) {
-    .hero-safe-padding {
-      padding-top: max(96px, env(safe-area-inset-top, 0px) + 80px);
-      padding-bottom: max(128px, env(safe-area-inset-bottom, 0px) + 112px);
-      padding-left: max(40px, env(safe-area-inset-left, 0px) + 32px);
-      padding-right: max(40px, env(safe-area-inset-right, 0px) + 32px);
-    }
-  }
-
   @media (min-width: 1024px) {
     .hero-safe-padding {
-      padding-top: max(80px, env(safe-area-inset-top, 0px) + 64px);
-      padding-bottom: max(80px, env(safe-area-inset-bottom, 0px) + 64px);
+      padding-top: max(128px, env(safe-area-inset-top, 0px) + 96px);
+      padding-bottom: max(112px, env(safe-area-inset-bottom, 0px) + 96px);
     }
   }
 
   .page-safe-padding {
     padding-top: max(16px, env(safe-area-inset-top, 0px) + 8px);
     padding-bottom: max(48px, env(safe-area-inset-bottom, 0px) + 32px);
-    padding-left: max(16px, env(safe-area-inset-left, 0px) + 12px);
-    padding-right: max(16px, env(safe-area-inset-right, 0px) + 12px);
+    padding-left: max(20px, env(safe-area-inset-left, 0px) + 16px);
+    padding-right: max(20px, env(safe-area-inset-right, 0px) + 16px);
   }
 
   @media (min-width: 640px) {
     .page-safe-padding {
       padding-left: max(32px, env(safe-area-inset-left, 0px) + 24px);
       padding-right: max(32px, env(safe-area-inset-right, 0px) + 24px);
-    }
-  }
-
-  @media (min-width: 768px) {
-    .page-safe-padding {
-      padding-left: max(40px, env(safe-area-inset-left, 0px) + 32px);
-      padding-right: max(40px, env(safe-area-inset-right, 0px) + 32px);
     }
   }
 
