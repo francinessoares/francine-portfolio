@@ -19,7 +19,7 @@ export function HomeFaqSection() {
   return (
     <Section id="faq">
       <SectionHeader
-        eyebrow={copy.eybrow}
+        eyebrow={copy.eyebrow}
         title={copy.title}
         subtitle={copy.subtitle}
         titleId="home-faq-heading"
