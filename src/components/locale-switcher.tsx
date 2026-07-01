@@ -12,18 +12,30 @@ const localeAria: Record<Locale, string> = {
   en: "English",
 };
 
-export function LocaleSwitcher() {
+type LocaleSwitcherProps = {
+  inline?: boolean;
+};
+
+export function LocaleSwitcher({ inline = false }: LocaleSwitcherProps) {
   const { locale, setLocale, dictionary } = useLocale();
   const { reducedMotion } = useMotionPrefs();
   const labels = dictionary.localeSwitcher;
 
   return (
     <div
-      className="fixed top-[max(16px,env(safe-area-inset-top,0px)+12px)] right-[max(16px,env(safe-area-inset-right,0px)+12px)] z-50"
+      className={cn(
+        !inline &&
+          "fixed top-[max(16px,env(safe-area-inset-top,0px)+12px)] right-[max(16px,env(safe-area-inset-right,0px)+12px)] z-50",
+      )}
       role="group"
       aria-label={labels.label}
     >
-      <div className="glass-pill flex items-center gap-[2px] p-[3px]">
+      <div
+        className={cn(
+          "flex items-center gap-[6px]",
+          !inline && "rounded-[12px] border border-white/[0.08] bg-white/[0.03] p-[3px]",
+        )}
+      >
         {locales.map((code) => {
           const active = locale === code;
 
@@ -37,10 +49,10 @@ export function LocaleSwitcher() {
               whileTap={reducedMotion || active ? {} : { scale: 0.96 }}
               transition={spring}
               className={cn(
-                "focus-ring text-label relative rounded-[7px] px-[10px] py-[5px] transition-premium",
+                "focus-ring min-w-[32px] rounded-[8px] px-[10px] py-[5px] text-[11px] font-semibold tracking-[0.08em] uppercase transition-premium",
                 active
-                  ? "bg-surface-glass-active text-fg-interactive-hover"
-                  : "text-fg-subtle hover:bg-surface-glass-hover hover:text-fg-body",
+                  ? "bg-gradient-to-br from-[#8B5CF6] to-[#7C3AED] text-white shadow-[0_2px_10px_rgba(139,92,246,0.4)]"
+                  : "bg-transparent text-fg-muted hover:text-fg-tertiary",
               )}
               aria-pressed={active}
               aria-label={localeAria[code]}
