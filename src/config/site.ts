@@ -1,7 +1,8 @@
 export const siteConfig = {
   name: "Francine Soares",
-  role: "Software Boutique",
+  role: "Software Studio",
   logo: "/logo/francine-logo.png?v=2",
+  portrait: "/francine-portrait-01.png",
   githubProfile:
     process.env.NEXT_PUBLIC_GITHUB_URL ?? "https://github.com/francinessoares",
   linkedInProfile:

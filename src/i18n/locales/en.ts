@@ -3,7 +3,7 @@ import type { Dictionary } from "@/i18n/types";
 export const en: Dictionary = {
   meta: {
     description:
-      "Software boutique specialized in systems, apps, and digital products for businesses, independent professionals, and startups.",
+      "Software studio specialized in systems, apps, and digital products for businesses, independent professionals, and startups.",
   },
   a11y: {
     skipToContent: "Skip to content",
@@ -22,11 +22,12 @@ export const en: Dictionary = {
     cta: "Let's talk",
   },
   hero: {
-    role: "Software Boutique · Digital Products",
-    headline:
-      "I build systems, apps, and digital products that help businesses sell more, automate processes, and grow.",
+    role: "Software Studio · Digital Products",
+    headlineLead:
+      "I build systems, apps, and digital products that help businesses ",
+    headlineHighlight: "automate processes and grow.",
     subtitle:
-      "Modern solutions for businesses, independent professionals, and startups.",
+      "Modern solutions for businesses, independent professionals, and startups seeking more efficiency, productivity, and results.",
     viewSolutions: "View solutions",
     requestQuote: "Request a quote",
     socialLinks: "Social links",
@@ -34,6 +35,13 @@ export const en: Dictionary = {
       github: "GitHub",
       linkedIn: "LinkedIn",
       email: "Email",
+    },
+    profile: {
+      role: "Software Engineer",
+      experience: "7+ years of experience",
+      stack: "React · Next.js · TypeScript",
+      focus: "Web · Mobile · AI",
+      available: "Available for projects",
     },
   },
   home: {
@@ -217,11 +225,11 @@ export const en: Dictionary = {
     },
     about: {
       eyebrow: "About",
-      title: "A software boutique, not just a portfolio",
+      title: "A software studio, not just a portfolio",
       subtitle:
         "I combine engineering, product vision, and premium execution to turn real problems into software that delivers results.",
       paragraphs: [
-        "I run a software boutique focused on building custom digital products — systems, apps, and platforms that help businesses grow.",
+        "I run a software studio focused on building custom digital products — systems, apps, and platforms that help businesses grow.",
         "With 7+ years shipping production software across retail, logistics, and government, I bring enterprise-grade quality to businesses that need accessible, well-executed solutions.",
         "My commitment is technology delivered with clarity, defined timelines, and direct communication — from briefing to launch.",
       ],

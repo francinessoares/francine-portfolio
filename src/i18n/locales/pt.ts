@@ -3,7 +3,7 @@ import type { Dictionary } from "@/i18n/types";
 export const pt: Dictionary = {
   meta: {
     description:
-      "Software Boutique especializada em sistemas, aplicativos e produtos digitais para empresas, profissionais liberais e startups.",
+      "Software Studio especializado em sistemas, aplicativos e produtos digitais para empresas, profissionais liberais e startups.",
   },
   a11y: {
     skipToContent: "Pular para o conteúdo",
@@ -22,11 +22,12 @@ export const pt: Dictionary = {
     cta: "Vamos conversar",
   },
   hero: {
-    role: "Software Boutique · Produtos Digitais",
-    headline:
-      "Desenvolvo sistemas, aplicativos e produtos digitais que ajudam empresas a vender mais, automatizar processos e crescer.",
+    role: "Software Studio · Produtos Digitais",
+    headlineLead:
+      "Desenvolvo sistemas, aplicativos e produtos digitais que ajudam empresas a ",
+    headlineHighlight: "automatizar processos e crescer.",
     subtitle:
-      "Soluções modernas para empresas, profissionais liberais e startups.",
+      "Soluções modernas para empresas, profissionais liberais e startups que buscam mais eficiência, produtividade e resultados.",
     viewSolutions: "Ver soluções",
     requestQuote: "Solicitar orçamento",
     socialLinks: "Redes sociais",
@@ -34,6 +35,13 @@ export const pt: Dictionary = {
       github: "GitHub",
       linkedIn: "LinkedIn",
       email: "E-mail",
+    },
+    profile: {
+      role: "Software Engineer",
+      experience: "7+ anos de experiência",
+      stack: "React · Next.js · TypeScript",
+      focus: "Web · Mobile · IA",
+      available: "Disponível para projetos",
     },
   },
   home: {
@@ -217,11 +225,11 @@ export const pt: Dictionary = {
     },
     about: {
       eyebrow: "Sobre",
-      title: "Uma boutique de software, não só um portfólio",
+      title: "Um software studio, não só um portfólio",
       subtitle:
         "Uno engenharia, visão de produto e execução premium para transformar problemas reais em software que gera resultado.",
       paragraphs: [
-        "Sou fundadora de uma software boutique focada em desenvolver produtos digitais sob medida — sistemas, aplicativos e plataformas que ajudam empresas a crescer.",
+        "Sou fundadora de um software studio focado em desenvolver produtos digitais sob medida — sistemas, aplicativos e plataformas que ajudam empresas a crescer.",
         "Com mais de 7 anos construindo software em produção para setores como varejo, logística e governo, trago a mesma qualidade técnica de grandes produtos para negócios que precisam de soluções acessíveis e bem executadas.",
         "Meu compromisso é entregar tecnologia com clareza, prazo definido e comunicação direta — do briefing à entrega.",
       ],

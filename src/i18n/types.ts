@@ -70,7 +70,8 @@ export type Dictionary = {
   };
   hero: {
     role: string;
-    headline: string;
+    headlineLead: string;
+    headlineHighlight: string;
     subtitle: string;
     viewSolutions: string;
     requestQuote: string;
@@ -79,6 +80,13 @@ export type Dictionary = {
       github: string;
       linkedIn: string;
       email: string;
+    };
+    profile: {
+      role: string;
+      experience: string;
+      stack: string;
+      focus: string;
+      available: string;
     };
   };
   home: {

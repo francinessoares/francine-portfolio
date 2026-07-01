@@ -26,6 +26,7 @@ export function HeroCtas() {
       className={cn(
         "mt-[36px] flex w-full max-w-[400px] flex-col gap-[12px]",
         "sm:max-w-none sm:flex-row sm:justify-center sm:gap-[12px]",
+        "lg:justify-start",
       )}
     >
       <HoverLift offset={1} className="w-full sm:w-auto" enableTap>
