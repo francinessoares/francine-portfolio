@@ -15,14 +15,13 @@ export function ExperienceSection() {
     <section className="pb-[120px] sm:pb-[140px]">
       <ScrollReveal>
         <GlassCard variant="experience" topLine="bright">
-          <div className="absolute -top-[120px] left-1/2 h-[240px] w-[400px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(139,92,246,0.08)_0%,transparent_70%)] blur-[60px]" />
+          <div className="absolute -top-[120px] left-1/2 h-[240px] w-[400px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(155,168,196,0.06)_0%,transparent_70%)] blur-[60px]" />
 
           <div className="relative px-[24px] py-[32px] sm:px-[40px] sm:py-[44px]">
             <SectionHeader
               eyebrow={copy.eyebrow}
               title={copy.title}
               align="left"
-              size="compact"
             />
 
             <ul className="mt-[32px] flex flex-col gap-[14px]">

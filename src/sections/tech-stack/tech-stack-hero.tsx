@@ -22,14 +22,12 @@ export function TechStackHero() {
       >
         <SectionHeader
           eyebrow={copy.eyebrow}
-          eyebrowDot="violet"
           title={copy.title}
           titleId="stack-heading"
           titleGradient
-          size="hero"
         />
         <ScrollReveal delay={0.1}>
-          <p className="mx-auto mt-[24px] max-w-[560px] text-center text-pretty text-[15px] leading-[26px] text-white/38 sm:mt-[28px] sm:text-[16px] sm:leading-[27px]">
+          <p className="text-subtitle mx-auto mt-[24px] max-w-[560px] text-center">
             {copy.subtitle}
           </p>
         </ScrollReveal>
