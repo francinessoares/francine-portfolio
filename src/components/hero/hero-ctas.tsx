@@ -1,56 +1,48 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight, MessageCircle } from "lucide-react";
+import Link from "next/link";
 
-import { HeroCvDownloadLink } from "@/components/hero/hero-cv-download-link";
 import { HoverLift } from "@/components/primitives/hover-lift";
+import {
+  outlineButtonClass,
+  primaryButtonClass,
+} from "@/components/primitives/button-styles";
 import { Button } from "@/components/ui/button";
-import { siteConfig } from "@/config/site";
 import { useHeroMotionContext } from "@/hooks/use-hero-motion";
-import { useTranslations } from "@/i18n/context";
+import { useLocale, useTranslations } from "@/i18n/context";
+import { getWhatsAppQuoteUrl } from "@/lib/whatsapp";
 import { cn } from "@/lib/utils";
-
-const primaryButtonClass = cn(
-  "transition-premium h-[42px] w-full rounded-[10px] border-0 px-[22px]",
-  "bg-white text-[13px] font-medium tracking-[-0.015em] text-surface",
-  "shadow-[0_0_0_1px_rgba(255,255,255,0.08),0_4px_24px_rgba(255,255,255,0.06)]",
-  "hover:bg-zinc-50 hover:shadow-[0_0_0_1px_rgba(255,255,255,0.12),0_8px_32px_rgba(255,255,255,0.1)]",
-  "sm:min-w-[140px] sm:w-auto",
-);
-
-const outlineButtonClass = cn(
-  "glass-pill transition-premium h-[42px] w-full rounded-[10px] border-white/[0.07] px-[22px]",
-  "bg-white/[0.025] text-[13px] font-medium tracking-[-0.015em] text-white/70",
-  "hover:border-white/[0.11] hover:bg-white/[0.045] hover:text-white/90",
-  "sm:min-w-[140px] sm:w-auto",
-);
 
 export function HeroCtas() {
   const t = useTranslations();
+  const { locale } = useLocale();
   const { variants } = useHeroMotionContext();
 
   return (
     <motion.div
       variants={variants.item}
       className={cn(
-        "mt-[40px] flex w-full max-w-[360px] flex-col gap-[10px]",
-        "sm:max-w-none sm:flex-row sm:flex-wrap sm:justify-center sm:gap-[10px]",
-        "lg:mt-[44px] lg:justify-start",
+        "mt-[36px] flex w-full max-w-[400px] flex-col gap-[12px]",
+        "sm:max-w-none sm:flex-row sm:justify-center sm:gap-[12px]",
       )}
     >
       <HoverLift offset={1} className="w-full sm:w-auto" enableTap>
         <Button
           nativeButton={false}
           size="lg"
-          className={primaryButtonClass}
-          render={<a href="#stack" />}
+          className={cn(primaryButtonClass, "gap-[8px]")}
+          render={
+            <a
+              href={getWhatsAppQuoteUrl(locale)}
+              target="_blank"
+              rel="noopener noreferrer"
+            />
+          }
         >
-          {t.hero.viewWork}
-          <ArrowRight
-            className="size-[14px] transition-transform duration-300 group-hover/button:translate-x-[2px]"
-            strokeWidth={1.75}
-          />
+          {t.hero.requestQuote}
+          <MessageCircle className="size-[15px]" strokeWidth={1.75} />
         </Button>
       </HoverLift>
 
@@ -60,22 +52,13 @@ export function HeroCtas() {
           size="lg"
           variant="outline"
           className={cn(outlineButtonClass, "gap-[8px]")}
-          render={<HeroCvDownloadLink />}
+          render={<Link href="/#solucoes" />}
         >
-          {t.hero.downloadCv}
-          <Download className="size-[14px]" strokeWidth={1.75} />
-        </Button>
-      </HoverLift>
-
-      <HoverLift offset={1} className="w-full sm:w-auto" enableTap>
-        <Button
-          nativeButton={false}
-          size="lg"
-          variant="outline"
-          className={outlineButtonClass}
-          render={<a href={`mailto:${siteConfig.email}`} />}
-        >
-          {t.hero.getInTouch}
+          {t.hero.viewSolutions}
+          <ArrowRight
+            className="size-[15px] transition-transform duration-300 group-hover/button:translate-x-[2px]"
+            strokeWidth={1.75}
+          />
         </Button>
       </HoverLift>
     </motion.div>
