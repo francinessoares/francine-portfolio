@@ -19,29 +19,31 @@ export function HomeFaqSection() {
   return (
     <Section id="faq">
       <SectionHeader
-        eyebrow={copy.eyebrow}
+        eyebrow={copy.eybrow}
         title={copy.title}
         subtitle={copy.subtitle}
         titleId="home-faq-heading"
       />
 
-      <div className="mt-[40px] flex flex-col gap-[12px]">
-        {faqItems.map((id, index) => {
-          const item = copy.items[id];
-          const isOpen = openId === id;
+      <ScrollReveal>
+        <div className="mt-[40px] flex flex-col gap-[12px]">
+          {faqItems.map((id) => {
+            const item = copy.items[id];
+            const isOpen = openId === id;
 
-          return (
-            <ScrollReveal key={id} delay={index * 0.04}>
+            return (
               <div
+                key={id}
                 className={cn(
-                  "overflow-hidden rounded-[14px] border border-white/[0.08] bg-white/[0.02] backdrop-blur-[12px] transition-premium",
-                  isOpen && "border-accent/20 shadow-[0_16px_48px_-24px_rgba(139,92,246,0.2)]",
+                  "relative isolate overflow-hidden rounded-[14px] border border-white/[0.08] bg-white/[0.02] backdrop-blur-[12px] transition-premium",
+                  isOpen &&
+                    "border-accent/20 shadow-[0_16px_48px_-24px_rgba(139,92,246,0.2)]",
                 )}
               >
                 <button
                   type="button"
                   onClick={() => setOpenId(isOpen ? null : id)}
-                  className="focus-ring flex w-full items-center justify-between gap-[16px] px-[24px] py-[20px] text-left"
+                  className="focus-ring flex w-full items-start justify-between gap-[12px] px-[20px] py-[18px] text-left sm:items-center sm:gap-[16px] sm:px-[24px] sm:py-[20px]"
                   aria-expanded={isOpen}
                 >
                   <span className="text-[15px] font-medium tracking-[-0.02em] text-fg-primary sm:text-[16px]">
@@ -49,7 +51,7 @@ export function HomeFaqSection() {
                   </span>
                   <ChevronDown
                     className={cn(
-                      "size-[18px] shrink-0 text-fg-muted transition-transform duration-300",
+                      "mt-[2px] size-[18px] shrink-0 text-fg-muted transition-transform duration-300 sm:mt-0",
                       isOpen && "rotate-180 text-accent-light",
                     )}
                     strokeWidth={1.75}
@@ -65,17 +67,17 @@ export function HomeFaqSection() {
                       transition={{ duration: 0.25 }}
                       className="overflow-hidden"
                     >
-                      <p className="text-body border-t border-white/[0.06] px-[24px] pt-[16px] pb-[20px]">
+                      <p className="text-body border-t border-white/[0.06] px-[20px] pt-[14px] pb-[18px] sm:px-[24px] sm:pt-[16px] sm:pb-[20px]">
                         {item.answer}
                       </p>
                     </motion.div>
                   ) : null}
                 </AnimatePresence>
               </div>
-            </ScrollReveal>
-          );
-        })}
-      </div>
+            );
+          })}
+        </div>
+      </ScrollReveal>
     </Section>
   );
 }
