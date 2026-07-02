@@ -3,7 +3,7 @@ import { describe, expect, it } from "vitest";
 import { navItems } from "@/config/navigation";
 import { footerNavItems } from "@/data/footer";
 import { getDictionary, locales } from "@/i18n";
-import { createPageMetadata } from "@/lib/seo";
+import { createPageMetadata, rootMetadata } from "@/lib/seo";
 import { getWhatsAppProductUrl, getWhatsAppQuoteUrl } from "@/lib/whatsapp";
 
 describe("getWhatsAppQuoteUrl", () => {
@@ -41,7 +41,40 @@ describe("createPageMetadata", () => {
     expect(metadata.description).toBe("Fale com a Francine");
     expect(metadata.alternates?.canonical).toContain("/contato");
     expect(metadata.openGraph?.title).toContain("Contato");
+    expect(metadata.openGraph?.images).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({ url: expect.stringContaining("francine-portrait") }),
+      ]),
+    );
     expect(metadata.twitter?.card).toBe("summary_large_image");
+    expect(metadata.twitter?.images).toEqual(
+      expect.arrayContaining([expect.stringContaining("francine-portrait")]),
+    );
+  });
+});
+
+describe("rootMetadata", () => {
+  it("expõe favicon e apple touch icon nos caminhos públicos", () => {
+    const icons = rootMetadata.icons;
+
+    expect(icons).toEqual(
+      expect.objectContaining({
+        apple: "/apple-touch-icon.png",
+      }),
+    );
+
+    const iconEntries = Array.isArray(icons?.icon) ? icons.icon : [];
+    const iconUrls = iconEntries.map((entry) =>
+      typeof entry === "string" ? entry : entry.url,
+    );
+
+    expect(iconUrls).toEqual(
+      expect.arrayContaining([
+        "/favicon.ico",
+        "/favicon-32x32.png",
+        "/favicon-48x48.png",
+      ]),
+    );
   });
 });
 

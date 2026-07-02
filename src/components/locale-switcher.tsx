@@ -14,9 +14,13 @@ const localeAria: Record<Locale, string> = {
 
 type LocaleSwitcherProps = {
   inline?: boolean;
+  disableMotion?: boolean;
 };
 
-export function LocaleSwitcher({ inline = false }: LocaleSwitcherProps) {
+export function LocaleSwitcher({
+  inline = false,
+  disableMotion = false,
+}: LocaleSwitcherProps) {
   const { locale, setLocale, dictionary } = useLocale();
   const { reducedMotion } = useMotionPrefs();
   const labels = dictionary.localeSwitcher;
@@ -38,27 +42,34 @@ export function LocaleSwitcher({ inline = false }: LocaleSwitcherProps) {
       >
         {locales.map((code) => {
           const active = locale === code;
+          const buttonClass = cn(
+            "focus-ring min-w-[32px] rounded-[8px] px-[10px] py-[5px] text-[11px] font-semibold tracking-[0.08em] uppercase transition-premium",
+            active
+              ? "bg-gradient-to-br from-[#8B5CF6] to-[#7C3AED] text-white shadow-[0_2px_10px_rgba(139,92,246,0.4)]"
+              : "bg-transparent text-fg-muted hover:text-fg-tertiary",
+          );
+          const buttonProps = {
+            type: "button" as const,
+            onClick: () => setLocale(code),
+            className: buttonClass,
+            "aria-pressed": active,
+            "aria-current": active ? ("true" as const) : undefined,
+            "aria-label": localeAria[code],
+            children: labels[code],
+          };
+
+          if (disableMotion) {
+            return <button key={code} {...buttonProps} />;
+          }
 
           return (
             <motion.button
               key={code}
-              type="button"
-              onClick={() => setLocale(code)}
+              {...buttonProps}
               whileHover={reducedMotion || active ? {} : { scale: 1.02 }}
               whileTap={reducedMotion || active ? {} : { scale: 0.96 }}
               transition={spring}
-              className={cn(
-                "focus-ring min-w-[32px] rounded-[8px] px-[10px] py-[5px] text-[11px] font-semibold tracking-[0.08em] uppercase transition-premium",
-                active
-                  ? "bg-gradient-to-br from-[#8B5CF6] to-[#7C3AED] text-white shadow-[0_2px_10px_rgba(139,92,246,0.4)]"
-                  : "bg-transparent text-fg-muted hover:text-fg-tertiary",
-              )}
-              aria-pressed={active}
-              aria-current={active ? "true" : undefined}
-              aria-label={localeAria[code]}
-            >
-              {labels[code]}
-            </motion.button>
+            />
           );
         })}
       </div>

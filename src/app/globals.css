@@ -196,8 +196,15 @@
       inset 0 1px 0 rgba(255, 255, 255, 0.06);
   }
 
+  @media (max-width: 1023px) {
+    .glass-nav {
+      background: rgba(15, 15, 20, 0.94);
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+    }
+  }
+
   .glass-nav-menu {
-    position: relative;
     background: rgba(10, 10, 14, 0.96);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
@@ -224,6 +231,37 @@
     );
     box-shadow: 0 0 14px rgba(139, 92, 246, 0.35);
     pointer-events: none;
+  }
+
+  .mobile-menu-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 98;
+    border: 0;
+    background: rgba(5, 5, 8, 0.82);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .mobile-menu-panel {
+    position: fixed;
+    inset-inline: 16px;
+    top: calc(max(14px, env(safe-area-inset-top, 0px) + 10px) + 64px + 12px);
+    z-index: 99;
+    margin-inline: auto;
+    max-width: 1180px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 22px;
+    background: rgba(10, 10, 14, 0.98);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.55);
+    transform: translateZ(0);
+  }
+
+  @media (min-width: 640px) {
+    .mobile-menu-panel {
+      inset-inline: 24px;
+      top: calc(max(14px, env(safe-area-inset-top, 0px) + 10px) + 72px + 12px);
+    }
   }
 
   .glass-nav::after {

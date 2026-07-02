@@ -12,7 +12,7 @@ import { siteConfig } from "@/config/site";
 import { useLocale, useTranslations } from "@/i18n/context";
 import { getWhatsAppQuoteUrl } from "@/lib/whatsapp";
 
-import { MobileMenuDrawer } from "./mobile-menu-drawer";
+import { MobileMenu } from "./mobile-menu-drawer";
 import { NavLink } from "./site-header-nav-link";
 
 function subscribeHash(listener: () => void) {
@@ -64,7 +64,7 @@ function HeaderCta() {
       href={getWhatsAppQuoteUrl(locale)}
       target="_blank"
       rel="noopener noreferrer"
-      className="nav-cta focus-ring"
+      className="nav-cta focus-ring shrink-0"
       aria-label={t.header.cta}
     >
       <SiWhatsapp className="size-[16px] text-accent-light" aria-hidden />
@@ -102,8 +102,8 @@ export function SiteHeader() {
   };
 
   return (
-    <header className="pointer-events-none fixed inset-x-0 top-0 z-50 px-[16px] pt-[max(14px,env(safe-area-inset-top,0px)+10px)] sm:px-[24px]">
-      <div className="glass-nav pointer-events-auto relative z-[60] mx-auto max-w-[1180px] px-[12px] py-[10px] sm:px-[24px] sm:py-[14px]">
+    <header className="fixed inset-x-0 top-0 isolate z-[100] px-[16px] pt-[max(14px,env(safe-area-inset-top,0px)+10px)] sm:px-[24px]">
+      <div className="glass-nav relative z-[2] mx-auto max-w-[1180px] px-[12px] py-[10px] sm:px-[24px] sm:py-[14px]">
         <div className="flex items-center justify-between gap-[12px] lg:grid lg:grid-cols-[1fr_auto_1fr] lg:gap-[16px]">
           <div className="justify-self-start">
             <SiteLogo />
@@ -123,17 +123,14 @@ export function SiteHeader() {
             ))}
           </nav>
 
-          <div className="flex items-center justify-end gap-[8px] sm:gap-[10px]">
+          <div className="relative z-[3] flex shrink-0 items-center justify-end gap-[8px] sm:gap-[10px]">
             <HeaderCta />
             <HeaderDivider />
             <div className="hidden sm:block">
               <LocaleSwitcher inline />
             </div>
 
-            <MobileMenuDrawer
-              key={`${pathname}${hash}`}
-              isActive={isActive}
-            />
+            <MobileMenu isActive={isActive} />
           </div>
         </div>
       </div>
