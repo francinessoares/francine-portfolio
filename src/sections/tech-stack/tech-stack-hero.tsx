@@ -21,6 +21,7 @@ export function TechStackHero() {
         className="mx-auto max-w-[720px]"
       >
         <SectionHeader
+          as="h1"
           eyebrow={copy.eyebrow}
           title={copy.title}
           titleId="stack-heading"

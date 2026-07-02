@@ -9,6 +9,7 @@ type SectionHeaderProps = {
   titleId?: string;
   titleGradient?: boolean;
   showDot?: boolean;
+  as?: "h1" | "h2";
   className?: string;
 };
 
@@ -20,6 +21,7 @@ export function SectionHeader({
   titleId,
   titleGradient = false,
   showDot = true,
+  as: TitleTag = "h2",
   className,
 }: SectionHeaderProps) {
   const isCenter = align === "center";
@@ -35,7 +37,7 @@ export function SectionHeader({
         <Eyebrow dot={showDot ? "accent" : undefined}>{eyebrow}</Eyebrow>
       ) : null}
 
-      <h2
+      <TitleTag
         id={titleId}
         className={cn("text-display-section mt-[16px]", !isCenter && "text-left")}
       >
@@ -44,7 +46,7 @@ export function SectionHeader({
         ) : (
           title
         )}
-      </h2>
+      </TitleTag>
 
       {subtitle ? (
         <p

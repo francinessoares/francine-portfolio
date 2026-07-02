@@ -3,6 +3,7 @@ export const siteConfig = {
   role: "Software Studio",
   logo: "/logo/francine-logo.png",
   portrait: "/francine-portrait-01.png",
+  ogImage: "/francine-portrait-01.png",
   githubProfile:
     process.env.NEXT_PUBLIC_GITHUB_URL ?? "https://github.com/francinessoares",
   linkedInProfile:

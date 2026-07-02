@@ -16,6 +16,7 @@ export function ServicesPageContent() {
       <div className="pb-[48px] pt-[32px] sm:pt-[48px]">
         <header className="mx-auto max-w-[640px] pb-[48px] text-center sm:pb-[64px]">
           <SectionHeader
+            as="h1"
             eyebrow={copy.eyebrow}
             title={copy.title}
             subtitle={copy.subtitle}
