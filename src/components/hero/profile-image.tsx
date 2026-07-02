@@ -28,7 +28,6 @@ export function ProfileImage({ className }: ProfileImageProps) {
         alt={siteConfig.name}
         fill
         priority
-        unoptimized
         sizes="(max-width: 640px) 280px, 300px"
         className="object-contain object-center"
       />

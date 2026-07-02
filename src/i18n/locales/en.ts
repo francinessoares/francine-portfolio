@@ -10,11 +10,13 @@ export const en: Dictionary = {
     openMenu: "Open menu",
     closeMenu: "Close menu",
     mainNav: "Main navigation",
+    scrollToTop: "Back to top",
   },
   nav: {
     home: "Home",
     services: "Services",
     solutions: "Solutions",
+    projects: "Projects",
     about: "About",
     contact: "Contact",
   },
@@ -683,5 +685,21 @@ export const en: Dictionary = {
         "legal solutions for PGE-RJ (Rio de Janeiro State Prosecutor's Office)",
       ],
     },
+  },
+  errors: {
+    notFound: {
+      title: "Page not found",
+      description:
+        "The address may be incorrect or the page may have moved. Go back home and keep browsing.",
+      backHome: "Back to home",
+    },
+    server: {
+      title: "Something went wrong",
+      description:
+        "We hit an unexpected problem. Try again or return to the home page.",
+      retry: "Try again",
+      backHome: "Back to home",
+    },
+    loading: "Loading content",
   },
 };

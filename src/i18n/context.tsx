@@ -6,10 +6,9 @@ import {
   useContext,
   useEffect,
   useMemo,
-  useState,
+  useSyncExternalStore,
 } from "react";
 
-import { siteTitle } from "@/config/site";
 import {
   defaultLocale,
   getDictionary,
@@ -29,6 +28,8 @@ type LocaleContextValue = {
 
 const LocaleContext = createContext<LocaleContextValue | null>(null);
 
+const localeListeners = new Set<() => void>();
+
 function readStoredLocale(): Locale {
   if (typeof window === "undefined") return defaultLocale;
 
@@ -40,9 +41,25 @@ function readStoredLocale(): Locale {
   return defaultLocale;
 }
 
+function subscribeLocale(listener: () => void) {
+  localeListeners.add(listener);
+  return () => localeListeners.delete(listener);
+}
+
+function getLocaleSnapshot(): Locale {
+  return readStoredLocale();
+}
+
+function getServerLocaleSnapshot(): Locale {
+  return defaultLocale;
+}
+
+function notifyLocaleChange() {
+  localeListeners.forEach((listener) => listener());
+}
+
 function applyDocumentLocale(locale: Locale, dictionary: Dictionary) {
   document.documentElement.lang = htmlLang[locale];
-  document.title = siteTitle;
 
   const metaDescription = document.querySelector('meta[name="description"]');
   metaDescription?.setAttribute("content", dictionary.meta.description);
@@ -53,18 +70,19 @@ type LocaleProviderProps = {
 };
 
 export function LocaleProvider({ children }: LocaleProviderProps) {
-  const [locale, setLocaleState] = useState<Locale>(defaultLocale);
+  const locale = useSyncExternalStore(
+    subscribeLocale,
+    getLocaleSnapshot,
+    getServerLocaleSnapshot,
+  );
 
   useEffect(() => {
-    const stored = readStoredLocale();
-    setLocaleState(stored);
-    applyDocumentLocale(stored, getDictionary(stored));
-  }, []);
+    applyDocumentLocale(locale, getDictionary(locale));
+  }, [locale]);
 
   const setLocale = useCallback((next: Locale) => {
-    setLocaleState(next);
     localStorage.setItem(STORAGE_KEY, next);
-    applyDocumentLocale(next, getDictionary(next));
+    notifyLocaleChange();
   }, []);
 
   const dictionary = useMemo(() => getDictionary(locale), [locale]);

@@ -97,7 +97,6 @@ export function SiteFooter() {
                 alt=""
                 width={36}
                 height={36}
-                unoptimized
                 className="size-[36px] object-contain"
               />
               <div className="leading-none">

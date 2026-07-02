@@ -2,9 +2,11 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { Geist } from "next/font/google";
 
-import { Providers } from "@/components/providers";
-import { siteTitle } from "@/config/site";
+import { SiteChrome } from "@/components/layout/site-chrome";
+import { LocaleProvider } from "@/i18n/context";
+import { siteTitle, siteUrl } from "@/config/site";
 import { defaultLocale, getDictionary, htmlLang } from "@/i18n";
+import { rootMetadata } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 
 const defaultDescription = getDictionary(defaultLocale).meta.description;
@@ -21,8 +23,19 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  title: siteTitle,
+  ...rootMetadata,
   description: defaultDescription,
+  openGraph: {
+    ...rootMetadata.openGraph,
+    title: siteTitle,
+    description: defaultDescription,
+    url: siteUrl,
+  },
+  twitter: {
+    ...rootMetadata.twitter,
+    title: siteTitle,
+    description: defaultDescription,
+  },
 };
 
 export default function RootLayout({
@@ -37,7 +50,9 @@ export default function RootLayout({
       className={cn("dark font-sans antialiased", geistSans.variable)}
     >
       <body className="overflow-x-hidden bg-surface text-foreground">
-        <Providers>{children}</Providers>
+        <LocaleProvider>
+          <SiteChrome>{children}</SiteChrome>
+        </LocaleProvider>
       </body>
     </html>
   );
