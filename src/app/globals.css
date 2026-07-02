@@ -245,7 +245,7 @@
   .mobile-menu-panel {
     position: fixed;
     inset-inline: 16px;
-    top: calc(env(safe-area-inset-top, 0px) + 68px);
+    top: calc(max(14px, env(safe-area-inset-top, 0px) + 10px) + 64px + 12px);
     z-index: 99;
     margin-inline: auto;
     max-width: 1180px;
@@ -260,7 +260,7 @@
   @media (min-width: 640px) {
     .mobile-menu-panel {
       inset-inline: 24px;
-      top: calc(env(safe-area-inset-top, 0px) + 72px);
+      top: calc(max(14px, env(safe-area-inset-top, 0px) + 10px) + 72px + 12px);
     }
   }
 
