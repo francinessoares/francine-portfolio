@@ -63,6 +63,7 @@ export type Dictionary = {
     openMenu: string;
     closeMenu: string;
     mainNav: string;
+    scrollToTop: string;
   };
   nav: Record<NavItemId, string>;
   header: {
@@ -280,5 +281,19 @@ export type Dictionary = {
       systemsTitle: string;
       systems: string[];
     };
+  };
+  errors: {
+    notFound: {
+      title: string;
+      description: string;
+      backHome: string;
+    };
+    server: {
+      title: string;
+      description: string;
+      retry: string;
+      backHome: string;
+    };
+    loading: string;
   };
 };

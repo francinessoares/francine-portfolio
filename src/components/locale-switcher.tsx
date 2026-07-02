@@ -44,7 +44,6 @@ export function LocaleSwitcher({ inline = false }: LocaleSwitcherProps) {
               key={code}
               type="button"
               onClick={() => setLocale(code)}
-              disabled={active}
               whileHover={reducedMotion || active ? {} : { scale: 1.02 }}
               whileTap={reducedMotion || active ? {} : { scale: 0.96 }}
               transition={spring}
@@ -55,6 +54,7 @@ export function LocaleSwitcher({ inline = false }: LocaleSwitcherProps) {
                   : "bg-transparent text-fg-muted hover:text-fg-tertiary",
               )}
               aria-pressed={active}
+              aria-current={active ? "true" : undefined}
               aria-label={localeAria[code]}
             >
               {labels[code]}

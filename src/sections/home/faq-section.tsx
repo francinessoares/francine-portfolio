@@ -30,6 +30,8 @@ export function HomeFaqSection() {
           {faqItems.map((id) => {
             const item = copy.items[id];
             const isOpen = openId === id;
+            const buttonId = `faq-button-${id}`;
+            const panelId = `faq-panel-${id}`;
 
             return (
               <div
@@ -41,10 +43,12 @@ export function HomeFaqSection() {
                 )}
               >
                 <button
+                  id={buttonId}
                   type="button"
                   onClick={() => setOpenId(isOpen ? null : id)}
                   className="focus-ring flex w-full items-start justify-between gap-[12px] px-[20px] py-[18px] text-left sm:items-center sm:gap-[16px] sm:px-[24px] sm:py-[20px]"
                   aria-expanded={isOpen}
+                  aria-controls={panelId}
                 >
                   <span className="text-[15px] font-medium tracking-[-0.02em] text-fg-primary sm:text-[16px]">
                     {item.question}
@@ -55,12 +59,16 @@ export function HomeFaqSection() {
                       isOpen && "rotate-180 text-accent-light",
                     )}
                     strokeWidth={1.75}
+                    aria-hidden
                   />
                 </button>
 
                 <AnimatePresence initial={false}>
                   {isOpen ? (
                     <motion.div
+                      id={panelId}
+                      role="region"
+                      aria-labelledby={buttonId}
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}

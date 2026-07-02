@@ -39,7 +39,7 @@ export function ProductCard({ product, className }: ProductCardProps) {
               alt={item.title}
               width={1536}
               height={1024}
-              unoptimized
+              sizes="(max-width: 768px) 100vw, 960px"
               className="h-auto w-full object-cover"
             />
           </div>

@@ -63,7 +63,7 @@ export function ProjectsPageContent() {
                 size="lg"
                 variant="outline"
                 className={cn(outlineButtonClass, "gap-[8px]")}
-                render={<Link href="/#stack" />}
+                render={<Link href="/stack" />}
               >
                 {cta.button}
                 <ArrowRight

@@ -10,11 +10,13 @@ export const pt: Dictionary = {
     openMenu: "Abrir menu",
     closeMenu: "Fechar menu",
     mainNav: "Navegação principal",
+    scrollToTop: "Voltar ao topo",
   },
   nav: {
     home: "Home",
     services: "Serviços",
     solutions: "Soluções",
+    projects: "Projetos",
     about: "Sobre",
     contact: "Contato",
   },
@@ -683,5 +685,21 @@ export const pt: Dictionary = {
         "Soluções jurídicas para a PGE-RJ",
       ],
     },
+  },
+  errors: {
+    notFound: {
+      title: "Página não encontrada",
+      description:
+        "O endereço pode estar incorreto ou a página foi movida. Volte para a home e continue navegando.",
+      backHome: "Voltar para a home",
+    },
+    server: {
+      title: "Algo deu errado",
+      description:
+        "Encontramos um problema inesperado. Tente novamente ou retorne para a página inicial.",
+      retry: "Tentar novamente",
+      backHome: "Voltar para a home",
+    },
+    loading: "Carregando conteúdo",
   },
 };
