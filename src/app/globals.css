@@ -235,10 +235,13 @@
 
   .mobile-menu-backdrop {
     position: fixed;
-    inset: 0;
+    inset-inline: 0;
+    bottom: 0;
+    top: calc(max(14px, env(safe-area-inset-top, 0px) + 10px) + 64px);
     z-index: 98;
     border: 0;
     background: rgba(5, 5, 8, 0.82);
+    touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
   }
 
@@ -255,9 +258,18 @@
     background: rgba(10, 10, 14, 0.98);
     box-shadow: 0 16px 48px rgba(0, 0, 0, 0.55);
     transform: translateZ(0);
+    touch-action: manipulation;
+  }
+
+  .mobile-menu-toggle {
+    transform: translateZ(0);
   }
 
   @media (min-width: 640px) {
+    .mobile-menu-backdrop {
+      top: calc(max(14px, env(safe-area-inset-top, 0px) + 10px) + 72px);
+    }
+
     .mobile-menu-panel {
       inset-inline: 24px;
       top: calc(max(14px, env(safe-area-inset-top, 0px) + 10px) + 72px + 12px);

@@ -7,9 +7,10 @@ type NavLinkProps = {
   label: string;
   active: boolean;
   onClick?: () => void;
+  className?: string;
 };
 
-export function NavLink({ href, label, active, onClick }: NavLinkProps) {
+export function NavLink({ href, label, active, onClick, className }: NavLinkProps) {
   return (
     <Link
       href={href}
@@ -18,6 +19,7 @@ export function NavLink({ href, label, active, onClick }: NavLinkProps) {
       className={cn(
         "focus-ring relative px-[16px] py-[10px] text-[13px] font-medium tracking-[-0.01em] transition-premium",
         active ? "text-accent-light" : "text-fg-muted hover:text-fg-secondary",
+        className,
       )}
     >
       {label}
