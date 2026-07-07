@@ -1,7 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, useSyncExternalStore } from "react";
-import { createPortal } from "react-dom";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import { Menu, X } from "lucide-react";
 
 import { LocaleSwitcher } from "@/components/locale-switcher";
@@ -15,7 +14,7 @@ type MobileMenuProps = {
   isActive: (href: string) => boolean;
 };
 
-const BACKDROP_GUARD_MS = 320;
+const INTERACTION_GUARD_MS = 450;
 
 function subscribeNoop() {
   return () => {};
@@ -30,62 +29,95 @@ function getServerSnapshot() {
 }
 
 const menuButtonClass =
-  "mobile-menu-toggle focus-ring relative z-[10] flex size-[44px] shrink-0 cursor-pointer touch-manipulation items-center justify-center rounded-[10px] border border-white/[0.12] bg-[rgba(15,15,20,0.96)] text-fg-muted [-webkit-tap-highlight-color:transparent] lg:hidden";
+  "mobile-menu-toggle focus-ring absolute inset-0 flex size-[44px] cursor-pointer touch-manipulation items-center justify-center rounded-[10px] border border-white/[0.12] bg-[rgba(15,15,20,0.96)] text-fg-muted [-webkit-tap-highlight-color:transparent] lg:hidden";
 
 export function MobileMenu({ isActive }: MobileMenuProps) {
   const t = useTranslations();
   const [open, setOpen] = useState(false);
-  const openedAtRef = useRef(0);
+  const [interactionReady, setInteractionReady] = useState(false);
   const isClient = useSyncExternalStore(
     subscribeNoop,
     getClientSnapshot,
     getServerSnapshot,
   );
 
-  const closeMenu = () => setOpen(false);
+  const openMenu = () => {
+    setInteractionReady(false);
+    setOpen(true);
+  };
 
-  const toggleMenu = () => {
-    setOpen((value) => {
-      if (!value) {
-        openedAtRef.current = Date.now();
-      }
-      return !value;
-    });
+  const closeMenu = () => {
+    if (!interactionReady) return;
+    setInteractionReady(false);
+    setOpen(false);
+  };
+
+  const closeMenuForNav = () => {
+    setInteractionReady(false);
+    setOpen(false);
   };
 
   useEffect(() => {
     if (!open) return;
 
-    const previousOverflow = document.body.style.overflow;
+    const previousBodyOverflow = document.body.style.overflow;
+    const previousHtmlOverflow = document.documentElement.style.overflow;
     document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
+
+    const guardTimer = window.setTimeout(() => {
+      setInteractionReady(true);
+    }, INTERACTION_GUARD_MS);
 
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key !== "Escape") return;
       event.preventDefault();
-      closeMenu();
+      setInteractionReady(false);
+      setOpen(false);
     };
 
     document.addEventListener("keydown", onKeyDown);
     return () => {
-      document.body.style.overflow = previousOverflow;
+      window.clearTimeout(guardTimer);
+      document.body.style.overflow = previousBodyOverflow;
+      document.documentElement.style.overflow = previousHtmlOverflow;
       document.removeEventListener("keydown", onKeyDown);
     };
   }, [open]);
 
   const handleBackdropDismiss = () => {
-    if (Date.now() - openedAtRef.current < BACKDROP_GUARD_MS) return;
+    if (!interactionReady) return;
     closeMenu();
+  };
+
+  const stopTouchGhostClick = (event: React.PointerEvent<HTMLButtonElement>) => {
+    if (event.pointerType === "touch") {
+      event.preventDefault();
+    }
+    event.stopPropagation();
   };
 
   const overlay =
     isClient && open
-      ? createPortal(
+      ? (
           <>
             <button
               type="button"
-              className="mobile-menu-backdrop lg:hidden"
+              className={cn(
+                "mobile-menu-backdrop lg:hidden",
+                !interactionReady && "pointer-events-none",
+              )}
               aria-label={t.a11y.closeMenu}
-              onClick={handleBackdropDismiss}
+              aria-hidden={!interactionReady}
+              tabIndex={interactionReady ? 0 : -1}
+              onPointerUp={(event) => {
+                stopTouchGhostClick(event);
+                handleBackdropDismiss();
+              }}
+              onClick={(event) => {
+                event.stopPropagation();
+                handleBackdropDismiss();
+              }}
             />
             <div
               id="mobile-menu-panel"
@@ -104,7 +136,7 @@ export function MobileMenu({ isActive }: MobileMenuProps) {
                     href={item.href}
                     label={t.nav[item.id]}
                     active={isActive(item.href)}
-                    onClick={closeMenu}
+                    onClick={closeMenuForNav}
                     className="touch-manipulation py-[12px]"
                   />
                 ))}
@@ -113,36 +145,57 @@ export function MobileMenu({ isActive }: MobileMenuProps) {
                 </div>
               </nav>
             </div>
-          </>,
-          document.body,
+          </>
         )
       : null;
 
   return (
     <>
-      <button
-        type="button"
-        className={menuButtonClass}
-        aria-expanded={open}
-        aria-controls="mobile-menu-panel"
-        aria-haspopup="dialog"
-        aria-label={open ? t.a11y.closeMenu : t.a11y.openMenu}
-        onClick={(event) => {
-          event.stopPropagation();
-          toggleMenu();
-        }}
-      >
-        <Menu
-          className={cn("pointer-events-none size-[18px]", open && "hidden")}
-          strokeWidth={1.75}
-          aria-hidden
-        />
-        <X
-          className={cn("pointer-events-none size-[18px]", !open && "hidden")}
-          strokeWidth={1.75}
-          aria-hidden
-        />
-      </button>
+      <div className="relative z-[10] size-[44px] shrink-0 lg:hidden">
+        {!open ? (
+          <button
+            type="button"
+            className={menuButtonClass}
+            aria-expanded={false}
+            aria-controls="mobile-menu-panel"
+            aria-haspopup="dialog"
+            aria-label={t.a11y.openMenu}
+            onPointerUp={(event) => {
+              stopTouchGhostClick(event);
+              openMenu();
+            }}
+            onClick={(event) => {
+              event.stopPropagation();
+              openMenu();
+            }}
+          >
+            <Menu className="pointer-events-none size-[18px]" strokeWidth={1.75} aria-hidden />
+          </button>
+        ) : (
+          <button
+            type="button"
+            className={cn(
+              menuButtonClass,
+              !interactionReady && "pointer-events-none",
+            )}
+            aria-expanded
+            aria-controls="mobile-menu-panel"
+            aria-haspopup="dialog"
+            aria-label={t.a11y.closeMenu}
+            tabIndex={interactionReady ? 0 : -1}
+            onPointerUp={(event) => {
+              stopTouchGhostClick(event);
+              closeMenu();
+            }}
+            onClick={(event) => {
+              event.stopPropagation();
+              closeMenu();
+            }}
+          >
+            <X className="pointer-events-none size-[18px]" strokeWidth={1.75} aria-hidden />
+          </button>
+        )}
+      </div>
       {overlay}
     </>
   );
