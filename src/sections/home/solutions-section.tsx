@@ -14,7 +14,6 @@ export function HomeSolutionsSection() {
   return (
     <Section
       id="solucoes"
-      containerClassName="max-w-[960px]"
       className="bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,rgba(139,92,246,0.06),transparent_60%)]"
     >
       <SectionHeader

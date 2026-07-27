@@ -26,7 +26,7 @@ export function HomeFaqSection() {
       />
 
       <ScrollReveal>
-        <div className="mt-[40px] flex flex-col gap-[12px]">
+        <div className="mx-auto mt-[40px] flex max-w-[720px] flex-col gap-[12px]">
           {faqItems.map((id) => {
             const item = copy.items[id];
             const isOpen = openId === id;

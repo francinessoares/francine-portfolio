@@ -20,7 +20,7 @@ export function HomeProcessSection() {
         titleId="home-process-heading"
       />
 
-      <ol className="mt-[48px] grid gap-[20px] sm:grid-cols-2 lg:grid-cols-5">
+      <ol className="mt-[48px] grid gap-[20px] sm:grid-cols-2 lg:grid-cols-5 xl:gap-[24px]">
         {processSteps.map((stepId, index) => {
           const step = copy.steps[stepId];
 

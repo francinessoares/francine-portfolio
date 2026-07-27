@@ -85,7 +85,7 @@ export function SiteFooter() {
         aria-hidden
       />
 
-      <div className="relative mx-auto max-w-[1180px] px-[20px] py-[72px] sm:px-[32px] sm:py-[88px] lg:py-[96px]">
+      <div className="layout-rail relative mx-auto w-full px-[20px] py-[72px] sm:px-[32px] sm:py-[88px] lg:py-[96px] xl:px-[40px]">
         <div className="grid gap-[48px] sm:grid-cols-2 lg:grid-cols-12 lg:gap-[40px]">
           <div className="sm:col-span-2 lg:col-span-5">
             <Link href="/" className="focus-ring group inline-flex items-center gap-[12px]">

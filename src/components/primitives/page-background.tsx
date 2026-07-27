@@ -45,7 +45,7 @@ export function PageBackground({ variant, className }: PageBackgroundProps) {
       />
 
       <motion.div
-        className="absolute top-[8%] left-1/2 h-[420px] w-[640px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(139,92,246,0.08)_0%,transparent_70%)] blur-[100px]"
+        className="absolute top-[8%] left-1/2 h-[420px] w-[640px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(139,92,246,0.08)_0%,transparent_70%)] blur-[100px] xl:h-[520px] xl:w-[880px] 2xl:h-[600px] 2xl:w-[1100px]"
         animate={
           reducedMotion ? { opacity: 0.5 } : { opacity: [0.35, 0.55, 0.35] }
         }

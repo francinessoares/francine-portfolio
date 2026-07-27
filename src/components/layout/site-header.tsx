@@ -99,7 +99,7 @@ export function SiteHeader() {
 
   return (
     <header className="fixed inset-x-0 top-0 isolate z-[100] px-[16px] pt-[max(14px,env(safe-area-inset-top,0px)+10px)] sm:px-[24px]">
-      <div className="glass-nav relative z-[2] mx-auto max-w-[1180px] px-[12px] py-[10px] sm:px-[24px] sm:py-[14px]">
+      <div className="glass-nav layout-rail relative z-[2] mx-auto w-full px-[12px] py-[10px] sm:px-[24px] sm:py-[14px]">
         <div className="flex items-center justify-between gap-[12px] lg:grid lg:grid-cols-[1fr_auto_1fr] lg:gap-[16px]">
           <div className="justify-self-start">
             <SiteLogo />

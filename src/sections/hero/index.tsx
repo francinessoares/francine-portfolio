@@ -40,12 +40,13 @@ export function Hero() {
       <PageBackground variant="hero" />
 
       <HeroMotionProvider>
-        <div className="relative z-10 mx-auto w-full max-w-[1180px]">
+        <div className="layout-rail relative z-10 mx-auto w-full">
           <div
             className={cn(
               "grid w-full items-center gap-[48px]",
               "md:gap-[56px]",
               "lg:grid-cols-[minmax(0,1fr)_300px] lg:items-start lg:gap-[64px]",
+              "xl:grid-cols-[minmax(0,1fr)_320px] xl:gap-[80px]",
             )}
           >
             <HeroContentColumn />

@@ -35,7 +35,7 @@ export function HeroContent() {
       <motion.p
         variants={variants.item}
         className={cn(
-          "text-subtitle mt-[24px] max-w-[560px]",
+          "text-subtitle mt-[24px] max-w-[560px] xl:max-w-[640px]",
           "mx-auto lg:mx-0",
         )}
       >

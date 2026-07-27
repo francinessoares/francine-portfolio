@@ -45,7 +45,7 @@ export function HeroProfileCard({ className }: HeroProfileCardProps) {
   return (
     <motion.div
       className={cn(
-        "relative w-full max-w-[280px] justify-self-center lg:max-w-[300px] lg:justify-self-end",
+        "relative w-full max-w-[280px] justify-self-center lg:max-w-[300px] lg:justify-self-end xl:max-w-[320px]",
         className,
       )}
       initial={

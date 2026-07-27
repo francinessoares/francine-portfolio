@@ -26,7 +26,7 @@ export function Section({
     >
       <div
         className={cn(
-          "mx-auto w-full max-w-[1080px]",
+          "layout-rail mx-auto w-full",
           containerClassName,
         )}
       >
