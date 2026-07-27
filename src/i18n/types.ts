@@ -207,15 +207,26 @@ export type Dictionary = {
       title: string;
       subtitle: string;
     };
+    form: {
+      name: string;
+      namePlaceholder: string;
+      email: string;
+      emailPlaceholder: string;
+      subject: string;
+      subjectPlaceholder: string;
+      message: string;
+      messagePlaceholder: string;
+      submit: string;
+      submitting: string;
+      success: string;
+      sendAnother: string;
+      error: string;
+    };
+    otherChannels: string;
     channels: {
       email: string;
       linkedIn: string;
       github: string;
-      whatsapp: string;
-    };
-    cta: {
-      title: string;
-      button: string;
     };
   };
   footer: {
@@ -230,7 +241,7 @@ export type Dictionary = {
     nav: Record<FooterNavId, string>;
     services: Record<FooterServiceId, string>;
     contact: {
-      whatsapp: string;
+      form: string;
       email: string;
       linkedIn: string;
       github: string;

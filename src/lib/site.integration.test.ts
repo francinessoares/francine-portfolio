@@ -4,30 +4,6 @@ import { navItems } from "@/config/navigation";
 import { footerNavItems } from "@/data/footer";
 import { getDictionary, locales } from "@/i18n";
 import { createPageMetadata, rootMetadata } from "@/lib/seo";
-import { getWhatsAppProductUrl, getWhatsAppQuoteUrl } from "@/lib/whatsapp";
-
-describe("getWhatsAppQuoteUrl", () => {
-  it("monta URL com telefone sanitizado e mensagem codificada em pt", () => {
-    const url = getWhatsAppQuoteUrl("pt");
-
-    expect(url).toMatch(/^https:\/\/wa\.me\/\d+\?text=/);
-    expect(decodeURIComponent(url)).toContain("orçamento");
-  });
-
-  it("usa mensagem em inglês quando locale é en", () => {
-    const url = getWhatsAppQuoteUrl("en");
-
-    expect(decodeURIComponent(url)).toContain("request a quote");
-  });
-});
-
-describe("getWhatsAppProductUrl", () => {
-  it("inclui o nome do produto na mensagem", () => {
-    const url = getWhatsAppProductUrl("pt", "Chatbot Inteligente");
-
-    expect(decodeURIComponent(url)).toContain("Chatbot Inteligente");
-  });
-});
 
 describe("createPageMetadata", () => {
   it("define título, descrição, canonical e redes sociais", () => {
@@ -98,6 +74,7 @@ describe("navegação", () => {
 
     expect(uniquePaths).toContain("/");
     expect(uniquePaths).toContain("/projetos");
+    expect(uniquePaths).toContain("/contato");
   });
 });
 

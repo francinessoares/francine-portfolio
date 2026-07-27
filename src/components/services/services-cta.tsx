@@ -1,6 +1,7 @@
 "use client";
 
-import { MessageCircle } from "lucide-react";
+import Link from "next/link";
+import { Send } from "lucide-react";
 
 import { GlassCard } from "@/components/primitives/glass-card";
 import { HoverLift } from "@/components/primitives/hover-lift";
@@ -8,8 +9,7 @@ import {
   accentButtonClass,
 } from "@/components/primitives/button-styles";
 import { Button } from "@/components/ui/button";
-import { useLocale, useTranslations } from "@/i18n/context";
-import { getWhatsAppQuoteUrl } from "@/lib/whatsapp";
+import { useTranslations } from "@/i18n/context";
 import { cn } from "@/lib/utils";
 
 type ServicesCtaProps = {
@@ -18,7 +18,6 @@ type ServicesCtaProps = {
 
 export function ServicesCta({ className }: ServicesCtaProps) {
   const t = useTranslations();
-  const { locale } = useLocale();
   const copy = t.services.cta;
 
   return (
@@ -38,15 +37,9 @@ export function ServicesCta({ className }: ServicesCtaProps) {
                 nativeButton={false}
                 size="lg"
                 className={cn(accentButtonClass, "gap-[8px]")}
-                render={
-                  <a
-                    href={getWhatsAppQuoteUrl(locale)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  />
-                }
+                render={<Link href="/contato" />}
               >
-                <MessageCircle className="size-[16px]" strokeWidth={1.75} />
+                <Send className="size-[16px]" strokeWidth={1.75} />
                 {copy.button}
               </Button>
             </HoverLift>

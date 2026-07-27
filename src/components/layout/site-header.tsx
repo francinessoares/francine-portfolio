@@ -4,13 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useSyncExternalStore } from "react";
-import { SiWhatsapp } from "react-icons/si";
+import { MessageSquare } from "lucide-react";
 
 import { LocaleSwitcher } from "@/components/locale-switcher";
 import { navItems } from "@/config/navigation";
 import { siteConfig } from "@/config/site";
-import { useLocale, useTranslations } from "@/i18n/context";
-import { getWhatsAppQuoteUrl } from "@/lib/whatsapp";
+import { useTranslations } from "@/i18n/context";
 
 import { MobileMenu } from "./mobile-menu-drawer";
 import { NavLink } from "./site-header-nav-link";
@@ -57,19 +56,16 @@ function SiteLogo() {
 
 function HeaderCta() {
   const t = useTranslations();
-  const { locale } = useLocale();
 
   return (
-    <a
-      href={getWhatsAppQuoteUrl(locale)}
-      target="_blank"
-      rel="noopener noreferrer"
+    <Link
+      href="/contato"
       className="nav-cta focus-ring shrink-0"
       aria-label={t.header.cta}
     >
-      <SiWhatsapp className="size-[16px] text-accent-light" aria-hidden />
+      <MessageSquare className="size-[16px] text-accent-light" aria-hidden />
       <span className="hidden md:inline">{t.header.cta}</span>
-    </a>
+    </Link>
   );
 }
 

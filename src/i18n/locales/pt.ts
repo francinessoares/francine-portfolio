@@ -366,7 +366,7 @@ export const pt: Dictionary = {
       title: "Quer colocar seu negócio no digital de um jeito profissional?",
       subtitle:
         "Me conta o que você precisa — sem compromisso. Monto uma proposta clara, com prazo e valor, para você decidir com tranquilidade.",
-      button: "Solicitar orçamento pelo WhatsApp",
+      button: "Solicitar orçamento",
     },
   },
   projects: {
@@ -448,17 +448,28 @@ export const pt: Dictionary = {
       eyebrow: "Contato",
       title: "Me conta o que você precisa",
       subtitle:
-        "Pode ser uma dúvida rápida, um orçamento ou só um oi para entender se faz sentido trabalharmos juntos. Escolha o canal que for mais prático para você.",
+        "Pode ser uma dúvida rápida, um orçamento ou só um oi para entender se faz sentido trabalharmos juntos. Envie pelo formulário e eu respondo por e-mail.",
     },
+    form: {
+      name: "Nome",
+      namePlaceholder: "Seu nome",
+      email: "E-mail",
+      emailPlaceholder: "seu@email.com",
+      subject: "Assunto",
+      subjectPlaceholder: "Orçamento, dúvida, parceria…",
+      message: "Mensagem",
+      messagePlaceholder: "Conte um pouco sobre o que você precisa.",
+      submit: "Enviar mensagem",
+      submitting: "Enviando…",
+      success: "Mensagem enviada. Em breve eu respondo no seu e-mail.",
+      sendAnother: "Enviar outra mensagem",
+      error: "Não foi possível enviar. Tente de novo em alguns minutos.",
+    },
+    otherChannels: "Outros canais",
     channels: {
       email: "E-mail",
       linkedIn: "LinkedIn",
       github: "GitHub",
-      whatsapp: "WhatsApp",
-    },
-    cta: {
-      title: "Prefere resolver pelo WhatsApp?",
-      button: "Solicitar orçamento pelo WhatsApp",
     },
   },
   footer: {
@@ -488,7 +499,7 @@ export const pt: Dictionary = {
       processAutomation: "Automação de Processos",
     },
     contact: {
-      whatsapp: "WhatsApp",
+      form: "Formulário",
       email: "E-mail",
       linkedIn: "LinkedIn",
       github: "GitHub",

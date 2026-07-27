@@ -1,29 +1,26 @@
 "use client";
 
+import { Suspense } from "react";
+
+import { ContactFormFromQuery } from "@/components/contact/contact-form-from-query";
 import { GitHubIcon, LinkedInIcon } from "@/components/icons/social";
 import { PageShell } from "@/components/layout/page-shell";
 import { GlassCard } from "@/components/primitives/glass-card";
 import { HoverLift } from "@/components/primitives/hover-lift";
 import { SectionHeader } from "@/components/primitives/section-header";
-import { accentButtonClass } from "@/components/primitives/button-styles";
-import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
 import { ScrollReveal } from "@/components/tech-stack/scroll-reveal";
-import { useLocale, useTranslations } from "@/i18n/context";
-import { getWhatsAppQuoteUrl } from "@/lib/whatsapp";
-import { cn } from "@/lib/utils";
-import { Mail, MessageCircle } from "lucide-react";
+import { useTranslations } from "@/i18n/context";
+import { Mail } from "lucide-react";
 
 const channelIcons = {
   email: Mail,
   linkedIn: LinkedInIcon,
   github: GitHubIcon,
-  whatsapp: MessageCircle,
 } as const;
 
 export function ContactPageContent() {
   const t = useTranslations();
-  const { locale } = useLocale();
   const hero = t.contact.hero;
   const channels = t.contact.channels;
 
@@ -46,18 +43,12 @@ export function ContactPageContent() {
       href: siteConfig.githubProfile,
       external: true,
     },
-    {
-      key: "whatsapp" as const,
-      label: channels.whatsapp,
-      href: getWhatsAppQuoteUrl(locale),
-      external: true,
-    },
   ];
 
   return (
     <PageShell>
       <div className="pb-[48px] pt-[32px] sm:pt-[48px]">
-        <header className="mx-auto max-w-[640px] pb-[48px] text-center sm:pb-[64px]">
+        <header className="mx-auto max-w-[640px] pb-[40px] text-center sm:pb-[56px]">
           <SectionHeader
             as="h1"
             eyebrow={hero.eyebrow}
@@ -68,7 +59,25 @@ export function ContactPageContent() {
           />
         </header>
 
-        <div className="mx-auto grid max-w-[560px] gap-[12px]">
+        <ScrollReveal>
+          <GlassCard
+            variant="expertise"
+            className="mx-auto max-w-[640px] p-[24px] sm:p-[32px]"
+          >
+            <Suspense
+              fallback={
+                <div className="h-[360px] animate-pulse rounded-[12px] bg-white/[0.03]" />
+              }
+            >
+              <ContactFormFromQuery />
+            </Suspense>
+          </GlassCard>
+        </ScrollReveal>
+
+        <div className="mx-auto mt-[48px] grid max-w-[640px] gap-[12px] sm:mt-[64px]">
+          <p className="mb-[4px] text-center text-[13px] tracking-[-0.01em] text-fg-muted">
+            {t.contact.otherChannels}
+          </p>
           {channelLinks.map((channel, index) => {
             const Icon = channelIcons[channel.key];
 
@@ -93,9 +102,7 @@ export function ContactPageContent() {
                         <p className="text-card-desc mt-[2px] truncate">
                           {channel.key === "email"
                             ? siteConfig.email
-                            : channel.key === "whatsapp"
-                              ? "WhatsApp"
-                              : channel.href.replace(/^https?:\/\/(www\.)?/, "")}
+                            : channel.href.replace(/^https?:\/\/(www\.)?/, "")}
                         </p>
                       </div>
                     </GlassCard>
@@ -105,29 +112,6 @@ export function ContactPageContent() {
             );
           })}
         </div>
-
-        <section className="mx-auto mt-[56px] max-w-[560px] text-center sm:mt-[72px]">
-          <p className="text-body-section">{t.contact.cta.title}</p>
-          <div className="mt-[20px] flex justify-center">
-            <HoverLift offset={1} enableTap>
-              <Button
-                nativeButton={false}
-                size="lg"
-                className={cn(accentButtonClass, "gap-[8px]")}
-                render={
-                  <a
-                    href={getWhatsAppQuoteUrl(locale)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  />
-                }
-              >
-                <MessageCircle className="size-[16px]" strokeWidth={1.75} />
-                {t.contact.cta.button}
-              </Button>
-            </HoverLift>
-          </div>
-        </section>
       </div>
     </PageShell>
   );

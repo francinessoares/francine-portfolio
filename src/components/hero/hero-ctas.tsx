@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowRight, Send } from "lucide-react";
 import Link from "next/link";
 
 import { HoverLift } from "@/components/primitives/hover-lift";
@@ -11,13 +11,11 @@ import {
 } from "@/components/primitives/button-styles";
 import { Button } from "@/components/ui/button";
 import { useHeroMotionContext } from "@/hooks/use-hero-motion";
-import { useLocale, useTranslations } from "@/i18n/context";
-import { getWhatsAppQuoteUrl } from "@/lib/whatsapp";
+import { useTranslations } from "@/i18n/context";
 import { cn } from "@/lib/utils";
 
 export function HeroCtas() {
   const t = useTranslations();
-  const { locale } = useLocale();
   const { variants } = useHeroMotionContext();
 
   return (
@@ -34,16 +32,10 @@ export function HeroCtas() {
           nativeButton={false}
           size="lg"
           className={cn(primaryButtonClass, "gap-[8px]")}
-          render={
-            <a
-              href={getWhatsAppQuoteUrl(locale)}
-              target="_blank"
-              rel="noopener noreferrer"
-            />
-          }
+          render={<Link href="/contato" />}
         >
           {t.hero.requestQuote}
-          <MessageCircle className="size-[15px]" strokeWidth={1.75} />
+          <Send className="size-[15px]" strokeWidth={1.75} />
         </Button>
       </HoverLift>
 

@@ -2,8 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Mail } from "lucide-react";
-import { SiWhatsapp } from "react-icons/si";
+import { Mail, MessageSquare } from "lucide-react";
 
 import { GitHubIcon, LinkedInIcon } from "@/components/icons/social";
 import { siteConfig } from "@/config/site";
@@ -12,8 +11,7 @@ import {
   footerServiceItems,
   footerTechStack,
 } from "@/data/footer";
-import { useLocale, useTranslations } from "@/i18n/context";
-import { getWhatsAppQuoteUrl } from "@/lib/whatsapp";
+import { useTranslations } from "@/i18n/context";
 import { cn } from "@/lib/utils";
 
 const footerLinkClass = cn(
@@ -39,17 +37,16 @@ function FooterLinkList({ title, children }: FooterLinkListProps) {
 
 export function SiteFooter() {
   const t = useTranslations();
-  const { locale } = useLocale();
   const copy = t.footer;
 
   const contactLinks = [
     {
-      id: "whatsapp",
-      label: copy.contact.whatsapp,
-      href: getWhatsAppQuoteUrl(locale),
-      external: true,
-      icon: SiWhatsapp,
-      iconClass: "text-[#25D366]",
+      id: "form",
+      label: copy.contact.form,
+      href: "/contato",
+      external: false,
+      icon: MessageSquare,
+      iconClass: "text-accent-light",
     },
     {
       id: "email",

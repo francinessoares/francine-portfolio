@@ -1,15 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import { Check, MessageCircle } from "lucide-react";
+import Link from "next/link";
+import { Check, Send } from "lucide-react";
 
 import { DeviceMockup } from "@/components/primitives/device-mockup";
 import { HoverLift } from "@/components/primitives/hover-lift";
 import { primaryButtonClass } from "@/components/primitives/button-styles";
 import { Button } from "@/components/ui/button";
 import type { DigitalProduct } from "@/data/digital-products";
-import { useLocale, useTranslations } from "@/i18n/context";
-import { getWhatsAppProductUrl } from "@/lib/whatsapp";
+import { useTranslations } from "@/i18n/context";
 import { cn } from "@/lib/utils";
 
 type ProductCardProps = {
@@ -19,9 +19,9 @@ type ProductCardProps = {
 
 export function ProductCard({ product, className }: ProductCardProps) {
   const t = useTranslations();
-  const { locale } = useLocale();
   const copy = t.home.solutions;
   const item = copy.items[product.id];
+  const contactHref = `/contato?assunto=${encodeURIComponent(item.title)}`;
 
   return (
     <article
@@ -80,15 +80,9 @@ export function ProductCard({ product, className }: ProductCardProps) {
               nativeButton={false}
               size="lg"
               className={cn(primaryButtonClass, "gap-[8px]")}
-              render={
-                <a
-                  href={getWhatsAppProductUrl(locale, item.title)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                />
-              }
+              render={<Link href={contactHref} />}
             >
-              <MessageCircle className="size-[15px]" strokeWidth={1.75} />
+              <Send className="size-[15px]" strokeWidth={1.75} />
               {copy.requestQuote}
             </Button>
           </HoverLift>

@@ -20,7 +20,7 @@ export const footerNavItems: { id: FooterNavId; href: string }[] = [
   { id: "solutions", href: "/#solucoes" },
   { id: "projects", href: "/projetos" },
   { id: "about", href: "/#sobre" },
-  { id: "contact", href: "/#contato" },
+  { id: "contact", href: "/contato" },
 ];
 
 export const footerServiceItems: { id: FooterServiceId; href: string }[] = [

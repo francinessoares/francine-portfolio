@@ -92,16 +92,18 @@ NEXT_PUBLIC_SITE_URL=https://francinesoares.dev
 NEXT_PUBLIC_GITHUB_URL=https://github.com/francinessoares
 NEXT_PUBLIC_LINKEDIN_URL=https://www.linkedin.com/in/francine-soares-5ba112124/
 NEXT_PUBLIC_EMAIL=francinesoares22@gmail.com
-NEXT_PUBLIC_WHATSAPP=5548999456066
+RESEND_API_KEY=re_xxxxxxxx
 ```
 
 | Variável | Obrigatória | Descrição |
 |----------|-------------|-----------|
 | `NEXT_PUBLIC_SITE_URL` | Recomendada | URL canônica para SEO, sitemap e Open Graph |
-| `NEXT_PUBLIC_WHATSAPP` | Opcional | Número com DDI |
 | `NEXT_PUBLIC_EMAIL` | Opcional | E-mail de contato |
 | `NEXT_PUBLIC_GITHUB_URL` | Opcional | Perfil GitHub |
 | `NEXT_PUBLIC_LINKEDIN_URL` | Opcional | Perfil LinkedIn |
+| `RESEND_API_KEY` | Sim (produção) | API key do Resend para o formulário de contato |
+| `CONTACT_FROM_EMAIL` | Opcional | Remetente verificado no Resend |
+| `CONTACT_TO_EMAIL` | Opcional | Destinatário das mensagens |
 
 ---
 
@@ -116,7 +118,7 @@ src/
 ├── i18n/             # Dicionários tipados (pt/en)
 ├── config/           # site, navegação
 ├── hooks/            # Motion e animações
-└── lib/              # SEO, WhatsApp, utilitários
+└── lib/              # SEO e utilitários
 
 public/               # Assets estáticos (logo, favicons, imagens)
 ```
@@ -129,7 +131,7 @@ public/               # Assets estáticos (logo, favicons, imagens)
 | `/servicos` | Pacotes de serviço |
 | `/projetos` | Domínios de atuação |
 | `/sobre` | Página sobre |
-| `/contato` | Canais de contato |
+| `/contato` | Formulário e canais de contato |
 | `/stack` | Tech stack completa |
 
 ---
@@ -140,7 +142,7 @@ public/               # Assets estáticos (logo, favicons, imagens)
 - Portfólio de projetos
 - Seção Sobre
 - Serviços e soluções digitais
-- Contato via WhatsApp, e-mail e redes
+- Contato via formulário, e-mail e redes
 - Menu responsivo otimizado para mobile
 - Botão de voltar ao topo
 - Internacionalização PT/EN
