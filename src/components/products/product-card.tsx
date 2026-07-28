@@ -26,12 +26,11 @@ export function ProductCard({ product, className }: ProductCardProps) {
   return (
     <article
       className={cn(
-        "group overflow-hidden rounded-[16px] border border-white/[0.08] bg-white/[0.02] shadow-[0_24px_64px_-24px_rgba(0,0,0,0.5)] backdrop-blur-[12px] transition-premium hover:border-accent/20 hover:shadow-[0_32px_80px_-24px_rgba(139,92,246,0.15)]",
+        "group overflow-hidden rounded-[16px] border border-white/[0.08] bg-white/[0.02] shadow-[0_24px_64px_-24px_rgba(0,0,0,0.5)] backdrop-blur-[12px] transition-premium hover:border-accent/20 hover:shadow-[0_32px_80px_-24px_rgba(161,56,245,0.15)]",
         className,
       )}
     >
-      <div className="relative bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,rgba(139,92,246,0.12),transparent_70%)] px-[24px] pt-[32px] pb-[16px] sm:px-[40px] sm:pt-[40px]">
-        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(139,92,246,0.04)_0%,transparent_50%)]" />
+      <div className="relative border-b border-white/[0.06] bg-surface px-[24px] pt-[32px] pb-[16px] sm:px-[40px] sm:pt-[40px]">
         {product.image ? (
           <div className="relative mx-auto max-w-[960px] overflow-hidden rounded-[12px] border border-white/[0.08] shadow-[0_32px_80px_-24px_rgba(0,0,0,0.55)]">
             <Image

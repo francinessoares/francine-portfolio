@@ -3,7 +3,7 @@ import type { Dictionary } from "@/i18n/types";
 export const pt: Dictionary = {
   meta: {
     description:
-      "Software Studio especializado em sistemas, aplicativos e produtos digitais para empresas, profissionais liberais e startups.",
+      "Sites, sistemas e produtos digitais sob medida para pequenas empresas, microempreendedores e profissionais autônomos.",
   },
   a11y: {
     skipToContent: "Pular para o conteúdo",
@@ -24,20 +24,33 @@ export const pt: Dictionary = {
     cta: "Vamos conversar",
   },
   hero: {
-    role: "Software Studio · Produtos Digitais",
-    headlineLead:
-      "Desenvolvo sistemas, aplicativos e produtos digitais que ajudam empresas a ",
-    headlineHighlight: "automatizar processos e crescer.",
+    headlineLine1: "Desenvolvo software que",
+    headlineLine2: "ajuda pequenas empresas",
+    headlineHighlight: "a crescer no digital.",
     subtitle:
-      "Soluções modernas para empresas, profissionais liberais e startups que buscam mais eficiência, produtividade e resultados.",
-    viewSolutions: "Ver soluções",
+      "De websites institucionais a sistemas personalizados e aplicações web, desenvolvo soluções modernas, rápidas e escaláveis para impulsionar o crescimento do seu negócio.",
+    viewProjects: "Ver projetos",
     requestQuote: "Solicitar orçamento",
     socialLinks: "Redes sociais",
+    badge: "Software Engineer • 7+ anos de experiência",
+    trust: [
+      "Desenvolvimento sob medida",
+      "Tecnologias modernas",
+      "Entrega contínua",
+    ],
+    stats: [
+      { label: "7+ anos", detail: "de experiência" },
+      { label: "20+", detail: "projetos entregues" },
+      { label: "React / Next.js", detail: "TypeScript • Tailwind CSS" },
+      { label: "Mobile", detail: "iOS • Android" },
+      { label: "IA", detail: "Integrações inteligentes" },
+    ],
     social: {
       github: "GitHub",
       linkedIn: "LinkedIn",
       email: "E-mail",
     },
+    audience: ["Empresas", "Startups", "Profissionais"],
     profile: {
       role: "Software Engineer",
       experience: "7+ anos de experiência",
@@ -47,22 +60,11 @@ export const pt: Dictionary = {
     },
   },
   home: {
-    clients: {
-      eyebrow: "Experiência",
-      title: "Empresas e setores em que já atuei",
-      items: {
-        environmental: "Gestão ambiental e fundiária",
-        retail: "Varejo supermercadista",
-        logistics: "Logística e navegação",
-        government: "Acessos governamentais",
-        legal: "Soluções jurídicas — PGE-RJ",
-      },
-    },
     services: {
       eyebrow: "Serviços",
       title: "Como posso ajudar seu negócio",
       subtitle:
-        "Da ideia ao produto em produção — com engenharia sólida, visual premium e foco em resultado.",
+        "Da ideia à entrega — produtos pequenos, bem feitos, com visual profissional e foco no que o seu negócio realmente precisa.",
       items: {
         websites: {
           title: "Sites e landing pages",
@@ -72,7 +74,7 @@ export const pt: Dictionary = {
         customSystems: {
           title: "Sistemas web sob medida",
           description:
-            "Plataformas personalizadas para automatizar operações e escalar o negócio.",
+            "Ferramentas simples para organizar o dia a dia do seu negócio — sem excesso de funcionalidades.",
         },
         aiProducts: {
           title: "Automação e IA",
@@ -82,7 +84,7 @@ export const pt: Dictionary = {
         platforms: {
           title: "Produtos digitais completos",
           description:
-            "MVPs, dashboards e plataformas prontas para crescer com o seu mercado.",
+            "MVPs e sistemas enxutos, prontos para validar sua ideia e atender seus clientes.",
         },
       },
       cta: "Ver pacotes e valores",
@@ -91,7 +93,7 @@ export const pt: Dictionary = {
       eyebrow: "Soluções",
       title: "Produtos que posso desenvolver para o seu negócio",
       subtitle:
-        "Soluções prontas para contratar — cada uma pensada para resolver um problema real com tecnologia de ponta.",
+        "Soluções prontas para contratar — pensadas para pequenas empresas, microempreendedores e profissionais autônomos.",
       requestQuote: "Solicitar orçamento",
       items: {
         scheduling: {
@@ -181,10 +183,10 @@ export const pt: Dictionary = {
         customSystem: {
           title: "Sistema Web Sob Medida",
           description:
-            "Desenvolvimento personalizado conforme a necessidade da sua empresa.",
+            "Desenvolvimento personalizado conforme a necessidade do seu negócio.",
           features: [
             "Escopo personalizado",
-            "Arquitetura escalável",
+            "Tamanho certo para o momento",
             "Integrações",
             "Painel administrativo",
             "Suporte na evolução",
@@ -227,13 +229,13 @@ export const pt: Dictionary = {
     },
     about: {
       eyebrow: "Sobre",
-      title: "Um software studio, não só um portfólio",
+      title: "Tecnologia próxima, para quem está começando ou crescendo",
       subtitle:
-        "Uno engenharia, visão de produto e execução premium para transformar problemas reais em software que gera resultado.",
+        "Ajudo pequenas empresas e microempreendedores a sair do improviso e ter um produto digital claro, útil e bem executado.",
       paragraphs: [
-        "Sou fundadora de um software studio focado em desenvolver produtos digitais sob medida — sistemas, aplicativos e plataformas que ajudam empresas a crescer.",
-        "Com mais de 7 anos construindo software em produção para setores como varejo, logística e governo, trago a mesma qualidade técnica de grandes produtos para negócios que precisam de soluções acessíveis e bem executadas.",
-        "Meu compromisso é entregar tecnologia com clareza, prazo definido e comunicação direta — do briefing à entrega.",
+        "Meu foco são produtos pequenos e sob medida — sites, sistemas e automações que resolvem o problema de agora, sem burocracia e sem complexidade desnecessária.",
+        "Com mais de 7 anos de experiência em software, trago qualidade técnica com linguagem simples, prazo definido e entrega que você consegue acompanhar.",
+        "Se você tem um negócio local, atua por conta própria ou está validando uma ideia, posso te ajudar a colocar isso no digital do jeito certo.",
       ],
       viewStack: "Ver stack técnica",
     },
@@ -271,15 +273,15 @@ export const pt: Dictionary = {
     },
     techPreview: {
       eyebrow: "Tecnologias",
-      title: "Stack moderna para produtos escaláveis",
+      title: "Stack moderna para produtos bem feitos",
       subtitle:
-        "Ferramentas de ponta para construir software rápido, seguro e preparado para crescer.",
+        "Ferramentas atuais para construir sites e sistemas rápidos, seguros e fáceis de manter — no tamanho certo para o seu negócio.",
       cta: "Ver stack completa",
     },
     contact: {
-      title: "Pronto para transformar sua ideia em produto?",
+      title: "Pronto para tirar sua ideia do papel?",
       subtitle:
-        "Conte o que você precisa construir e receba uma proposta clara com escopo, prazo e investimento.",
+        "Me conta o que o seu negócio precisa — monto uma proposta clara com escopo, prazo e investimento.",
       button: "Solicitar orçamento",
     },
   },
@@ -373,67 +375,60 @@ export const pt: Dictionary = {
     meta: {
       title: "Projetos",
       description:
-        "Experiência em sistemas reais para diferentes setores — a base técnica por trás dos sites e soluções que desenvolvo para pequenos negócios.",
+        "Produtos digitais para pequenas empresas e microempreendedores — além de projetos próprios construídos end-to-end.",
     },
     hero: {
       eyebrow: "Portfólio",
-      title: "Experiência que dá segurança ao seu projeto",
-      subtitle:
-        "Antes de cuidar da presença digital de negócios locais, passei 7+ anos construindo sistemas exigentes em produção. Isso significa código confiável, site rápido e menos dor de cabeça para você.",
-    },
-    domains: {
-      title: "Onde já apliquei essa experiência",
-      items: [
-        {
-          title: "Gestão ambiental e fundiária",
-          description:
-            "Interfaces para análise e acompanhamento de dados territoriais, com fluxos complexos e múltiplos perfis de usuário.",
-        },
-        {
-          title: "Varejo supermercadista",
-          description:
-            "Sistemas internos de operação e gestão com alto volume de interações diárias e requisitos de performance.",
-        },
-        {
-          title: "Navegação e logística de containers",
-          description:
-            "Plataformas de rastreamento e operação logística com dashboards e visualização de dados em tempo real.",
-        },
-        {
-          title: "Gerenciamento de acessos governamentais",
-          description:
-            "Fluxos de autenticação, permissões e auditoria para ambientes com requisitos rigorosos de segurança.",
-        },
-        {
-          title: "Soluções jurídicas — PGE-RJ",
-          description:
-            "Ferramentas para a Procuradoria Geral do Estado do Rio de Janeiro, com foco em produtividade e confiabilidade.",
-        },
+      title: "Produtos digitais pensados para negócios reais.",
+      paragraphs: [
+        "Mais de 7 anos desenvolvendo software com qualidade de produção — agora aplicados a sites, sistemas e produtos pequenos, feitos sob medida.",
+        "Ajudo pequenas empresas, microempreendedores e profissionais autônomos a construir soluções modernas, confiáveis e fáceis de usar no dia a dia.",
       ],
     },
+    featured: {
+      eyebrow: "Produto próprio",
+      title: "Construindo produtos, não apenas projetos.",
+      paragraphs: [
+        "Além de desenvolver soluções para clientes, também construo produtos digitais próprios.",
+        "Isso me permite aplicar uma visão completa de produto — da ideia ao lançamento — com o mesmo cuidado que levo para cada cliente.",
+      ],
+      visit: "Visitar site",
+      items: {
+        evuflow: {
+          name: "EvuFlow",
+          status: "Em desenvolvimento",
+          paragraphs: [
+            "Plataforma de análise corporal com Inteligência Artificial desenvolvida para identificar padrões de postura, assimetria corporal e movimento, gerando recomendações personalizadas para saúde e treinamento.",
+            "O projeto envolve arquitetura de software, IA, experiência do usuário e desenvolvimento full stack, refletindo minha abordagem na construção de produtos digitais modernos.",
+          ],
+        },
+      },
+    },
     cta: {
-      title: "Quer conhecer as tecnologias que uso no dia a dia?",
-      button: "Ver tech stack",
+      title: "Tecnologias por trás de cada projeto.",
+      description:
+        "Conheça as tecnologias e ferramentas que utilizo para desenvolver sites e sistemas modernos, claros e preparados para o dia a dia do seu negócio.",
+      button: "Explorar Tech Stack",
     },
   },
   about: {
     meta: {
       title: "Sobre",
       description:
-        "Engenheira Front-End que une experiência em produto com atendimento próximo a profissionais autônomos e pequenos negócios. Remota, baseada no Brasil.",
+        "Engenheira Front-End com atendimento próximo a pequenas empresas, microempreendedores e profissionais autônomos. Remota, baseada no Brasil.",
     },
     hero: {
       eyebrow: "Sobre mim",
       title: "Técnica de ponta, atendimento de perto",
       subtitle:
-        "Sou engenheira front-end há mais de 7 anos. Trabalho com produtos complexos no dia a dia e, em paralelo, ajudo quem precisa de um site ou sistema sem burocracia — com linguagem clara e entrega que você consegue acompanhar.",
+        "Sou engenheira front-end há mais de 7 anos. Ajudo pequenas empresas e microempreendedores a ter site ou sistema sem burocracia — com linguagem clara e entrega que você acompanha.",
     },
     approach: {
       title: "Como é trabalhar comigo",
       paragraphs: [
         "Começo entendendo o seu negócio: quem é seu cliente, o que você vende e o que precisa resolver agora. A partir daí, proponho algo proporcional — sem empurrar funcionalidade que você não vai usar.",
         "Você recebe atualizações ao longo do caminho, entende o que está sendo feito e pode tirar dúvidas sem medo de parecer leigo. Prazo e valor combinados antes de começar, sem surpresas no final.",
-        "Por trás de cada entrega, há anos de prática com React, TypeScript e Next.js — o mesmo nível técnico que levo para empresas maiores, aplicado com cuidado ao tamanho do seu projeto.",
+        "Por trás de cada entrega há prática sólida com React, TypeScript e Next.js — aplicada com cuidado ao tamanho do seu projeto, não ao tamanho de uma grande empresa.",
       ],
     },
     viewStack: "Ver tech stack completa",
@@ -475,7 +470,7 @@ export const pt: Dictionary = {
   footer: {
     brand: {
       description:
-        "Desenvolvimento de sistemas, aplicativos e soluções digitais sob medida para empresas, profissionais e startups.",
+        "Desenvolvo sites, sistemas e produtos digitais sob medida para pequenas empresas, microempreendedores e profissionais autônomos.",
     },
     sections: {
       navigation: "Navegação",
@@ -535,7 +530,7 @@ export const pt: Dictionary = {
       eyebrow: "Stack & Expertise",
       title: "Tech Stack & Expertise",
       subtitle:
-        "As tecnologias que uso no dia a dia — seja em produtos de grande porte ou em sites e sistemas para pequenos negócios. Sempre com foco em performance, clareza e entrega que funciona.",
+        "As tecnologias que uso para criar sites e sistemas claros, rápidos e bem feitos — no tamanho certo para pequenas empresas e microempreendedores.",
     },
     categories: {
       frontend: {
@@ -582,7 +577,7 @@ export const pt: Dictionary = {
       },
       angular: {
         name: "Angular",
-        description: "Framework completo para aplicações enterprise.",
+        description: "Framework completo para APIs e aplicações robustas.",
         tags: ["RxJS", "Modules", "Enterprise"],
       },
       tailwindcss: {
@@ -684,7 +679,7 @@ export const pt: Dictionary = {
       title: "Experiência profissional",
       highlights: [
         "7+ anos desenvolvendo aplicações em produção",
-        "Sites e sistemas para negócios locais e produtos de escala",
+        "Foco em sites e sistemas para negócios locais e microempreendedores",
         "Código limpo, site rápido e experiência pensada para o usuário final",
       ],
       systemsTitle: "Experiência em sistemas de:",

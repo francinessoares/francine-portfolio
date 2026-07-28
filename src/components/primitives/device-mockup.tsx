@@ -61,7 +61,7 @@ function MockupScreen({ variant }: { variant: MockupVariant }) {
               isMobile ? "h-[120px]" : "h-[100px]",
             )}
           >
-            <div className="h-full w-[55%] bg-[linear-gradient(90deg,rgba(139,92,246,0.18)_0%,transparent_100%)]" />
+            <div className="h-full w-[55%] bg-[linear-gradient(90deg,rgba(161,56,245,0.18)_0%,transparent_100%)]" />
           </div>
 
           <div className="flex flex-col gap-[6px]">
@@ -113,7 +113,7 @@ export function DeviceMockup({
       <div
         className={cn(
           "overflow-hidden rounded-[12px] border border-white/[0.08] bg-[#0a0a0c] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.55)]",
-          isLarge && "rounded-[14px] shadow-[0_40px_80px_-20px_rgba(139,92,246,0.12)]",
+          isLarge && "rounded-[14px] shadow-[0_40px_80px_-20px_rgba(161,56,245,0.12)]",
         )}
       >
         <div

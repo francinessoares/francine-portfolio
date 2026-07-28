@@ -11,7 +11,7 @@ export function PageShell({ children, className }: PageShellProps) {
     <main
       id="main-content"
       className={cn(
-        "relative min-h-[100dvh] bg-surface pt-[88px] sm:pt-[96px]",
+        "relative min-h-[100dvh] bg-surface pt-[80px] sm:pt-[88px]",
         className,
       )}
     >

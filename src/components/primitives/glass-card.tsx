@@ -19,8 +19,8 @@ const variantStyles = {
   ),
   profile: cn(
     "glass-panel group transition-premium relative overflow-hidden rounded-[13px]",
-    "shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_24px_48px_-20px_rgba(0,0,0,0.6),0_0_64px_-24px_rgba(139,92,246,0.1)]",
-    "hover:shadow-[0_0_0_1px_rgba(255,255,255,0.08),0_28px_56px_-18px_rgba(0,0,0,0.65),0_0_72px_-20px_rgba(139,92,246,0.14)]",
+    "shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_24px_48px_-20px_rgba(0,0,0,0.6),0_0_64px_-24px_rgba(161,56,245,0.1)]",
+    "hover:shadow-[0_0_0_1px_rgba(255,255,255,0.08),0_28px_56px_-18px_rgba(0,0,0,0.65),0_0_72px_-20px_rgba(161,56,245,0.14)]",
   ),
 } as const;
 

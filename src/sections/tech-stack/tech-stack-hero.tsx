@@ -13,7 +13,7 @@ export function TechStackHero() {
   const copy = t.techStack.hero;
 
   return (
-    <section className="relative pt-[72px] pb-[64px] sm:pt-[88px] sm:pb-[80px]">
+    <section className="relative pt-[40px] pb-[48px] sm:pt-[48px] sm:pb-[56px]">
       <motion.div
         initial={reducedMotion ? {} : { opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
@@ -25,7 +25,6 @@ export function TechStackHero() {
           eyebrow={copy.eyebrow}
           title={copy.title}
           titleId="stack-heading"
-          titleGradient
         />
         <ScrollReveal delay={0.1}>
           <p className="text-subtitle mx-auto mt-[24px] max-w-[560px] text-center">

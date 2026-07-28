@@ -45,7 +45,7 @@ export function LocaleSwitcher({
           const buttonClass = cn(
             "focus-ring min-w-[32px] rounded-[8px] px-[10px] py-[5px] text-[11px] font-semibold tracking-[0.08em] uppercase transition-premium",
             active
-              ? "bg-gradient-to-br from-[#8B5CF6] to-[#7C3AED] text-white shadow-[0_2px_10px_rgba(139,92,246,0.4)]"
+              ? "bg-gradient-to-br from-[#A138F5] to-[#6B1FC9] text-white shadow-[0_2px_10px_rgba(161,56,245,0.4)]"
               : "bg-transparent text-fg-muted hover:text-fg-tertiary",
           );
           const buttonProps = {

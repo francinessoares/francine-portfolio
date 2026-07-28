@@ -1,7 +1,8 @@
 import { cn } from "@/lib/utils";
 
 const dotStyles = {
-  accent: "bg-accent shadow-[0_0_8px_rgba(139,92,246,0.45)]",
+  accent: "bg-[var(--color-eyebrow)] shadow-[0_0_8px_rgba(155,168,184,0.4)]",
+  champagne: "bg-[var(--color-eyebrow)] shadow-[0_0_8px_rgba(155,168,184,0.4)]",
 } as const;
 
 type EyebrowDot = keyof typeof dotStyles;
@@ -13,7 +14,8 @@ type EyebrowProps = {
 };
 
 export function Eyebrow({ children, dot, className }: EyebrowProps) {
-  const resolvedDot = dot === "emerald" || dot === "violet" ? "accent" : dot;
+  const resolvedDot =
+    dot === "emerald" || dot === "violet" ? "accent" : dot;
 
   if (!resolvedDot) {
     return (
@@ -30,7 +32,7 @@ export function Eyebrow({ children, dot, className }: EyebrowProps) {
         className,
       )}
     >
-      <span className={cn("size-[5px] rounded-full", dotStyles.accent)} />
+      <span className={cn("size-[5px] rounded-full", dotStyles[resolvedDot])} />
       {children}
     </span>
   );

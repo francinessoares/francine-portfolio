@@ -39,7 +39,7 @@ export function HomeFaqSection() {
                 className={cn(
                   "relative isolate overflow-hidden rounded-[14px] border border-white/[0.08] bg-white/[0.02] backdrop-blur-[12px] transition-premium",
                   isOpen &&
-                    "border-accent/20 shadow-[0_16px_48px_-24px_rgba(139,92,246,0.2)]",
+                    "border-accent/20 shadow-[0_16px_48px_-24px_rgba(161,56,245,0.2)]",
                 )}
               >
                 <button

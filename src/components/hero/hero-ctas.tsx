@@ -23,8 +23,7 @@ export function HeroCtas() {
       variants={variants.item}
       className={cn(
         "mt-[36px] flex w-full max-w-[400px] flex-col gap-[12px]",
-        "sm:max-w-none sm:flex-row sm:justify-center sm:gap-[12px]",
-        "lg:justify-start",
+        "sm:max-w-none sm:flex-row sm:justify-start sm:gap-[12px]",
       )}
     >
       <HoverLift offset={1} className="w-full sm:w-auto" enableTap>
@@ -45,9 +44,9 @@ export function HeroCtas() {
           size="lg"
           variant="outline"
           className={cn(outlineButtonClass, "gap-[8px]")}
-          render={<Link href="/#solucoes" />}
+          render={<Link href="/projetos" />}
         >
-          {t.hero.viewSolutions}
+          {t.hero.viewProjects}
           <ArrowRight
             className="size-[15px] transition-transform duration-300 group-hover/button:translate-x-[2px]"
             strokeWidth={1.75}

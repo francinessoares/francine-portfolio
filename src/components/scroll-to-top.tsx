@@ -36,7 +36,7 @@ export function ScrollToTopButton() {
           transition={{ duration: 0.25 }}
           onClick={scrollToTop}
           aria-label={t.a11y.scrollToTop}
-          className="focus-ring fixed right-[max(16px,env(safe-area-inset-right,0px)+16px)] bottom-[max(20px,env(safe-area-inset-bottom,0px)+20px)] z-40 flex size-[44px] items-center justify-center rounded-[14px] border border-white/[0.12] bg-[rgba(15,15,20,0.88)] text-fg-muted shadow-[0_8px_32px_rgba(0,0,0,0.45)] backdrop-blur-[16px] transition-premium hover:border-accent/25 hover:text-accent-light hover:shadow-[0_8px_32px_rgba(139,92,246,0.18)]"
+          className="focus-ring fixed right-[max(16px,env(safe-area-inset-right,0px)+16px)] bottom-[max(20px,env(safe-area-inset-bottom,0px)+20px)] z-40 flex size-[44px] items-center justify-center rounded-[14px] border border-white/[0.12] bg-[rgba(15,15,20,0.88)] text-fg-muted shadow-[0_8px_32px_rgba(0,0,0,0.45)] backdrop-blur-[16px] transition-premium hover:border-accent/25 hover:text-accent-light hover:shadow-[0_8px_32px_rgba(161,56,245,0.18)]"
         >
           <ArrowUp className="size-[18px]" strokeWidth={1.75} aria-hidden />
         </motion.button>

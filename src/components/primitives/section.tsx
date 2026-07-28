@@ -19,7 +19,7 @@ export function Section({
     <section
       id={id}
       className={cn(
-        "section-padding scroll-mt-[96px]",
+        "section-padding scroll-mt-[96px] bg-surface",
         bordered && "border-t border-border-subtle",
         className,
       )}

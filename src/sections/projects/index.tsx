@@ -3,61 +3,98 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
+import { FeaturedProjectCard } from "@/components/projects/featured-project-card";
 import { PageShell } from "@/components/layout/page-shell";
-import { GlassCard } from "@/components/primitives/glass-card";
+import { Eyebrow } from "@/components/primitives/eyebrow";
 import { HoverLift } from "@/components/primitives/hover-lift";
-import { SectionHeader } from "@/components/primitives/section-header";
 import { outlineButtonClass } from "@/components/primitives/button-styles";
 import { Button } from "@/components/ui/button";
 import { ScrollReveal } from "@/components/tech-stack/scroll-reveal";
+import { featuredProjects } from "@/data/featured-projects";
 import { useTranslations } from "@/i18n/context";
 import { cn } from "@/lib/utils";
+
+function ProjectsSectionHeader({
+  eyebrow,
+  title,
+  paragraphs,
+  titleId,
+  as: TitleTag = "h2",
+}: {
+  eyebrow?: string;
+  title: string;
+  paragraphs?: string[];
+  titleId: string;
+  as?: "h1" | "h2";
+}) {
+  return (
+    <header className="mx-auto max-w-[760px] text-center">
+      {eyebrow ? <Eyebrow dot="accent">{eyebrow}</Eyebrow> : null}
+      <TitleTag
+        id={titleId}
+        className={cn(
+          TitleTag === "h1" ? "projects-title" : "projects-title-section",
+          eyebrow ? "mt-[20px]" : undefined,
+        )}
+      >
+        {title}
+      </TitleTag>
+      {paragraphs?.length ? (
+        <div className="mx-auto mt-[28px] flex max-w-[760px] flex-col gap-[18px] sm:mt-[32px]">
+          {paragraphs.map((paragraph) => (
+            <p key={paragraph} className="projects-body">
+              {paragraph}
+            </p>
+          ))}
+        </div>
+      ) : null}
+    </header>
+  );
+}
 
 export function ProjectsPageContent() {
   const t = useTranslations();
   const hero = t.projects.hero;
-  const domains = t.projects.domains;
+  const featured = t.projects.featured;
   const cta = t.projects.cta;
 
   return (
     <PageShell>
-      <div className="pb-[80px] pt-[32px] sm:pt-[48px]">
-        <header className="mx-auto max-w-[640px] pb-[48px] text-center sm:pb-[64px]">
-          <SectionHeader
-            as="h1"
-            eyebrow={hero.eyebrow}
-            title={hero.title}
-            subtitle={hero.subtitle}
-            align="center"
-            titleId="projects-heading"
-          />
-        </header>
+      <div className="projects-page pb-[96px] pt-[24px] sm:pb-[120px] sm:pt-[32px]">
+        <ProjectsSectionHeader
+          as="h1"
+          eyebrow={hero.eyebrow}
+          title={hero.title}
+          paragraphs={hero.paragraphs}
+          titleId="projects-heading"
+        />
 
-        <section aria-labelledby="domains-heading">
+        <section
+          aria-labelledby="featured-heading"
+          className="mt-[88px] sm:mt-[112px]"
+        >
           <ScrollReveal>
-            <h2
-              id="domains-heading"
-              className="text-display-compact text-center"
-            >
-              {domains.title}
-            </h2>
+            <ProjectsSectionHeader
+              eyebrow={featured.eyebrow}
+              title={featured.title}
+              paragraphs={featured.paragraphs}
+              titleId="featured-heading"
+            />
           </ScrollReveal>
 
-          <div className="mt-[32px] flex flex-col gap-[16px] sm:gap-[20px]">
-            {domains.items.map((item, index) => (
-              <ScrollReveal key={item.title} delay={index * 0.05}>
-                <GlassCard variant="expertise" className="p-[24px] sm:p-[28px]">
-                  <h3 className="text-card-title-lg">{item.title}</h3>
-                  <p className="text-card-desc mt-[8px]">{item.description}</p>
-                </GlassCard>
+          <div className="mt-[48px] flex flex-col gap-[28px] sm:mt-[56px]">
+            {featuredProjects.map((project, index) => (
+              <ScrollReveal key={project.id} delay={index * 0.05}>
+                <FeaturedProjectCard project={project} />
               </ScrollReveal>
             ))}
           </div>
         </section>
 
-        <section className="mt-[56px] text-center sm:mt-[72px]">
-          <p className="text-body-section">{cta.title}</p>
-          <div className="mt-[20px] flex justify-center">
+        <section className="mx-auto mt-[88px] max-w-[760px] text-center sm:mt-[112px]">
+          <h2 className="projects-title-section">{cta.title}</h2>
+          <p className="projects-body mt-[24px]">{cta.description}</p>
+          <div className="mt-[32px] flex justify-center">
             <HoverLift offset={1} enableTap>
               <Button
                 nativeButton={false}

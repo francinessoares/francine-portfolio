@@ -16,7 +16,7 @@ export default function StackPage() {
   return (
     <main
       id="main-content"
-      className="relative bg-surface pt-[88px] sm:pt-[96px]"
+      className="relative bg-surface pt-[80px] sm:pt-[88px]"
     >
       <TechStackSection />
     </main>

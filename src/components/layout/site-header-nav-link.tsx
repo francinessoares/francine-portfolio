@@ -24,7 +24,7 @@ export function NavLink({ href, label, active, onClick, className }: NavLinkProp
     >
       {label}
       {active ? (
-        <span className="absolute inset-x-[16px] bottom-[6px] h-[2px] rounded-full bg-accent-light shadow-[0_0_8px_rgba(167,139,250,0.6)]" />
+        <span className="absolute inset-x-[16px] bottom-[6px] h-[2px] rounded-full bg-accent-light shadow-[0_0_8px_rgba(196,120,255,0.6)]" />
       ) : null}
     </Link>
   );

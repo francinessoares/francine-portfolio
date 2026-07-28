@@ -75,13 +75,9 @@ export function SiteFooter() {
   ] as const;
 
   return (
-    <footer className="relative border-t border-white/[0.06] bg-[#040406]">
+    <footer className="relative border-t border-border-subtle bg-surface">
       <div
-        className="pointer-events-none absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-accent/35 to-transparent"
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute inset-x-0 top-0 h-[160px] bg-[radial-gradient(ellipse_70%_80%_at_50%_-20%,rgba(139,92,246,0.08),transparent_70%)]"
+        className="pointer-events-none absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/[0.06] to-transparent"
         aria-hidden
       />
 

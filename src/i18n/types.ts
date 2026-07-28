@@ -4,7 +4,7 @@ import type { NavItemId } from "@/config/navigation";
 import type { HomeServiceId } from "@/data/home-services";
 import type { ProcessStepId } from "@/data/projects";
 import type { DigitalProductId } from "@/data/digital-products";
-import type { ClientIndustryId } from "@/data/clients";
+import type { FeaturedProjectId } from "@/data/featured-projects";
 import type { FaqId } from "@/data/faq";
 import type { FooterNavId, FooterServiceId } from "@/data/footer";
 
@@ -70,18 +70,22 @@ export type Dictionary = {
     cta: string;
   };
   hero: {
-    role: string;
-    headlineLead: string;
+    headlineLine1: string;
+    headlineLine2: string;
     headlineHighlight: string;
     subtitle: string;
-    viewSolutions: string;
+    viewProjects: string;
     requestQuote: string;
     socialLinks: string;
+    badge: string;
+    trust: string[];
+    stats: Array<{ label: string; detail: string }>;
     social: {
       github: string;
       linkedIn: string;
       email: string;
     };
+    audience: string[];
     profile: {
       role: string;
       experience: string;
@@ -91,11 +95,6 @@ export type Dictionary = {
     };
   };
   home: {
-    clients: {
-      eyebrow: string;
-      title: string;
-      items: Record<ClientIndustryId, string>;
-    };
     services: {
       eyebrow: string;
       title: string;
@@ -167,17 +166,25 @@ export type Dictionary = {
     hero: {
       eyebrow: string;
       title: string;
-      subtitle: string;
+      paragraphs: string[];
     };
-    domains: {
+    featured: {
+      eyebrow: string;
       title: string;
-      items: Array<{
-        title: string;
-        description: string;
-      }>;
+      paragraphs: string[];
+      visit: string;
+      items: Record<
+        FeaturedProjectId,
+        {
+          name: string;
+          status: string;
+          paragraphs: string[];
+        }
+      >;
     };
     cta: {
       title: string;
+      description: string;
       button: string;
     };
   };
