@@ -22,8 +22,8 @@ export function HeroCtas() {
     <motion.div
       variants={variants.item}
       className={cn(
-        "mt-[36px] flex w-full max-w-[400px] flex-col gap-[12px]",
-        "sm:max-w-none sm:flex-row sm:justify-start sm:gap-[12px]",
+        "mt-[28px] flex w-full flex-col gap-[12px]",
+        "lg:mt-[36px] lg:max-w-none lg:flex-row lg:justify-start",
       )}
     >
       <HoverLift offset={1} className="w-full sm:w-auto" enableTap>

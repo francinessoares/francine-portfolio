@@ -27,20 +27,34 @@ export const pt: Dictionary = {
     headlineLine1: "Desenvolvo software que",
     headlineLine2: "ajuda pequenas empresas",
     headlineHighlight: "a crescer no digital.",
+    headlineMobile: [
+      "Desenvolvo software",
+      "que ajuda pequenas",
+      "empresas a crescer",
+      "no digital.",
+    ],
     subtitle:
       "De websites institucionais a sistemas personalizados e aplicações web, desenvolvo soluções modernas, rápidas e escaláveis para impulsionar o crescimento do seu negócio.",
+    subtitleMobile:
+      "Soluções modernas, rápidas e escaláveis para impulsionar o crescimento do seu negócio.",
     viewProjects: "Ver projetos",
     requestQuote: "Solicitar orçamento",
     socialLinks: "Redes sociais",
-    badge: "Software Engineer • 7+ anos de experiência",
+    badge: "Software Engineer • 6+ anos de experiência",
+    badgeRole: "Software Engineer",
+    badgeExperience: "6+ anos de experiência",
     trust: [
       "Desenvolvimento sob medida",
       "Tecnologias modernas",
       "Entrega contínua",
     ],
+    trustMobile: [
+      "Desenvolvimento sob medida",
+      "Web • Mobile • IA",
+      "Tecnologias modernas",
+    ],
     stats: [
-      { label: "7+ anos", detail: "de experiência" },
-      { label: "20+", detail: "projetos entregues" },
+      { label: "6+ anos", detail: "de experiência" },
       { label: "React / Next.js", detail: "TypeScript • Tailwind CSS" },
       { label: "Mobile", detail: "iOS • Android" },
       { label: "IA", detail: "Integrações inteligentes" },
@@ -53,7 +67,7 @@ export const pt: Dictionary = {
     audience: ["Empresas", "Startups", "Profissionais"],
     profile: {
       role: "Software Engineer",
-      experience: "7+ anos de experiência",
+      experience: "6+ anos de experiência",
       stack: "React · Next.js · TypeScript",
       focus: "Web · Mobile · IA",
       available: "Disponível para projetos",
@@ -234,7 +248,7 @@ export const pt: Dictionary = {
         "Ajudo pequenas empresas e microempreendedores a sair do improviso e ter um produto digital claro, útil e bem executado.",
       paragraphs: [
         "Meu foco são produtos pequenos e sob medida — sites, sistemas e automações que resolvem o problema de agora, sem burocracia e sem complexidade desnecessária.",
-        "Com mais de 7 anos de experiência em software, trago qualidade técnica com linguagem simples, prazo definido e entrega que você consegue acompanhar.",
+        "Com mais de 6 anos de experiência em software, trago qualidade técnica com linguagem simples, prazo definido e entrega que você consegue acompanhar.",
         "Se você tem um negócio local, atua por conta própria ou está validando uma ideia, posso te ajudar a colocar isso no digital do jeito certo.",
       ],
       viewStack: "Ver stack técnica",
@@ -381,7 +395,7 @@ export const pt: Dictionary = {
       eyebrow: "Portfólio",
       title: "Produtos digitais pensados para negócios reais.",
       paragraphs: [
-        "Mais de 7 anos desenvolvendo software com qualidade de produção — agora aplicados a sites, sistemas e produtos pequenos, feitos sob medida.",
+        "Mais de 6 anos desenvolvendo software com qualidade de produção — agora aplicados a sites, sistemas e produtos pequenos, feitos sob medida.",
         "Ajudo pequenas empresas, microempreendedores e profissionais autônomos a construir soluções modernas, confiáveis e fáceis de usar no dia a dia.",
       ],
     },
@@ -421,7 +435,7 @@ export const pt: Dictionary = {
       eyebrow: "Sobre mim",
       title: "Técnica de ponta, atendimento de perto",
       subtitle:
-        "Sou engenheira front-end há mais de 7 anos. Ajudo pequenas empresas e microempreendedores a ter site ou sistema sem burocracia — com linguagem clara e entrega que você acompanha.",
+        "Sou engenheira front-end há mais de 6 anos. Ajudo pequenas empresas e microempreendedores a ter site ou sistema sem burocracia — com linguagem clara e entrega que você acompanha.",
     },
     approach: {
       title: "Como é trabalhar comigo",
@@ -678,7 +692,7 @@ export const pt: Dictionary = {
       eyebrow: "Trajetória",
       title: "Experiência profissional",
       highlights: [
-        "7+ anos desenvolvendo aplicações em produção",
+        "6+ anos desenvolvendo aplicações em produção",
         "Foco em sites e sistemas para negócios locais e microempreendedores",
         "Código limpo, site rápido e experiência pensada para o usuário final",
       ],

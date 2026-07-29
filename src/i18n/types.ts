@@ -73,12 +73,17 @@ export type Dictionary = {
     headlineLine1: string;
     headlineLine2: string;
     headlineHighlight: string;
+    headlineMobile: [string, string, string, string];
     subtitle: string;
+    subtitleMobile: string;
     viewProjects: string;
     requestQuote: string;
     socialLinks: string;
     badge: string;
+    badgeRole: string;
+    badgeExperience: string;
     trust: string[];
+    trustMobile: string[];
     stats: Array<{ label: string; detail: string }>;
     social: {
       github: string;

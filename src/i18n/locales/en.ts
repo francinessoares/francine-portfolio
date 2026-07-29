@@ -27,20 +27,34 @@ export const en: Dictionary = {
     headlineLine1: "I build software",
     headlineLine2: "that helps small businesses",
     headlineHighlight: "grow digitally.",
+    headlineMobile: [
+      "I build software",
+      "that helps small",
+      "businesses grow",
+      "digitally.",
+    ],
     subtitle:
       "From institutional websites to custom systems and web applications, I develop modern, fast, and scalable solutions to drive your business growth.",
+    subtitleMobile:
+      "Modern, fast, and scalable solutions to drive your business growth.",
     viewProjects: "View projects",
     requestQuote: "Request a quote",
     socialLinks: "Social links",
-    badge: "Software Engineer • 7+ years of experience",
+    badge: "Software Engineer • 6+ years of experience",
+    badgeRole: "Software Engineer",
+    badgeExperience: "6+ years of experience",
     trust: [
       "Custom development",
       "Modern technologies",
       "Continuous delivery",
     ],
+    trustMobile: [
+      "Custom development",
+      "Web • Mobile • AI",
+      "Modern technologies",
+    ],
     stats: [
-      { label: "7+ years", detail: "of experience" },
-      { label: "20+", detail: "projects delivered" },
+      { label: "6+ years", detail: "of experience" },
       { label: "React / Next.js", detail: "TypeScript • Tailwind CSS" },
       { label: "Mobile", detail: "iOS • Android" },
       { label: "AI", detail: "Smart integrations" },
@@ -53,7 +67,7 @@ export const en: Dictionary = {
     audience: ["Businesses", "Startups", "Professionals"],
     profile: {
       role: "Software Engineer",
-      experience: "7+ years of experience",
+      experience: "6+ years of experience",
       stack: "React · Next.js · TypeScript",
       focus: "Web · Mobile · AI",
       available: "Available for projects",
@@ -234,7 +248,7 @@ export const en: Dictionary = {
         "I help small businesses and micro-entrepreneurs move past improvisation and get a clear, useful, well-executed digital product.",
       paragraphs: [
         "I focus on small, made-to-fit products — websites, systems, and automations that solve today's problem, without bureaucracy or unnecessary complexity.",
-        "With 7+ years of software experience, I bring solid technical quality with plain language, a defined timeline, and delivery you can follow along.",
+        "With 6+ years of software experience, I bring solid technical quality with plain language, a defined timeline, and delivery you can follow along.",
         "If you run a local business, work independently, or are validating an idea, I can help you get it online the right way.",
       ],
       viewStack: "View technical stack",
@@ -381,7 +395,7 @@ export const en: Dictionary = {
       eyebrow: "Portfolio",
       title: "Digital products built for real businesses.",
       paragraphs: [
-        "Over 7 years building production-quality software — now applied to websites, systems, and small made-to-fit products.",
+        "Over 6 years building production-quality software — now applied to websites, systems, and small made-to-fit products.",
         "I help small businesses, micro-entrepreneurs, and independent professionals build modern, reliable solutions that are easy to use every day.",
       ],
     },
@@ -421,7 +435,7 @@ export const en: Dictionary = {
       eyebrow: "About me",
       title: "Top-tier skills, close support",
       subtitle:
-        "I've been a front-end engineer for over 7 years. I help small businesses and micro-entrepreneurs get a website or system without the bureaucracy — plain language and deliveries you can actually follow.",
+        "I've been a front-end engineer for over 6 years. I help small businesses and micro-entrepreneurs get a website or system without the bureaucracy — plain language and deliveries you can actually follow.",
     },
     approach: {
       title: "What it's like to work with me",
@@ -678,7 +692,7 @@ export const en: Dictionary = {
       eyebrow: "Track record",
       title: "Professional experience",
       highlights: [
-        "7+ years building production applications",
+        "6+ years building production applications",
         "Focus on websites and systems for local businesses and micro-entrepreneurs",
         "Clean code, fast websites, and experiences built for end users",
       ],
