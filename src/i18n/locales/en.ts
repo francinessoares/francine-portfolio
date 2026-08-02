@@ -242,16 +242,44 @@ export const en: Dictionary = {
       },
     },
     about: {
-      eyebrow: "About",
-      title: "Approachable tech for those starting or growing",
-      subtitle:
-        "I help small businesses and micro-entrepreneurs move past improvisation and get a clear, useful, well-executed digital product.",
+      eyebrow: "About me",
+      title: "Meet the person behind the",
+      titleHighlight: "projects.",
       paragraphs: [
-        "I focus on small, made-to-fit products — websites, systems, and automations that solve today's problem, without bureaucracy or unnecessary complexity.",
-        "With 6+ years of software experience, I bring solid technical quality with plain language, a defined timeline, and delivery you can follow along.",
-        "If you run a local business, work independently, or are validating an idea, I can help you get it online the right way.",
+        [
+          { text: "Hi! I'm Francine Soares, a Full Stack developer specialized in " },
+          { text: "React, React Native, Node.js", accent: true },
+          { text: " and Artificial Intelligence." },
+        ],
+        [
+          {
+            text: "For over 6 years I've been building web and mobile applications — from platforms for companies to my own products focused on technology and innovation.",
+          },
+        ],
+        [
+          {
+            text: "I'm passionate about turning ideas into high-quality digital products, prioritizing performance, user experience, scalability, and modern design.",
+          },
+        ],
+        [
+          {
+            text: "My goal is to build solutions that truly create value for businesses and people.",
+          },
+        ],
       ],
-      viewStack: "View technical stack",
+      profile: {
+        firstName: "Francine",
+        lastName: "Soares",
+        role: "Full Stack Developer",
+        stack: "React • Node.js • AI",
+      },
+      metrics: [
+        { value: "6+ years", label: "of experience" },
+        { value: "React / Node.js", label: "Specialization" },
+        { value: "Brazil + Abroad", label: "Clients" },
+      ],
+      ctaPrimary: "Let's talk",
+      ctaSecondary: "View Projects",
     },
     faq: {
       eyebrow: "FAQ",

@@ -129,9 +129,17 @@ export type Dictionary = {
     about: {
       eyebrow: string;
       title: string;
-      subtitle: string;
-      paragraphs: string[];
-      viewStack: string;
+      titleHighlight: string;
+      paragraphs: Array<Array<{ text: string; accent?: boolean }>>;
+      profile: {
+        firstName: string;
+        lastName: string;
+        role: string;
+        stack: string;
+      };
+      metrics: Array<{ value: string; label: string }>;
+      ctaPrimary: string;
+      ctaSecondary: string;
     };
     faq: {
       eyebrow: string;

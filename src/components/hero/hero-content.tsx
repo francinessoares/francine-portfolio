@@ -24,9 +24,9 @@ export function HeroContent() {
         variants={variants.headline}
         className="text-display-hero text-left"
       >
-        <span className="block">{t.hero.headlineLine1}</span>
-        <span className="block">{t.hero.headlineLine2}</span>
-        <span className="block bg-gradient-to-r from-[#E879F9] via-[#A855F7] to-[#7C3AED] bg-clip-text text-transparent">
+        <span className="block whitespace-nowrap">{t.hero.headlineLine1}</span>
+        <span className="block whitespace-nowrap">{t.hero.headlineLine2}</span>
+        <span className="block whitespace-nowrap bg-gradient-to-r from-[#E879F9] via-[#A855F7] to-[#7C3AED] bg-clip-text text-transparent">
           {t.hero.headlineHighlight}
         </span>
       </motion.h1>
@@ -34,7 +34,7 @@ export function HeroContent() {
       <motion.p
         variants={variants.item}
         className={cn(
-          "mt-[22px] max-w-[46ch] text-pretty text-left text-[16px] leading-[1.7] tracking-[-0.01em] text-fg-secondary",
+          "mt-[22px] max-w-[42ch] text-pretty text-left text-[15px] leading-[1.7] tracking-[-0.01em] text-fg-secondary sm:max-w-[46ch] sm:text-[16px]",
         )}
       >
         {t.hero.subtitle}

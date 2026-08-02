@@ -242,16 +242,44 @@ export const pt: Dictionary = {
       },
     },
     about: {
-      eyebrow: "Sobre",
-      title: "Tecnologia próxima, para quem está começando ou crescendo",
-      subtitle:
-        "Ajudo pequenas empresas e microempreendedores a sair do improviso e ter um produto digital claro, útil e bem executado.",
+      eyebrow: "Sobre mim",
+      title: "Conheça quem está por trás dos",
+      titleHighlight: "projetos.",
       paragraphs: [
-        "Meu foco são produtos pequenos e sob medida — sites, sistemas e automações que resolvem o problema de agora, sem burocracia e sem complexidade desnecessária.",
-        "Com mais de 6 anos de experiência em software, trago qualidade técnica com linguagem simples, prazo definido e entrega que você consegue acompanhar.",
-        "Se você tem um negócio local, atua por conta própria ou está validando uma ideia, posso te ajudar a colocar isso no digital do jeito certo.",
+        [
+          { text: "Olá! Sou Francine Soares, desenvolvedora Full Stack especializada em " },
+          { text: "React, React Native, Node.js", accent: true },
+          { text: " e Inteligência Artificial." },
+        ],
+        [
+          {
+            text: "Há mais de 6 anos desenvolvo aplicações web e mobile, criando desde plataformas para empresas até produtos próprios focados em tecnologia e inovação.",
+          },
+        ],
+        [
+          {
+            text: "Tenho paixão por transformar ideias em produtos digitais de alta qualidade, priorizando performance, experiência do usuário, escalabilidade e design moderno.",
+          },
+        ],
+        [
+          {
+            text: "Meu objetivo é desenvolver soluções que realmente gerem valor para empresas e pessoas.",
+          },
+        ],
       ],
-      viewStack: "Ver stack técnica",
+      profile: {
+        firstName: "Francine",
+        lastName: "Soares",
+        role: "Full Stack Developer",
+        stack: "React • Node.js • AI",
+      },
+      metrics: [
+        { value: "6+ anos", label: "de experiência" },
+        { value: "React / Node.js", label: "Especialização" },
+        { value: "Brasil + Exterior", label: "Clientes" },
+      ],
+      ctaPrimary: "Vamos conversar",
+      ctaSecondary: "Ver Projetos",
     },
     faq: {
       eyebrow: "FAQ",

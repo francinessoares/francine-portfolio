@@ -29,7 +29,7 @@ function HeroStatsDesktop() {
   return (
     <motion.div
       variants={variants.item}
-      className="mt-[20px] overflow-hidden rounded-[16px] border border-white/[0.08] bg-white/[0.02] backdrop-blur-[12px] sm:mt-[24px] lg:-mt-[8px] xl:-mt-[16px]"
+      className="mt-[72px] overflow-hidden rounded-[16px] border border-white/[0.08] bg-white/[0.02] backdrop-blur-[12px] lg:mt-[96px] xl:mt-[112px]"
     >
       <div className="grid gap-[0] lg:grid-cols-4">
         {t.hero.stats.map((stat, index) => {
