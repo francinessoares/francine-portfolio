@@ -1,8 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
-
-import { useMotionPrefs } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 
 type PageBackgroundProps = {
@@ -11,7 +6,6 @@ type PageBackgroundProps = {
 };
 
 export function PageBackground({ variant, className }: PageBackgroundProps) {
-  const { reducedMotion } = useMotionPrefs();
   const isHero = variant === "hero";
 
   return (
@@ -28,17 +22,7 @@ export function PageBackground({ variant, className }: PageBackgroundProps) {
         <>
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_55%_50%_at_78%_42%,rgba(168,85,247,0.16),transparent_65%)]" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_20%_-5%,rgba(168,85,247,0.08),transparent_55%)]" />
-          <motion.div
-            className="absolute top-[22%] right-[-4%] h-[420px] w-[520px] rounded-full bg-[radial-gradient(circle,rgba(168,85,247,0.14)_0%,transparent_70%)] blur-[90px]"
-            animate={
-              reducedMotion ? { opacity: 0.45 } : { opacity: [0.35, 0.55, 0.35] }
-            }
-            transition={
-              reducedMotion
-                ? { duration: 0 }
-                : { duration: 18, repeat: Infinity, ease: "easeInOut" }
-            }
-          />
+          <div className="absolute top-[22%] right-[-4%] h-[420px] w-[520px] rounded-full bg-[radial-gradient(circle,rgba(168,85,247,0.14)_0%,transparent_70%)] opacity-45 blur-[64px]" />
           <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
           <div className="absolute inset-x-0 bottom-0 h-[120px] bg-gradient-to-t from-surface to-transparent" />
         </>

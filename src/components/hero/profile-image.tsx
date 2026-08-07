@@ -27,7 +27,6 @@ export function ProfileImage({ className }: ProfileImageProps) {
         src={siteConfig.portrait}
         alt={siteConfig.name}
         fill
-        priority
         sizes="(max-width: 640px) 280px, 300px"
         className="object-contain object-center"
       />

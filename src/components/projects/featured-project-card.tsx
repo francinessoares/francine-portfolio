@@ -33,7 +33,6 @@ export function FeaturedProjectCard({ project }: FeaturedProjectCardProps) {
               height={900}
               sizes="(max-width: 768px) 100vw, 1200px"
               className="h-auto w-full object-cover object-top"
-              priority
             />
           </div>
         </div>

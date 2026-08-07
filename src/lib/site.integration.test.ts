@@ -19,12 +19,12 @@ describe("createPageMetadata", () => {
     expect(metadata.openGraph?.title).toContain("Contato");
     expect(metadata.openGraph?.images).toEqual(
       expect.arrayContaining([
-        expect.objectContaining({ url: expect.stringContaining("francine-portrait") }),
+        expect.objectContaining({ url: expect.stringContaining("og-image") }),
       ]),
     );
     expect(metadata.twitter?.card).toBe("summary_large_image");
     expect(metadata.twitter?.images).toEqual(
-      expect.arrayContaining([expect.stringContaining("francine-portrait")]),
+      expect.arrayContaining([expect.stringContaining("og-image")]),
     );
   });
 });
