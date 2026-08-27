@@ -19,8 +19,33 @@ export const siteConfig = {
   },
 } as const;
 
-export const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+export function resolveSiteUrl({
+  configured = process.env.NEXT_PUBLIC_SITE_URL,
+  vercelProduction = process.env.VERCEL_PROJECT_PRODUCTION_URL,
+  nodeEnv = process.env.NODE_ENV,
+}: {
+  configured?: string;
+  vercelProduction?: string;
+  nodeEnv?: string;
+} = {}) {
+  const fromEnv = configured?.trim();
+  if (fromEnv) {
+    return fromEnv.replace(/\/+$/, "");
+  }
+
+  const fromVercel = vercelProduction?.trim();
+  if (fromVercel) {
+    return `https://${fromVercel.replace(/^https?:\/\//, "").replace(/\/+$/, "")}`;
+  }
+
+  if (nodeEnv === "development") {
+    return "http://localhost:3000";
+  }
+
+  return "https://francinesoares.dev";
+}
+
+export const siteUrl = resolveSiteUrl();
 
 export const siteTitle = `${siteConfig.name} — Criação de sites profissionais`;
 

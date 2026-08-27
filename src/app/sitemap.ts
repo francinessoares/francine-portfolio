@@ -13,7 +13,7 @@ const routes = [
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return routes.map(({ path, changeFrequency, priority }) => ({
-    url: `${siteUrl}${path}`,
+    url: path ? `${siteUrl}${path}` : siteUrl,
     changeFrequency,
     priority,
   }));

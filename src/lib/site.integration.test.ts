@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import { navItems } from "@/config/navigation";
-import { getWhatsAppUrl } from "@/config/site";
+import { getWhatsAppUrl, resolveSiteUrl } from "@/config/site";
 import { footerNavItems } from "@/data/footer";
 import { getDictionary, locales } from "@/i18n";
 import { createPageMetadata, rootMetadata } from "@/lib/seo";
@@ -128,6 +128,29 @@ describe("i18n", () => {
     const enKeys = collectKeys(getDictionary("en")).sort();
 
     expect(ptKeys).toEqual(enKeys);
+  });
+});
+
+describe("resolveSiteUrl", () => {
+  it("usa o domínio de produção quando a env não está definida", () => {
+    expect(
+      resolveSiteUrl({
+        configured: "",
+        vercelProduction: "",
+        nodeEnv: "production",
+      }),
+    ).toBe("https://francinesoares.dev");
+  });
+
+  it("não gera URL de localhost em produção", () => {
+    const url = resolveSiteUrl({
+      configured: "",
+      vercelProduction: "francinesoares.dev",
+      nodeEnv: "production",
+    });
+
+    expect(url).toBe("https://francinesoares.dev");
+    expect(url).not.toContain("localhost");
   });
 });
 
