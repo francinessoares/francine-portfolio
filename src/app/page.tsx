@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 
-import { siteConfig } from "@/config/site";
 import { defaultLocale, getDictionary } from "@/i18n";
 import { createPageMetadata } from "@/lib/seo";
 import { Hero } from "@/sections/hero";
@@ -12,10 +11,10 @@ const HomeServicesSection = dynamic(
       (m) => m.HomeServicesSection,
     ),
 );
-const HomeSolutionsSection = dynamic(
+const HomeBenefitsSection = dynamic(
   () =>
-    import("@/sections/home/solutions-section").then(
-      (m) => m.HomeSolutionsSection,
+    import("@/sections/home/benefits-section").then(
+      (m) => m.HomeBenefitsSection,
     ),
 );
 const HomeProcessSection = dynamic(
@@ -24,15 +23,19 @@ const HomeProcessSection = dynamic(
       (m) => m.HomeProcessSection,
     ),
 );
-const HomeTechPreviewSection = dynamic(
+const HomePortfolioSection = dynamic(
   () =>
-    import("@/sections/home/tech-preview-section").then(
-      (m) => m.HomeTechPreviewSection,
+    import("@/sections/home/portfolio-section").then(
+      (m) => m.HomePortfolioSection,
     ),
 );
 const HomeAboutSection = dynamic(
   () =>
     import("@/sections/home/about-section").then((m) => m.HomeAboutSection),
+);
+const HomeBeyondSection = dynamic(
+  () =>
+    import("@/sections/home/beyond-section").then((m) => m.HomeBeyondSection),
 );
 const HomeFaqSection = dynamic(
   () => import("@/sections/home/faq-section").then((m) => m.HomeFaqSection),
@@ -47,8 +50,9 @@ const HomeContactSection = dynamic(
 const dict = getDictionary(defaultLocale);
 
 export const metadata: Metadata = createPageMetadata({
-  title: siteConfig.role,
+  title: dict.meta.title,
   description: dict.meta.description,
+  keywords: dict.meta.keywords,
   path: "/",
 });
 
@@ -57,10 +61,11 @@ export default function Home() {
     <main id="main-content" className="relative bg-surface">
       <Hero />
       <HomeServicesSection />
-      <HomeSolutionsSection />
+      <HomeBenefitsSection />
       <HomeProcessSection />
-      <HomeTechPreviewSection />
+      <HomePortfolioSection />
       <HomeAboutSection />
+      <HomeBeyondSection />
       <HomeFaqSection />
       <HomeContactSection />
     </main>

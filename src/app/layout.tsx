@@ -3,6 +3,7 @@ import "./globals.css";
 import { Geist } from "next/font/google";
 
 import { SiteChrome } from "@/components/layout/site-chrome";
+import { JsonLd } from "@/components/seo/json-ld";
 import { LocaleProvider } from "@/i18n/context";
 import { siteTitle, siteUrl } from "@/config/site";
 import { defaultLocale, getDictionary, htmlLang } from "@/i18n";
@@ -25,6 +26,9 @@ const geistSans = Geist({
 export const metadata: Metadata = {
   ...rootMetadata,
   description: defaultDescription,
+  keywords: getDictionary(defaultLocale).meta.keywords
+    .split(",")
+    .map((item) => item.trim()),
   openGraph: {
     ...rootMetadata.openGraph,
     title: siteTitle,
@@ -51,6 +55,7 @@ export default function RootLayout({
     >
       <body className="overflow-x-hidden bg-surface text-foreground">
         <LocaleProvider>
+          <JsonLd />
           <SiteChrome>{children}</SiteChrome>
         </LocaleProvider>
       </body>

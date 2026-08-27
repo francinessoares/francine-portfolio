@@ -1,33 +1,39 @@
 import type { Metadata } from "next";
 
-import { siteConfig, siteUrl } from "@/config/site";
+import { siteConfig, siteTitle, siteUrl } from "@/config/site";
 
 type PageMetadataInput = {
   title: string;
   description: string;
   path?: string;
+  keywords?: string;
 };
 
 export const socialImage = {
   url: siteConfig.ogImage,
-  alt: `${siteConfig.name} — ${siteConfig.role}`,
+  alt: `${siteConfig.name} — criação de sites profissionais`,
 } as const;
 
 export function createPageMetadata({
   title,
   description,
   path = "",
+  keywords,
 }: PageMetadataInput): Metadata {
   const url = `${siteUrl}${path}`;
+  const fullTitle = `${title} — ${siteConfig.name}`;
 
   return {
     title,
     description,
+    keywords: keywords
+      ? keywords.split(",").map((item) => item.trim())
+      : undefined,
     alternates: {
       canonical: url,
     },
     openGraph: {
-      title: `${title} — ${siteConfig.name}`,
+      title: fullTitle,
       description,
       url,
       siteName: siteConfig.name,
@@ -37,7 +43,7 @@ export function createPageMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: `${title} — ${siteConfig.name}`,
+      title: fullTitle,
       description,
       images: [socialImage.url],
     },
@@ -47,7 +53,7 @@ export function createPageMetadata({
 export const rootMetadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${siteConfig.name} — ${siteConfig.role}`,
+    default: siteTitle,
     template: `%s — ${siteConfig.name}`,
   },
   icons: {

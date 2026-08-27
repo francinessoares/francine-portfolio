@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, Check, Send } from "lucide-react";
+import { ArrowRight, Send } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
@@ -50,7 +50,7 @@ export function HeroMobile() {
 
       <motion.p
         variants={variants.item}
-        className="mt-[20px] max-w-[32ch] text-center text-pretty text-[15px] leading-[1.65] tracking-[-0.01em] text-fg-secondary"
+        className="mt-[20px] max-w-[34ch] text-center text-pretty text-[15px] leading-[1.65] tracking-[-0.01em] text-fg-secondary"
       >
         {t.hero.subtitleMobile}
       </motion.p>
@@ -73,7 +73,7 @@ export function HeroMobile() {
             )}
             render={<Link href="/contato" />}
           >
-            {t.hero.requestQuote}
+            {t.hero.primaryCta}
             <Send className="size-[15px]" strokeWidth={1.75} />
           </Button>
         </HoverLift>
@@ -87,30 +87,20 @@ export function HeroMobile() {
               outlineButtonClass,
               "h-[52px] w-full gap-[8px] rounded-[12px] border-white/[0.14] text-[15px] text-fg-primary sm:min-w-0",
             )}
-            render={<Link href="/projetos" />}
+            render={<Link href="/#servicos" />}
           >
-            {t.hero.viewProjects}
+            {t.hero.secondaryCta}
             <ArrowRight className="size-[15px]" strokeWidth={1.75} />
           </Button>
         </HoverLift>
       </motion.div>
 
-      <motion.ul
+      <motion.p
         variants={variants.item}
-        className="mt-[36px] flex w-full flex-col items-center gap-[14px]"
+        className="mt-[36px] max-w-[36ch] text-center text-[13px] leading-[1.6] text-fg-tertiary"
       >
-        {t.hero.trustMobile.map((item) => (
-          <li
-            key={item}
-            className="inline-flex items-center gap-[10px] text-[14px] text-fg-secondary"
-          >
-            <span className="flex size-[20px] shrink-0 items-center justify-center rounded-full bg-accent/[0.16] text-accent-light">
-              <Check className="size-[11px]" strokeWidth={2.75} />
-            </span>
-            {item}
-          </li>
-        ))}
-      </motion.ul>
+        {t.hero.trust.join(" • ")}
+      </motion.p>
     </div>
   );
 }

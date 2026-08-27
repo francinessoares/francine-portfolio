@@ -33,7 +33,7 @@ export function HeroCtas() {
           className={cn(primaryButtonClass, "gap-[8px]")}
           render={<Link href="/contato" />}
         >
-          {t.hero.requestQuote}
+          {t.hero.primaryCta}
           <Send className="size-[15px]" strokeWidth={1.75} />
         </Button>
       </HoverLift>
@@ -44,9 +44,9 @@ export function HeroCtas() {
           size="lg"
           variant="outline"
           className={cn(outlineButtonClass, "gap-[8px]")}
-          render={<Link href="/projetos" />}
+          render={<Link href="/#servicos" />}
         >
-          {t.hero.viewProjects}
+          {t.hero.secondaryCta}
           <ArrowRight
             className="size-[15px] transition-transform duration-300 group-hover/button:translate-x-[2px]"
             strokeWidth={1.75}

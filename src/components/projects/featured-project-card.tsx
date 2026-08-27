@@ -19,6 +19,7 @@ type FeaturedProjectCardProps = {
 export function FeaturedProjectCard({ project }: FeaturedProjectCardProps) {
   const t = useTranslations();
   const featured = t.projects.featured;
+  const labels = t.projects.labels;
   const item = featured.items[project.id];
 
   return (
@@ -46,15 +47,52 @@ export function FeaturedProjectCard({ project }: FeaturedProjectCardProps) {
           </span>
         </div>
 
-        <div className="mt-[24px] flex max-w-[72ch] flex-col gap-[16px]">
-          {item.paragraphs.map((paragraph) => (
-            <p key={paragraph} className="projects-body">
-              {paragraph}
-            </p>
-          ))}
-        </div>
+        <dl className="mt-[28px] flex max-w-[72ch] flex-col gap-[22px]">
+          <div>
+            <dt className="text-[11px] font-semibold tracking-[0.14em] text-accent-light uppercase">
+              {labels.developed}
+            </dt>
+            <dd className="projects-body mt-[8px]">{item.developed}</dd>
+          </div>
+          <div>
+            <dt className="text-[11px] font-semibold tracking-[0.14em] text-accent-light uppercase">
+              {labels.audience}
+            </dt>
+            <dd className="projects-body mt-[8px]">{item.audience}</dd>
+          </div>
+          <div>
+            <dt className="text-[11px] font-semibold tracking-[0.14em] text-accent-light uppercase">
+              {labels.features}
+            </dt>
+            <dd className="mt-[10px]">
+              <ul className="flex flex-col gap-[8px]">
+                {item.features.map((feature) => (
+                  <li
+                    key={feature}
+                    className="projects-body flex items-start gap-[8px]"
+                  >
+                    <span
+                      className="mt-[9px] size-[5px] shrink-0 rounded-full bg-accent-light"
+                      aria-hidden
+                    />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </dd>
+          </div>
+          <div>
+            <dt className="text-[11px] font-semibold tracking-[0.14em] text-accent-light uppercase">
+              {labels.result}
+            </dt>
+            <dd className="projects-body mt-[8px]">{item.result}</dd>
+          </div>
+        </dl>
 
-        <TagList tags={project.stack} className="mt-[28px]" />
+        <p className="mt-[28px] text-[11px] font-semibold tracking-[0.14em] text-accent-light uppercase">
+          {labels.stack}
+        </p>
+        <TagList tags={project.stack} className="mt-[10px]" />
 
         <div className="mt-[32px]">
           <HoverLift offset={1} enableTap>

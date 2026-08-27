@@ -1,14 +1,14 @@
 export type FaqId =
   | "pricing"
   | "timeline"
+  | "beginner"
   | "support"
-  | "technologies"
   | "process";
 
 export const faqItems: FaqId[] = [
   "pricing",
   "timeline",
+  "beginner",
   "support",
-  "technologies",
   "process",
 ];

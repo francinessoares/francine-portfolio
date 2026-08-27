@@ -9,6 +9,7 @@ const dict = getDictionary(defaultLocale);
 export const metadata: Metadata = createPageMetadata({
   title: dict.services.meta.title,
   description: dict.services.meta.description,
+  keywords: dict.meta.keywords,
   path: "/servicos",
 });
 

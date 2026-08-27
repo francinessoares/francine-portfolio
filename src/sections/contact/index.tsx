@@ -8,40 +8,54 @@ import { PageShell } from "@/components/layout/page-shell";
 import { GlassCard } from "@/components/primitives/glass-card";
 import { HoverLift } from "@/components/primitives/hover-lift";
 import { SectionHeader } from "@/components/primitives/section-header";
-import { siteConfig } from "@/config/site";
+import { getWhatsAppUrl, siteConfig } from "@/config/site";
 import { ScrollReveal } from "@/components/tech-stack/scroll-reveal";
 import { useTranslations } from "@/i18n/context";
 import { Mail } from "lucide-react";
-
-const channelIcons = {
-  email: Mail,
-  linkedIn: LinkedInIcon,
-  github: GitHubIcon,
-} as const;
+import { FaWhatsapp } from "react-icons/fa";
 
 export function ContactPageContent() {
   const t = useTranslations();
   const hero = t.contact.hero;
   const channels = t.contact.channels;
+  const whatsappHref = getWhatsAppUrl(t.contact.whatsappMessage);
 
   const channelLinks = [
+    ...(whatsappHref
+      ? [
+          {
+            key: "whatsapp",
+            label: t.a11y.whatsapp,
+            href: whatsappHref,
+            detail: t.a11y.whatsapp,
+            external: true,
+            icon: FaWhatsapp,
+          },
+        ]
+      : []),
     {
-      key: "email" as const,
+      key: "email",
       label: channels.email,
       href: `mailto:${siteConfig.email}`,
+      detail: siteConfig.email,
       external: false,
+      icon: Mail,
     },
     {
-      key: "linkedIn" as const,
+      key: "linkedIn",
       label: channels.linkedIn,
       href: siteConfig.linkedInProfile,
+      detail: siteConfig.linkedInProfile.replace(/^https?:\/\/(www\.)?/, ""),
       external: true,
+      icon: LinkedInIcon,
     },
     {
-      key: "github" as const,
+      key: "github",
       label: channels.github,
       href: siteConfig.githubProfile,
+      detail: siteConfig.githubProfile.replace(/^https?:\/\/(www\.)?/, ""),
       external: true,
+      icon: GitHubIcon,
     },
   ];
 
@@ -79,7 +93,7 @@ export function ContactPageContent() {
             {t.contact.otherChannels}
           </p>
           {channelLinks.map((channel, index) => {
-            const Icon = channelIcons[channel.key];
+            const Icon = channel.icon;
 
             return (
               <ScrollReveal key={channel.key} delay={index * 0.05}>
@@ -100,9 +114,7 @@ export function ContactPageContent() {
                       <div className="min-w-0">
                         <p className="text-card-title-sm">{channel.label}</p>
                         <p className="text-card-desc mt-[2px] truncate">
-                          {channel.key === "email"
-                            ? siteConfig.email
-                            : channel.href.replace(/^https?:\/\/(www\.)?/, "")}
+                          {channel.detail}
                         </p>
                       </div>
                     </GlassCard>

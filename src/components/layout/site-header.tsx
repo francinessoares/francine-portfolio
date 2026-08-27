@@ -28,6 +28,8 @@ function getServerHashSnapshot() {
 }
 
 function SiteLogo() {
+  const t = useTranslations();
+
   return (
     <Link
       href="/"
@@ -47,7 +49,7 @@ function SiteLogo() {
           <span className="text-accent-light">.</span>
         </span>
         <span className="mt-[4px] block text-[10px] font-medium text-fg-muted sm:mt-[5px] sm:text-[11px]">
-          {siteConfig.role}
+          {t.header.role}
         </span>
       </div>
     </Link>

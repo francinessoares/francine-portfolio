@@ -98,7 +98,7 @@ export function SiteFooter() {
                   <span className="text-accent-light">.</span>
                 </span>
                 <span className="mt-[6px] block text-[12px] font-medium text-fg-muted">
-                  {siteConfig.role}
+                  {t.header.role}
                 </span>
               </div>
             </Link>

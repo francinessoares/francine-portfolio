@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import { navItems } from "@/config/navigation";
+import { getWhatsAppUrl } from "@/config/site";
 import { footerNavItems } from "@/data/footer";
 import { getDictionary, locales } from "@/i18n";
 import { createPageMetadata, rootMetadata } from "@/lib/seo";
@@ -95,5 +96,17 @@ describe("i18n", () => {
     const enKeys = collectKeys(getDictionary("en")).sort();
 
     expect(ptKeys).toEqual(enKeys);
+  });
+});
+
+describe("getWhatsAppUrl", () => {
+  it("retorna null quando o telefone está vazio", () => {
+    expect(getWhatsAppUrl("Olá", "")).toBeNull();
+  });
+
+  it("monta o link do WhatsApp com DDI e mensagem", () => {
+    expect(getWhatsAppUrl("Quero criar meu site", "48 99999-0000")).toBe(
+      "https://wa.me/48999990000?text=Quero%20criar%20meu%20site",
+    );
   });
 });

@@ -5,17 +5,11 @@ export type MockupVariant =
   | "operations"
   | "mobile";
 
-export type ProcessStepId =
-  | "discovery"
-  | "proposal"
-  | "design"
-  | "development"
-  | "delivery";
+export type ProcessStepId = "idea" | "plan" | "build" | "launch";
 
 export const processSteps: ProcessStepId[] = [
-  "discovery",
-  "proposal",
-  "design",
-  "development",
-  "delivery",
+  "idea",
+  "plan",
+  "build",
+  "launch",
 ];

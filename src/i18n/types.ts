@@ -1,7 +1,7 @@
 import type { ExpertiseId, StackCategoryId, TechId } from "@/data/tech-stack";
 import type { ServiceId } from "@/data/services";
+import type { BenefitId } from "@/data/benefits";
 import type { NavItemId } from "@/config/navigation";
-import type { HomeServiceId } from "@/data/home-services";
 import type { ProcessStepId } from "@/data/projects";
 import type { DigitalProductId } from "@/data/digital-products";
 import type { FeaturedProjectId } from "@/data/featured-projects";
@@ -33,11 +33,6 @@ type ServiceEntry = {
   price: string;
 };
 
-type HomeServiceEntry = {
-  title: string;
-  description: string;
-};
-
 type DigitalProductEntry = {
   title: string;
   description: string;
@@ -49,14 +44,30 @@ type ProcessStepEntry = {
   description: string;
 };
 
+type BenefitEntry = {
+  title: string;
+  description: string;
+};
+
 type FaqEntry = {
   question: string;
   answer: string;
 };
 
+type FeaturedProjectEntry = {
+  name: string;
+  status: string;
+  developed: string;
+  audience: string;
+  features: string[];
+  result: string;
+};
+
 export type Dictionary = {
   meta: {
+    title: string;
     description: string;
+    keywords: string;
   };
   a11y: {
     skipToContent: string;
@@ -64,10 +75,12 @@ export type Dictionary = {
     closeMenu: string;
     mainNav: string;
     scrollToTop: string;
+    whatsapp: string;
   };
   nav: Record<NavItemId, string>;
   header: {
     cta: string;
+    role: string;
   };
   hero: {
     headlineLine1: string;
@@ -76,27 +89,17 @@ export type Dictionary = {
     headlineMobile: [string, string, string, string];
     subtitle: string;
     subtitleMobile: string;
-    viewProjects: string;
-    requestQuote: string;
+    primaryCta: string;
+    secondaryCta: string;
     socialLinks: string;
     badge: string;
     badgeRole: string;
     badgeExperience: string;
     trust: string[];
-    trustMobile: string[];
-    stats: Array<{ label: string; detail: string }>;
     social: {
       github: string;
       linkedIn: string;
       email: string;
-    };
-    audience: string[];
-    profile: {
-      role: string;
-      experience: string;
-      stack: string;
-      focus: string;
-      available: string;
     };
   };
   home: {
@@ -104,8 +107,12 @@ export type Dictionary = {
       eyebrow: string;
       title: string;
       subtitle: string;
-      items: Record<HomeServiceId, HomeServiceEntry>;
-      cta: string;
+    };
+    benefits: {
+      eyebrow: string;
+      title: string;
+      subtitle: string;
+      items: Record<BenefitId, BenefitEntry>;
     };
     solutions: {
       eyebrow: string;
@@ -120,7 +127,13 @@ export type Dictionary = {
       subtitle: string;
       steps: Record<ProcessStepId, ProcessStepEntry>;
     };
-    techPreview: {
+    portfolio: {
+      eyebrow: string;
+      title: string;
+      subtitle: string;
+      cta: string;
+    };
+    beyond: {
       eyebrow: string;
       title: string;
       subtitle: string;
@@ -165,6 +178,7 @@ export type Dictionary = {
     };
     packages: Record<ServiceId, ServiceEntry>;
     featured: string;
+    cardCta: string;
     cta: {
       title: string;
       subtitle: string;
@@ -181,19 +195,19 @@ export type Dictionary = {
       title: string;
       paragraphs: string[];
     };
+    labels: {
+      developed: string;
+      audience: string;
+      features: string;
+      result: string;
+      stack: string;
+    };
     featured: {
       eyebrow: string;
       title: string;
       paragraphs: string[];
       visit: string;
-      items: Record<
-        FeaturedProjectId,
-        {
-          name: string;
-          status: string;
-          paragraphs: string[];
-        }
-      >;
+      items: Record<FeaturedProjectId, FeaturedProjectEntry>;
     };
     cta: {
       title: string;
@@ -248,6 +262,7 @@ export type Dictionary = {
       linkedIn: string;
       github: string;
     };
+    whatsappMessage: string;
   };
   footer: {
     brand: {

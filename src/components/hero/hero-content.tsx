@@ -1,6 +1,5 @@
 "use client";
 
-import { Check } from "lucide-react";
 import { motion } from "framer-motion";
 
 import { useHeroMotionContext } from "@/hooks/use-hero-motion";
@@ -48,21 +47,11 @@ export function HeroTrust() {
   const { variants } = useHeroMotionContext();
 
   return (
-    <motion.ul
+    <motion.p
       variants={variants.item}
-      className="mt-[32px] flex flex-col gap-[10px] sm:flex-row sm:flex-wrap sm:gap-x-[18px] sm:gap-y-[10px]"
+      className="mt-[32px] text-[13px] leading-[1.6] tracking-[-0.01em] text-fg-tertiary"
     >
-      {t.hero.trust.map((item) => (
-        <li
-          key={item}
-          className="inline-flex items-center gap-[8px] text-[13px] text-fg-tertiary"
-        >
-          <span className="flex size-[16px] shrink-0 items-center justify-center rounded-full bg-accent/[0.15] text-accent-light">
-            <Check className="size-[10px]" strokeWidth={2.75} />
-          </span>
-          {item}
-        </li>
-      ))}
-    </motion.ul>
+      {t.hero.trust.join(" • ")}
+    </motion.p>
   );
 }

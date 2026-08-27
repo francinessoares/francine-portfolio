@@ -2,8 +2,11 @@ import type { Dictionary } from "@/i18n/types";
 
 export const pt: Dictionary = {
   meta: {
+    title: "Criação de sites profissionais",
     description:
-      "Sites, sistemas e produtos digitais sob medida para pequenas empresas, microempreendedores e profissionais autônomos.",
+      "Crio sites profissionais, landing pages e soluções digitais para profissionais liberais e pequenas empresas. Desenvolvimento web em Florianópolis e São José.",
+    keywords:
+      "criação de sites, desenvolvimento de sites, site profissional, landing page, desenvolvimento web, criação de site para empresas, desenvolvedora freelancer, desenvolvimento de sites em Florianópolis, desenvolvimento de sites em São José",
   },
   a11y: {
     skipToContent: "Pular para o conteúdo",
@@ -11,97 +14,93 @@ export const pt: Dictionary = {
     closeMenu: "Fechar menu",
     mainNav: "Navegação principal",
     scrollToTop: "Voltar ao topo",
+    whatsapp: "Falar no WhatsApp",
   },
   nav: {
-    home: "Home",
+    home: "Início",
     services: "Serviços",
-    solutions: "Soluções",
     projects: "Projetos",
     about: "Sobre",
     contact: "Contato",
   },
   header: {
-    cta: "Vamos conversar",
+    cta: "Solicitar orçamento",
+    role: "Desenvolvimento de sites",
   },
   hero: {
-    headlineLine1: "Desenvolvo software que",
-    headlineLine2: "ajuda pequenas empresas",
-    headlineHighlight: "a crescer no digital.",
+    headlineLine1: "Seu negócio merece",
+    headlineLine2: "uma presença digital",
+    headlineHighlight: "profissional.",
     headlineMobile: [
-      "Desenvolvo software",
-      "que ajuda pequenas",
-      "empresas a crescer",
-      "no digital.",
+      "Seu negócio",
+      "merece uma",
+      "presença digital",
+      "profissional.",
     ],
     subtitle:
-      "De websites institucionais a sistemas personalizados e aplicações web, desenvolvo soluções modernas, rápidas e escaláveis para impulsionar o crescimento do seu negócio.",
+      "Crio sites, landing pages e soluções digitais modernas para você apresentar seu trabalho, conquistar clientes e crescer online.",
     subtitleMobile:
-      "Soluções modernas, rápidas e escaláveis para impulsionar o crescimento do seu negócio.",
-    viewProjects: "Ver projetos",
-    requestQuote: "Solicitar orçamento",
+      "Sites e landing pages para apresentar seu trabalho, conquistar clientes e crescer online.",
+    primaryCta: "Quero criar meu site",
+    secondaryCta: "Ver serviços",
     socialLinks: "Redes sociais",
-    badge: "Software Engineer • 6+ anos de experiência",
-    badgeRole: "Software Engineer",
-    badgeExperience: "6+ anos de experiência",
+    badge: "Desenvolvedora • Sites profissionais",
+    badgeRole: "Desenvolvedora Front-End",
+    badgeExperience: "6+ anos criando produtos digitais",
     trust: [
-      "Desenvolvimento sob medida",
-      "Tecnologias modernas",
-      "Entrega contínua",
-    ],
-    trustMobile: [
-      "Desenvolvimento sob medida",
-      "Web • Mobile • IA",
-      "Tecnologias modernas",
-    ],
-    stats: [
-      { label: "6+ anos", detail: "de experiência" },
-      { label: "React / Next.js", detail: "TypeScript • Tailwind CSS" },
-      { label: "Mobile", detail: "iOS • Android" },
-      { label: "IA", detail: "Integrações inteligentes" },
+      "Desenvolvimento personalizado",
+      "Design responsivo",
+      "Tecnologia moderna",
     ],
     social: {
       github: "GitHub",
       linkedIn: "LinkedIn",
       email: "E-mail",
     },
-    audience: ["Empresas", "Startups", "Profissionais"],
-    profile: {
-      role: "Software Engineer",
-      experience: "6+ anos de experiência",
-      stack: "React · Next.js · TypeScript",
-      focus: "Web · Mobile · IA",
-      available: "Disponível para projetos",
-    },
   },
   home: {
     services: {
       eyebrow: "Serviços",
-      title: "Como posso ajudar seu negócio",
+      title: "Sites profissionais que ajudam seu negócio a crescer",
       subtitle:
-        "Da ideia à entrega — produtos pequenos, bem feitos, com visual profissional e foco no que o seu negócio realmente precisa.",
+        "Crio sites, landing pages e soluções digitais sob medida para profissionais e pequenas empresas — mesmo se você não entende de tecnologia.",
+    },
+    benefits: {
+      eyebrow: "Por que um site bem feito",
+      title: "Uma presença digital que transmite confiança",
+      subtitle:
+        "Cada projeto é pensado para o seu negócio — com visual profissional, fácil de usar no celular e pronto para gerar contatos.",
       items: {
-        websites: {
-          title: "Sites e landing pages",
+        design: {
+          title: "Design profissional",
           description:
-            "Presença digital de alta conversão para captar clientes e fortalecer sua marca.",
+            "Seu site pensado para transmitir confiança e valorizar sua marca.",
         },
-        customSystems: {
-          title: "Sistemas web sob medida",
+        responsive: {
+          title: "Responsivo",
           description:
-            "Ferramentas simples para organizar o dia a dia do seu negócio — sem excesso de funcionalidades.",
+            "Seu site funcionando perfeitamente no celular, tablet e computador.",
         },
-        aiProducts: {
-          title: "Automação e IA",
+        custom: {
+          title: "Feito sob medida",
           description:
-            "Chatbots, assistentes inteligentes e fluxos automatizados para ganhar eficiência.",
+            "Nada de templates genéricos. O projeto é adaptado ao seu negócio.",
         },
-        platforms: {
-          title: "Produtos digitais completos",
+        readyToSell: {
+          title: "Pronto para vender",
           description:
-            "MVPs e sistemas enxutos, prontos para validar sua ideia e atender seus clientes.",
+            "CTAs, WhatsApp e formulários pensados para transformar visitantes em contatos.",
+        },
+        seo: {
+          title: "SEO básico",
+          description:
+            "Estrutura preparada para melhorar sua presença nos mecanismos de busca.",
+        },
+        performance: {
+          title: "Performance",
+          description: "Sites rápidos, modernos e otimizados.",
         },
       },
-      cta: "Ver pacotes e valores",
     },
     solutions: {
       eyebrow: "Soluções",
@@ -209,283 +208,314 @@ export const pt: Dictionary = {
       },
     },
     process: {
-      eyebrow: "Processo",
-      title: "Como funciona o processo",
+      eyebrow: "Como funciona",
+      title: "Do primeiro contato ao site no ar",
       subtitle:
-        "Um fluxo claro e transparente — do primeiro contato à entrega do produto.",
+        "Um processo simples, claro e acompanhado — sem jargão e sem surpresas.",
       steps: {
-        discovery: {
-          title: "Entendimento do problema",
+        idea: {
+          title: "Você me conta sua ideia",
           description:
-            "Converso sobre o contexto, os usuários e o que precisa ser resolvido — antes de falar de tecnologia.",
+            "Conversamos sobre o seu negócio, o que você precisa e o resultado que espera.",
         },
-        proposal: {
-          title: "Proposta de solução",
+        plan: {
+          title: "Definimos a melhor solução",
           description:
-            "Defino escopo, prazo e investimento de forma transparente, alinhado ao seu momento e objetivo.",
+            "Proponho o caminho certo — site, landing page ou algo maior — com prazo e valor claros.",
         },
-        design: {
-          title: "Design e estrutura",
+        build: {
+          title: "Eu desenvolvo seu projeto",
           description:
-            "Organizo a arquitetura da informação, o fluxo e a interface para garantir clareza desde o início.",
+            "Crio o visual, o conteúdo e a estrutura, com atualizações ao longo do caminho.",
         },
-        development: {
-          title: "Desenvolvimento",
+        launch: {
+          title: "Você recebe tudo pronto para divulgar",
           description:
-            "Construo com código limpo, entregas incrementais e comunicação constante sobre o andamento.",
-        },
-        delivery: {
-          title: "Entrega e evolução",
-          description:
-            "Publico, valido e acompanho os primeiros passos — com espaço para ajustes e melhorias futuras.",
+            "Publico o site, configuro o essencial e deixo pronto para você começar a usar.",
         },
       },
     },
+    portfolio: {
+      eyebrow: "Portfólio",
+      title: "Projetos que mostram o que é possível construir",
+      subtitle:
+        "Do site profissional ao produto digital completo — cada projeto começa pelo problema a resolver.",
+      cta: "Ver todos os projetos",
+    },
+    beyond: {
+      eyebrow: "Projetos maiores",
+      title: "Precisa de algo além de um site?",
+      subtitle:
+        "Também desenvolvo plataformas, sistemas e aplicações personalizadas para empresas que possuem necessidades específicas.",
+      cta: "Falar sobre meu projeto",
+    },
     about: {
       eyebrow: "Sobre mim",
-      title: "Conheça quem está por trás dos",
-      titleHighlight: "projetos.",
+      title: "Desenvolvedora por trás dos",
+      titleHighlight: "seus projetos.",
       paragraphs: [
         [
-          { text: "Olá! Sou Francine Soares, desenvolvedora Full Stack especializada em " },
-          { text: "React, React Native, Node.js", accent: true },
-          { text: " e Inteligência Artificial." },
-        ],
-        [
           {
-            text: "Há mais de 6 anos desenvolvo aplicações web e mobile, criando desde plataformas para empresas até produtos próprios focados em tecnologia e inovação.",
+            text: "Sou Francine Soares, desenvolvedora Front-End com experiência na criação de produtos e soluções digitais.",
           },
         ],
         [
           {
-            text: "Tenho paixão por transformar ideias em produtos digitais de alta qualidade, priorizando performance, experiência do usuário, escalabilidade e design moderno.",
+            text: "Há mais de 6 anos construo sites e aplicações reais com ",
+          },
+          { text: "React, Angular, TypeScript e Node.js", accent: true },
+          {
+            text: " — da presença digital de um profissional até produtos mais completos, inclusive com IA e automações.",
           },
         ],
         [
           {
-            text: "Meu objetivo é desenvolver soluções que realmente gerem valor para empresas e pessoas.",
+            text: "Meu trabalho é traduzir o que você precisa em um site claro, moderno e fácil de usar — sem você ter que entender de tecnologia.",
           },
         ],
       ],
       profile: {
         firstName: "Francine",
         lastName: "Soares",
-        role: "Full Stack Developer",
-        stack: "React • Node.js • AI",
+        role: "Desenvolvedora Front-End",
+        stack: "React • TypeScript • Node.js",
       },
       metrics: [
         { value: "6+ anos", label: "de experiência" },
-        { value: "React / Node.js", label: "Especialização" },
-        { value: "Brasil + Exterior", label: "Clientes" },
+        { value: "React / Node.js", label: "especialização" },
+        { value: "Sites e produtos", label: "do simples ao completo" },
       ],
-      ctaPrimary: "Vamos conversar",
-      ctaSecondary: "Ver Projetos",
+      ctaPrimary: "Quero criar meu site",
+      ctaSecondary: "Ver projetos",
     },
     faq: {
-      eyebrow: "FAQ",
+      eyebrow: "Dúvidas",
       title: "Perguntas frequentes",
-      subtitle: "Respostas diretas para as dúvidas mais comuns antes de iniciar um projeto.",
+      subtitle:
+        "Respostas diretas para quem quer um site profissional sem complicação.",
       items: {
         pricing: {
-          question: "Como funciona o orçamento?",
+          question: "Quanto custa criar um site?",
           answer:
-            "Cada projeto recebe uma proposta personalizada com escopo, prazo e investimento definidos após entender sua necessidade. Sem surpresas no final.",
+            "Landing pages a partir de R$ 900 e sites profissionais a partir de R$ 1.500. Cada projeto recebe uma proposta com escopo, prazo e valor — sem surpresas no final.",
         },
         timeline: {
-          question: "Qual o prazo de entrega?",
+          question: "Em quanto tempo o site fica pronto?",
           answer:
-            "Depende da complexidade. Landing pages levam de 1 a 2 semanas; sistemas completos de 4 a 12 semanas. Defino o cronograma na proposta.",
+            "Landing pages costumam levar de 1 a 2 semanas. Sites profissionais, de 2 a 4 semanas. O prazo fica definido na proposta, antes de começarmos.",
+        },
+        beginner: {
+          question: "Não entendo de tecnologia. Consigo mesmo assim?",
+          answer:
+            "Sim. Eu cuido de tudo — da estrutura ao site publicado. Você acompanha em linguagem simples e só precisa contar o que o seu negócio precisa.",
         },
         support: {
-          question: "Você oferece suporte após a entrega?",
+          question: "E depois que o site entra no ar?",
           answer:
-            "Sim. Incluo acompanhamento inicial após o lançamento e posso continuar com manutenção e evolução conforme a necessidade.",
-        },
-        technologies: {
-          question: "Quais tecnologias você utiliza?",
-          answer:
-            "React, Next.js, TypeScript, Node.js e integrações modernas — sempre escolhendo a stack mais adequada para performance, escala e manutenção.",
+            "Incluo o essencial para você começar a divulgar. Se quiser alterações, melhorias ou manutenção contínua, montamos um plano à parte.",
         },
         process: {
-          question: "Como é o processo de trabalho?",
+          question: "Como começamos?",
           answer:
-            "Começo entendendo o problema, proponho a solução, estruturo o design, desenvolvo com entregas incrementais e publico com acompanhamento pós-lançamento.",
+            "Você me conta a ideia, eu proponho a melhor solução e desenvolvo o projeto até ele estar pronto para divulgar. Tudo combinado antes de iniciar.",
         },
       },
     },
-    techPreview: {
-      eyebrow: "Tecnologias",
-      title: "Stack moderna para produtos bem feitos",
-      subtitle:
-        "Ferramentas atuais para construir sites e sistemas rápidos, seguros e fáceis de manter — no tamanho certo para o seu negócio.",
-      cta: "Ver stack completa",
-    },
     contact: {
-      title: "Pronto para tirar sua ideia do papel?",
+      title: "Vamos colocar sua ideia no ar?",
       subtitle:
-        "Me conta o que o seu negócio precisa — monto uma proposta clara com escopo, prazo e investimento.",
+        "Me conte o que você precisa e eu te ajudo a encontrar a melhor solução.",
       button: "Solicitar orçamento",
     },
   },
   services: {
     meta: {
-      title: "Serviços",
+      title: "Serviços de criação de sites",
       description:
-        "Sites e sistemas para profissionais autônomos e pequenos negócios: landing pages, sites institucionais, agendamento online e integrações com IA.",
+        "Criação de sites profissionais, landing pages e sites para empresas. Desenvolvimento web para profissionais liberais e pequenos negócios em Florianópolis e São José.",
     },
     hero: {
       eyebrow: "Serviços",
-      title: "Pacotes pensados para quem está construindo presença digital",
+      title: "Criação de sites para profissionais e empresas",
       subtitle:
-        "Sem letras miúdas nem pacotes engessados. Escolha um ponto de partida, me conte o que você precisa e montamos juntos o escopo certo para o seu momento.",
+        "Pacotes claros para quem precisa de presença digital — do site pessoal à página de divulgação, com espaço para manutenção e automações.",
     },
     packages: {
+      professionalSite: {
+        title: "Site Profissional",
+        description:
+          "Para profissionais que precisam apresentar seus serviços na internet — personal trainers, nutricionistas, fisioterapeutas, médicos, psicólogos e consultores.",
+        features: [
+          "Design personalizado",
+          "Página inicial",
+          "Sobre",
+          "Serviços",
+          "Contato",
+          "WhatsApp",
+          "Responsividade",
+          "SEO básico",
+          "Publicação do site",
+        ],
+        price: "A partir de R$ 1.500",
+      },
       landingPage: {
         title: "Landing Page",
         description:
-          "Para quem quer divulgar um serviço, lançar uma promoção ou testar uma ideia — uma página direta, bonita e que convida o visitante a entrar em contato.",
+          "Para divulgação de serviços, produtos, campanhas ou anúncios — uma página direta, pensada para gerar contato.",
         features: [
-          "Site responsivo",
-          "Design moderno",
+          "Design personalizado",
+          "Layout responsivo",
+          "CTA estratégico",
+          "WhatsApp",
+          "Formulário",
           "SEO básico",
-          "Formulário de contato",
-          "Deploy na Vercel",
+          "Analytics",
         ],
-        price: "A partir de R$ 1.200",
+        price: "A partir de R$ 900",
       },
-      institutional: {
-        title: "Site Institucional",
+      businessSite: {
+        title: "Site para Empresas",
         description:
-          "Para clínicas, escritórios, lojas e negócios locais que precisam de um site completo — com páginas organizadas, visual profissional e fácil de atualizar.",
+          "Para empresas que precisam apresentar seus serviços e gerar novos contatos com um site institucional completo.",
         features: [
-          "Até 8 páginas",
-          "Design responsivo",
-          "SEO",
-          "Performance",
-          "Formulário de contato",
-          "Integração com WhatsApp",
+          "Site institucional",
+          "Múltiplas páginas",
+          "Serviços",
+          "Sobre a empresa",
+          "Contato",
+          "WhatsApp",
+          "Google Maps",
+          "SEO básico",
         ],
         price: "A partir de R$ 2.500",
       },
-      scheduling: {
-        title: "Sistema de Agendamento",
+      maintenance: {
+        title: "Manutenção e Melhorias",
         description:
-          "Para profissionais autônomos, salões, clínicas e consultórios que querem parar de marcar horário pelo WhatsApp sem perder o controle da agenda.",
+          "Para quem já possui um site e precisa corrigir, atualizar ou evoluir o que já está no ar.",
         features: [
-          "Página personalizada",
-          "Agenda online",
-          "Integração com WhatsApp",
-          "Dashboard administrativo",
-          "Possibilidade de pagamento online",
+          "Correções",
+          "Alterações de conteúdo",
+          "Melhorias de layout",
+          "Responsividade",
+          "Performance",
+          "Novas seções",
+          "Integrações",
         ],
-        price: "A partir de R$ 4.500 ou assinatura mensal sob consulta",
+        price: "Orçamento personalizado",
       },
-      aiIntegrations: {
-        title: "Integrações com IA",
+      automationAi: {
+        title: "Automação e IA",
         description:
-          "Para negócios que querem responder mais rápido, organizar demandas repetitivas ou dar um passo à frente da concorrência local — sem precisar entender de tecnologia.",
+          "Serviço complementar para empresas que precisam automatizar processos e ganhar tempo no atendimento.",
         features: [
           "Chatbots",
-          "Assistentes inteligentes",
+          "Atendimento automatizado",
+          "Integrações com APIs",
+          "Formulários inteligentes",
           "Automação de processos",
-          "Integração com OpenAI",
+          "Soluções com IA",
         ],
-        price: "Sob consulta",
-      },
-      customDevelopment: {
-        title: "Desenvolvimento sob medida",
-        description:
-          "Para quando você precisa de algo específico — um painel interno, um MVP para validar uma ideia ou um fluxo que nenhum pacote padrão cobre.",
-        features: [
-          "Aplicações web",
-          "MVPs",
-          "Dashboards",
-          "Sistemas internos",
-        ],
-        price: "Sob consulta",
+        price: "Orçamento personalizado",
       },
     },
     featured: "Mais escolhido",
+    cardCta: "Quero este serviço",
     cta: {
-      title: "Quer colocar seu negócio no digital de um jeito profissional?",
+      title: "Pronto para ter um site profissional?",
       subtitle:
-        "Me conta o que você precisa — sem compromisso. Monto uma proposta clara, com prazo e valor, para você decidir com tranquilidade.",
+        "Me conte o que você precisa. Monto uma proposta clara, com prazo e valor, para você decidir com tranquilidade.",
       button: "Solicitar orçamento",
     },
   },
   projects: {
     meta: {
-      title: "Projetos",
+      title: "Projetos e portfólio",
       description:
-        "Produtos digitais para pequenas empresas e microempreendedores — além de projetos próprios construídos end-to-end.",
+        "Portfólio de desenvolvimento web: sites, produtos digitais e aplicações — incluindo o EvuFlow, plataforma de análise corporal com IA.",
     },
     hero: {
       eyebrow: "Portfólio",
-      title: "Produtos digitais pensados para negócios reais.",
+      title: "Resultado primeiro. Tecnologia depois.",
       paragraphs: [
-        "Mais de 6 anos desenvolvendo software com qualidade de produção — agora aplicados a sites, sistemas e produtos pequenos, feitos sob medida.",
-        "Ajudo pequenas empresas, microempreendedores e profissionais autônomos a construir soluções modernas, confiáveis e fáceis de usar no dia a dia.",
+        "Cada projeto começa pelo problema do negócio — e só então pela stack. Aqui você vê o que foi construído, para quem e qual objetivo ele atende.",
+        "Também desenvolvo produtos digitais mais completos. Isso mostra que um site simples nasce da mesma base técnica de um sistema maior.",
       ],
     },
+    labels: {
+      developed: "O que foi desenvolvido",
+      audience: "Para quem",
+      features: "Principais funcionalidades",
+      result: "Resultado",
+      stack: "Tecnologias",
+    },
     featured: {
-      eyebrow: "Produto próprio",
-      title: "Construindo produtos, não apenas projetos.",
+      eyebrow: "Produto em destaque",
+      title: "Quando o projeto pede mais do que um site",
       paragraphs: [
-        "Além de desenvolver soluções para clientes, também construo produtos digitais próprios.",
-        "Isso me permite aplicar uma visão completa de produto — da ideia ao lançamento — com o mesmo cuidado que levo para cada cliente.",
+        "O EvuFlow é um produto digital completo que desenvolvo — prova de que também construo plataformas, não só páginas.",
+        "A mesma atenção a design, performance e experiência que levo para um site profissional.",
       ],
       visit: "Visitar site",
       items: {
         evuflow: {
           name: "EvuFlow",
           status: "Em desenvolvimento",
-          paragraphs: [
-            "Plataforma de análise corporal com Inteligência Artificial desenvolvida para identificar padrões de postura, assimetria corporal e movimento, gerando recomendações personalizadas para saúde e treinamento.",
-            "O projeto envolve arquitetura de software, IA, experiência do usuário e desenvolvimento full stack, refletindo minha abordagem na construção de produtos digitais modernos.",
+          developed:
+            "Plataforma de inteligência corporal com IA para profissionais de saúde e treino.",
+          audience:
+            "Quem precisa entender o corpo do aluno ou paciente com mais clareza — sem depender só do olho nu.",
+          features: [
+            "Análise postural e de assimetrias",
+            "Mapa muscular e evolução",
+            "Recomendações personalizadas",
+            "Experiência web e mobile",
           ],
+          result:
+            "Um produto digital completo — da análise à orientação — mostrando capacidade para ir além de um site institucional.",
         },
       },
     },
     cta: {
-      title: "Tecnologias por trás de cada projeto.",
+      title: "Quer um site com essa mesma qualidade?",
       description:
-        "Conheça as tecnologias e ferramentas que utilizo para desenvolver sites e sistemas modernos, claros e preparados para o dia a dia do seu negócio.",
-      button: "Explorar Tech Stack",
+        "A base técnica existe para o seu projeto nascer no tamanho certo — do site profissional a um produto mais completo.",
+      button: "Solicitar orçamento",
     },
   },
   about: {
     meta: {
-      title: "Sobre",
+      title: "Sobre a desenvolvedora",
       description:
-        "Engenheira Front-End com atendimento próximo a pequenas empresas, microempreendedores e profissionais autônomos. Remota, baseada no Brasil.",
+        "Francine Soares é desenvolvedora Front-End freelancer em Florianópolis e São José. Cria sites profissionais, landing pages e soluções digitais para profissionais e empresas.",
     },
     hero: {
       eyebrow: "Sobre mim",
-      title: "Técnica de ponta, atendimento de perto",
+      title: "Uma desenvolvedora para o seu site — não uma agência",
       subtitle:
-        "Sou engenheira front-end há mais de 6 anos. Ajudo pequenas empresas e microempreendedores a ter site ou sistema sem burocracia — com linguagem clara e entrega que você acompanha.",
+        "Sou Francine Soares, desenvolvedora Front-End com experiência na criação de produtos e soluções digitais. Atendimento direto, linguagem clara e entrega que você acompanha.",
     },
     approach: {
       title: "Como é trabalhar comigo",
       paragraphs: [
-        "Começo entendendo o seu negócio: quem é seu cliente, o que você vende e o que precisa resolver agora. A partir daí, proponho algo proporcional — sem empurrar funcionalidade que você não vai usar.",
-        "Você recebe atualizações ao longo do caminho, entende o que está sendo feito e pode tirar dúvidas sem medo de parecer leigo. Prazo e valor combinados antes de começar, sem surpresas no final.",
-        "Por trás de cada entrega há prática sólida com React, TypeScript e Next.js — aplicada com cuidado ao tamanho do seu projeto, não ao tamanho de uma grande empresa.",
+        "Você conversa com quem vai desenvolver o site. Entendo o seu negócio, proponho o que faz sentido agora e construo no tamanho certo — sem empurrar pacote de agência.",
+        "Atualizo você ao longo do caminho, em português simples. Prazo e valor combinados antes de começar.",
+        "Por trás de cada entrega há prática com React, Angular, TypeScript, Node.js e também IA e automações — aplicada ao tamanho do seu projeto.",
       ],
     },
-    viewStack: "Ver tech stack completa",
+    viewStack: "Ver tecnologias que utilizo",
   },
   contact: {
     meta: {
-      title: "Contato",
+      title: "Solicitar orçamento",
       description:
-        "Fale comigo para orçar um site, tirar dúvidas sobre um projeto ou conversar sobre oportunidades de trabalho.",
+        "Peça um orçamento para criação de site profissional, landing page ou desenvolvimento web. Atendimento em Florianópolis, São José e remoto.",
     },
     hero: {
       eyebrow: "Contato",
-      title: "Me conta o que você precisa",
+      title: "Me conte o que você precisa",
       subtitle:
-        "Pode ser uma dúvida rápida, um orçamento ou só um oi para entender se faz sentido trabalharmos juntos. Envie pelo formulário e eu respondo por e-mail.",
+        "Pode ser um site novo, uma landing page ou uma dúvida rápida. Envie pelo formulário e eu respondo por e-mail.",
     },
     form: {
       name: "Nome",
@@ -493,10 +523,10 @@ export const pt: Dictionary = {
       email: "E-mail",
       emailPlaceholder: "seu@email.com",
       subject: "Assunto",
-      subjectPlaceholder: "Orçamento, dúvida, parceria…",
+      subjectPlaceholder: "Site profissional, landing page, orçamento…",
       message: "Mensagem",
-      messagePlaceholder: "Conte um pouco sobre o que você precisa.",
-      submit: "Enviar mensagem",
+      messagePlaceholder: "Conte um pouco sobre o seu negócio e o que você precisa.",
+      submit: "Solicitar orçamento",
       submitting: "Enviando…",
       success: "Mensagem enviada. Em breve eu respondo no seu e-mail.",
       sendAnother: "Enviar outra mensagem",
@@ -508,11 +538,13 @@ export const pt: Dictionary = {
       linkedIn: "LinkedIn",
       github: "GitHub",
     },
+    whatsappMessage:
+      "Olá, Francine! Quero criar um site profissional e gostaria de conversar.",
   },
   footer: {
     brand: {
       description:
-        "Desenvolvo sites, sistemas e produtos digitais sob medida para pequenas empresas, microempreendedores e profissionais autônomos.",
+        "Desenvolvedora Front-End. Crio sites profissionais, landing pages e soluções digitais para profissionais e pequenas empresas.",
     },
     sections: {
       navigation: "Navegação",
@@ -520,20 +552,18 @@ export const pt: Dictionary = {
       contact: "Contato",
     },
     nav: {
-      home: "Home",
+      home: "Início",
       services: "Serviços",
-      solutions: "Soluções",
       projects: "Projetos",
       about: "Sobre",
       contact: "Contato",
     },
     services: {
-      landingPages: "Landing Pages",
-      institutionalSites: "Sites Institucionais",
-      webSystems: "Sistemas Web",
-      applications: "Aplicativos",
-      aiIntegrations: "Integrações com IA",
-      processAutomation: "Automação de Processos",
+      professionalSites: "Site profissional",
+      landingPages: "Landing page",
+      businessSites: "Site para empresas",
+      maintenance: "Manutenção",
+      automationAi: "Automação e IA",
     },
     contact: {
       form: "Formulário",
@@ -542,9 +572,8 @@ export const pt: Dictionary = {
       github: "GitHub",
     },
     cta: {
-      title: "Vamos construir seu próximo projeto?",
-      subtitle:
-        "Entre em contato e receba um orçamento sem compromisso.",
+      title: "Vamos colocar sua ideia no ar?",
+      subtitle: "Me conte o que você precisa e receba um orçamento sem compromisso.",
       button: "Solicitar orçamento",
     },
     bottom: {
@@ -557,9 +586,9 @@ export const pt: Dictionary = {
     available: "Disponível para projetos",
     profile: "perfil",
     metrics: {
-      based: { label: "Base", value: "Remoto · Brasil" },
+      based: { label: "Base", value: "Florianópolis · São José" },
       stack: { label: "Stack", value: "React · TypeScript · Next.js" },
-      focus: { label: "Foco", value: "Produto · engenharia · IA" },
+      focus: { label: "Foco", value: "Sites · produtos · IA" },
     },
   },
   localeSwitcher: {
@@ -569,10 +598,10 @@ export const pt: Dictionary = {
   },
   techStack: {
     hero: {
-      eyebrow: "Stack & Expertise",
-      title: "Tech Stack & Expertise",
+      eyebrow: "Tecnologias",
+      title: "Ferramentas que uso no dia a dia",
       subtitle:
-        "As tecnologias que uso para criar sites e sistemas claros, rápidos e bem feitos — no tamanho certo para pequenas empresas e microempreendedores.",
+        "A stack por trás de sites rápidos, seguros e fáceis de manter — no tamanho certo para o seu negócio.",
     },
     categories: {
       frontend: {
@@ -721,7 +750,7 @@ export const pt: Dictionary = {
       title: "Experiência profissional",
       highlights: [
         "6+ anos desenvolvendo aplicações em produção",
-        "Foco em sites e sistemas para negócios locais e microempreendedores",
+        "Foco em sites e produtos digitais para profissionais e empresas",
         "Código limpo, site rápido e experiência pensada para o usuário final",
       ],
       systemsTitle: "Experiência em sistemas de:",
@@ -738,15 +767,15 @@ export const pt: Dictionary = {
     notFound: {
       title: "Página não encontrada",
       description:
-        "O endereço pode estar incorreto ou a página foi movida. Volte para a home e continue navegando.",
-      backHome: "Voltar para a home",
+        "O endereço pode estar incorreto ou a página foi movida. Volte para o início e continue navegando.",
+      backHome: "Voltar para o início",
     },
     server: {
       title: "Algo deu errado",
       description:
         "Encontramos um problema inesperado. Tente novamente ou retorne para a página inicial.",
       retry: "Tentar novamente",
-      backHome: "Voltar para a home",
+      backHome: "Voltar para o início",
     },
     loading: "Carregando conteúdo",
   },

@@ -2,8 +2,11 @@ import type { Dictionary } from "@/i18n/types";
 
 export const en: Dictionary = {
   meta: {
+    title: "Professional website design",
     description:
-      "Custom websites, systems, and digital products for small businesses, micro-entrepreneurs, and independent professionals.",
+      "I build professional websites, landing pages, and digital solutions for independent professionals and small businesses. Web development in Florianópolis and São José, Brazil.",
+    keywords:
+      "website design, web development, professional website, landing page, business website, freelance web developer, website development Florianópolis, website development São José",
   },
   a11y: {
     skipToContent: "Skip to content",
@@ -11,97 +14,93 @@ export const en: Dictionary = {
     closeMenu: "Close menu",
     mainNav: "Main navigation",
     scrollToTop: "Back to top",
+    whatsapp: "Chat on WhatsApp",
   },
   nav: {
     home: "Home",
     services: "Services",
-    solutions: "Solutions",
     projects: "Projects",
     about: "About",
     contact: "Contact",
   },
   header: {
-    cta: "Let's talk",
+    cta: "Request a quote",
+    role: "Website development",
   },
   hero: {
-    headlineLine1: "I build software",
-    headlineLine2: "that helps small businesses",
-    headlineHighlight: "grow digitally.",
+    headlineLine1: "Your business deserves",
+    headlineLine2: "a professional",
+    headlineHighlight: "digital presence.",
     headlineMobile: [
-      "I build software",
-      "that helps small",
-      "businesses grow",
-      "digitally.",
+      "Your business",
+      "deserves a",
+      "professional",
+      "digital presence.",
     ],
     subtitle:
-      "From institutional websites to custom systems and web applications, I develop modern, fast, and scalable solutions to drive your business growth.",
+      "I build modern websites, landing pages, and digital solutions so you can present your work, attract clients, and grow online.",
     subtitleMobile:
-      "Modern, fast, and scalable solutions to drive your business growth.",
-    viewProjects: "View projects",
-    requestQuote: "Request a quote",
+      "Websites and landing pages to present your work, attract clients, and grow online.",
+    primaryCta: "I want my website",
+    secondaryCta: "See services",
     socialLinks: "Social links",
-    badge: "Software Engineer • 6+ years of experience",
-    badgeRole: "Software Engineer",
-    badgeExperience: "6+ years of experience",
+    badge: "Developer • Professional websites",
+    badgeRole: "Front-End Developer",
+    badgeExperience: "6+ years building digital products",
     trust: [
       "Custom development",
-      "Modern technologies",
-      "Continuous delivery",
-    ],
-    trustMobile: [
-      "Custom development",
-      "Web • Mobile • AI",
-      "Modern technologies",
-    ],
-    stats: [
-      { label: "6+ years", detail: "of experience" },
-      { label: "React / Next.js", detail: "TypeScript • Tailwind CSS" },
-      { label: "Mobile", detail: "iOS • Android" },
-      { label: "AI", detail: "Smart integrations" },
+      "Responsive design",
+      "Modern technology",
     ],
     social: {
       github: "GitHub",
       linkedIn: "LinkedIn",
       email: "Email",
     },
-    audience: ["Businesses", "Startups", "Professionals"],
-    profile: {
-      role: "Software Engineer",
-      experience: "6+ years of experience",
-      stack: "React · Next.js · TypeScript",
-      focus: "Web · Mobile · AI",
-      available: "Available for projects",
-    },
   },
   home: {
     services: {
       eyebrow: "Services",
-      title: "How I can help your business",
+      title: "Professional websites that help your business grow",
       subtitle:
-        "From idea to delivery — small, well-built products with a professional look, focused on what your business actually needs.",
+        "I create custom websites, landing pages, and digital solutions for professionals and small businesses — even if you don't speak tech.",
+    },
+    benefits: {
+      eyebrow: "Why a well-built website",
+      title: "A digital presence that builds trust",
+      subtitle:
+        "Every project is shaped around your business — professional look, great on mobile, and ready to turn visitors into contacts.",
       items: {
-        websites: {
-          title: "Websites and landing pages",
+        design: {
+          title: "Professional design",
           description:
-            "High-converting digital presence to attract clients and strengthen your brand.",
+            "A website designed to build trust and showcase your brand.",
         },
-        customSystems: {
-          title: "Custom web systems",
+        responsive: {
+          title: "Responsive",
           description:
-            "Simple tools to organize your day-to-day operations — without unnecessary features.",
+            "Your site working perfectly on phone, tablet, and desktop.",
         },
-        aiProducts: {
-          title: "Automation and AI",
+        custom: {
+          title: "Made to fit",
           description:
-            "Chatbots, smart assistants, and automated workflows for greater efficiency.",
+            "No generic templates. The project is tailored to your business.",
         },
-        platforms: {
-          title: "Full digital products",
+        readyToSell: {
+          title: "Built to convert",
           description:
-            "Lean MVPs and systems ready to validate your idea and serve your clients.",
+            "CTAs, WhatsApp, and forms designed to turn visitors into contacts.",
+        },
+        seo: {
+          title: "Basic SEO",
+          description:
+            "A structure prepared to improve your presence in search engines.",
+        },
+        performance: {
+          title: "Performance",
+          description: "Fast, modern, optimized websites.",
         },
       },
-      cta: "See packages and pricing",
     },
     solutions: {
       eyebrow: "Solutions",
@@ -209,283 +208,314 @@ export const en: Dictionary = {
       },
     },
     process: {
-      eyebrow: "Process",
-      title: "How the process works",
+      eyebrow: "How it works",
+      title: "From first conversation to a live website",
       subtitle:
-        "A clear, transparent flow — from first contact to product delivery.",
+        "A simple, clear process — no jargon and no surprises along the way.",
       steps: {
-        discovery: {
-          title: "Understanding the problem",
+        idea: {
+          title: "You tell me your idea",
           description:
-            "I discuss context, users, and what needs solving — before talking technology.",
+            "We talk about your business, what you need, and the result you want.",
         },
-        proposal: {
-          title: "Solution proposal",
+        plan: {
+          title: "We define the right solution",
           description:
-            "I define scope, timeline, and investment transparently, aligned with your goals.",
+            "I propose the right path — website, landing page, or something larger — with a clear timeline and price.",
         },
-        design: {
-          title: "Design and structure",
+        build: {
+          title: "I build your project",
           description:
-            "I organize information architecture, flow, and interface to ensure clarity from day one.",
+            "I create the look, the content, and the structure, with updates along the way.",
         },
-        development: {
-          title: "Development",
+        launch: {
+          title: "You get everything ready to share",
           description:
-            "I build with clean code, incremental deliveries, and consistent progress updates.",
-        },
-        delivery: {
-          title: "Delivery and evolution",
-          description:
-            "I launch, validate, and support the first steps — with room for adjustments and future improvements.",
+            "I publish the site, set up the essentials, and leave it ready for you to use.",
         },
       },
     },
+    portfolio: {
+      eyebrow: "Portfolio",
+      title: "Work that shows what can be built",
+      subtitle:
+        "From a professional website to a full digital product — every project starts with the problem to solve.",
+      cta: "See all projects",
+    },
+    beyond: {
+      eyebrow: "Larger projects",
+      title: "Need something beyond a website?",
+      subtitle:
+        "I also build platforms, systems, and custom applications for companies with more specific needs.",
+      cta: "Talk about my project",
+    },
     about: {
       eyebrow: "About me",
-      title: "Meet the person behind the",
-      titleHighlight: "projects.",
+      title: "The developer behind",
+      titleHighlight: "your projects.",
       paragraphs: [
         [
-          { text: "Hi! I'm Francine Soares, a Full Stack developer specialized in " },
-          { text: "React, React Native, Node.js", accent: true },
-          { text: " and Artificial Intelligence." },
-        ],
-        [
           {
-            text: "For over 6 years I've been building web and mobile applications — from platforms for companies to my own products focused on technology and innovation.",
+            text: "I'm Francine Soares, a Front-End developer with experience building digital products and solutions.",
           },
         ],
         [
           {
-            text: "I'm passionate about turning ideas into high-quality digital products, prioritizing performance, user experience, scalability, and modern design.",
+            text: "For over 6 years I've been creating websites and real-world applications with ",
+          },
+          { text: "React, Angular, TypeScript, and Node.js", accent: true },
+          {
+            text: " — from a professional's online presence to fuller products, including AI and automations.",
           },
         ],
         [
           {
-            text: "My goal is to build solutions that truly create value for businesses and people.",
+            text: "My job is to turn what you need into a clear, modern website that's easy to use — without you having to understand the technology.",
           },
         ],
       ],
       profile: {
         firstName: "Francine",
         lastName: "Soares",
-        role: "Full Stack Developer",
-        stack: "React • Node.js • AI",
+        role: "Front-End Developer",
+        stack: "React • TypeScript • Node.js",
       },
       metrics: [
         { value: "6+ years", label: "of experience" },
-        { value: "React / Node.js", label: "Specialization" },
-        { value: "Brazil + Abroad", label: "Clients" },
+        { value: "React / Node.js", label: "specialization" },
+        { value: "Sites & products", label: "from simple to complete" },
       ],
-      ctaPrimary: "Let's talk",
-      ctaSecondary: "View Projects",
+      ctaPrimary: "I want my website",
+      ctaSecondary: "See projects",
     },
     faq: {
       eyebrow: "FAQ",
       title: "Frequently asked questions",
-      subtitle: "Straight answers to the most common questions before starting a project.",
+      subtitle:
+        "Straight answers for anyone who wants a professional website without the hassle.",
       items: {
         pricing: {
-          question: "How does pricing work?",
+          question: "How much does a website cost?",
           answer:
-            "Each project gets a custom proposal with defined scope, timeline, and investment after understanding your needs. No surprises at the end.",
+            "Landing pages start at R$ 900 and professional websites at R$ 1,500. Each project gets a proposal with scope, timeline, and price — no surprises at the end.",
         },
         timeline: {
-          question: "What's the delivery timeline?",
+          question: "How long until the site is live?",
           answer:
-            "It depends on complexity. Landing pages take 1–2 weeks; full systems 4–12 weeks. I define the schedule in the proposal.",
+            "Landing pages usually take 1–2 weeks. Professional websites, 2–4 weeks. The timeline is defined in the proposal before we start.",
+        },
+        beginner: {
+          question: "I don't understand technology. Can I still do this?",
+          answer:
+            "Yes. I take care of everything — from structure to a published site. You follow along in plain language and only need to share what your business needs.",
         },
         support: {
-          question: "Do you offer post-launch support?",
+          question: "What happens after the site goes live?",
           answer:
-            "Yes. I include initial follow-up after launch and can continue with maintenance and evolution as needed.",
-        },
-        technologies: {
-          question: "What technologies do you use?",
-          answer:
-            "React, Next.js, TypeScript, Node.js, and modern integrations — always choosing the best stack for performance, scale, and maintainability.",
+            "I include the essentials so you can start sharing it. If you want changes, improvements, or ongoing maintenance, we set up a separate plan.",
         },
         process: {
-          question: "How does the work process go?",
+          question: "How do we get started?",
           answer:
-            "I start by understanding the problem, propose a solution, structure the design, develop incrementally, and launch with post-release support.",
+            "You tell me the idea, I propose the best solution, and I build the project until it's ready to share. Everything is agreed before we begin.",
         },
       },
     },
-    techPreview: {
-      eyebrow: "Technologies",
-      title: "A modern stack for well-built products",
-      subtitle:
-        "Current tools to build fast, secure, easy-to-maintain websites and systems — sized right for your business.",
-      cta: "View full stack",
-    },
     contact: {
-      title: "Ready to get your idea off the ground?",
+      title: "Ready to get your idea online?",
       subtitle:
-        "Tell me what your business needs — I'll put together a clear proposal with scope, timeline, and investment.",
+        "Tell me what you need and I'll help you find the right solution.",
       button: "Request a quote",
     },
   },
   services: {
     meta: {
-      title: "Services",
+      title: "Website design services",
       description:
-        "Websites and systems for independent professionals and small businesses: landing pages, institutional sites, online scheduling, and AI integrations.",
+        "Professional websites, landing pages, and business sites. Web development for independent professionals and small businesses in Florianópolis and São José.",
     },
     hero: {
       eyebrow: "Services",
-      title: "Packages built for those establishing a digital presence",
+      title: "Website design for professionals and companies",
       subtitle:
-        "No fine print, no rigid bundles. Pick a starting point, tell me what you need, and we'll shape the right scope for where you are right now.",
+        "Clear packages for anyone who needs a digital presence — from a personal site to a campaign page, plus maintenance and automation when you need it.",
     },
     packages: {
+      professionalSite: {
+        title: "Professional Website",
+        description:
+          "For professionals who need to present their services online — personal trainers, nutritionists, physiotherapists, doctors, psychologists, and consultants.",
+        features: [
+          "Custom design",
+          "Home page",
+          "About",
+          "Services",
+          "Contact",
+          "WhatsApp",
+          "Responsive layout",
+          "Basic SEO",
+          "Site publishing",
+        ],
+        price: "Starting at R$ 1,500",
+      },
       landingPage: {
         title: "Landing Page",
         description:
-          "For promoting a service, running a campaign, or testing an idea — a focused, polished page that invites visitors to get in touch.",
+          "For promoting services, products, campaigns, or ads — a focused page designed to generate contact.",
         features: [
-          "Responsive website",
-          "Modern design",
+          "Custom design",
+          "Responsive layout",
+          "Strategic CTA",
+          "WhatsApp",
+          "Form",
           "Basic SEO",
-          "Contact form",
-          "Vercel deployment",
+          "Analytics",
         ],
-        price: "Starting at R$ 1,200",
+        price: "Starting at R$ 900",
       },
-      institutional: {
-        title: "Institutional Website",
+      businessSite: {
+        title: "Business Website",
         description:
-          "For clinics, offices, shops, and local businesses that need a complete website — organized pages, a professional look, and room to grow.",
+          "For companies that need to present their services and generate new contacts with a complete institutional site.",
         features: [
-          "Up to 8 pages",
-          "Responsive design",
-          "SEO",
-          "Performance",
-          "Contact form",
-          "WhatsApp integration",
+          "Institutional website",
+          "Multiple pages",
+          "Services",
+          "About the company",
+          "Contact",
+          "WhatsApp",
+          "Google Maps",
+          "Basic SEO",
         ],
         price: "Starting at R$ 2,500",
       },
-      scheduling: {
-        title: "Scheduling System",
+      maintenance: {
+        title: "Maintenance & Improvements",
         description:
-          "For independent professionals, salons, clinics, and offices who want to stop booking appointments over WhatsApp without losing control of their schedule.",
+          "For anyone who already has a website and needs to fix, update, or evolve what's live.",
         features: [
-          "Custom page",
-          "Online scheduling",
-          "WhatsApp integration",
-          "Admin dashboard",
-          "Online payment option",
+          "Fixes",
+          "Content updates",
+          "Layout improvements",
+          "Responsiveness",
+          "Performance",
+          "New sections",
+          "Integrations",
         ],
-        price: "Starting at R$ 4,500 or monthly subscription on request",
+        price: "Custom quote",
       },
-      aiIntegrations: {
-        title: "AI Integrations",
+      automationAi: {
+        title: "Automation & AI",
         description:
-          "For businesses that want to respond faster, handle repetitive tasks, or stay ahead of local competition — without needing to understand the technology behind it.",
+          "A complementary service for companies that need to automate processes and save time on support.",
         features: [
           "Chatbots",
-          "Smart assistants",
+          "Automated support",
+          "API integrations",
+          "Smart forms",
           "Process automation",
-          "OpenAI integration",
+          "AI-powered solutions",
         ],
-        price: "On request",
-      },
-      customDevelopment: {
-        title: "Custom Development",
-        description:
-          "For when you need something specific — an internal dashboard, an MVP to validate an idea, or a workflow no standard package covers.",
-        features: [
-          "Web applications",
-          "MVPs",
-          "Dashboards",
-          "Internal systems",
-        ],
-        price: "On request",
+        price: "Custom quote",
       },
     },
     featured: "Most chosen",
+    cardCta: "I want this service",
     cta: {
-      title: "Ready to give your business a professional digital presence?",
+      title: "Ready for a professional website?",
       subtitle:
-        "Tell me what you need — no strings attached. I'll put together a clear proposal with timeline and pricing so you can decide with confidence.",
+        "Tell me what you need. I'll put together a clear proposal with timeline and pricing so you can decide with confidence.",
       button: "Request a quote",
     },
   },
   projects: {
     meta: {
-      title: "Projects",
+      title: "Projects and portfolio",
       description:
-        "Digital products for small businesses and micro-entrepreneurs — plus own products built end-to-end.",
+        "Web development portfolio: websites, digital products, and applications — including EvuFlow, an AI-powered body analysis platform.",
     },
     hero: {
       eyebrow: "Portfolio",
-      title: "Digital products built for real businesses.",
+      title: "Outcome first. Technology second.",
       paragraphs: [
-        "Over 6 years building production-quality software — now applied to websites, systems, and small made-to-fit products.",
-        "I help small businesses, micro-entrepreneurs, and independent professionals build modern, reliable solutions that are easy to use every day.",
+        "Every project starts with the business problem — and only then with the stack. Here you see what was built, for whom, and what goal it serves.",
+        "I also build fuller digital products. That shows a simple website comes from the same technical foundation as a larger system.",
       ],
     },
+    labels: {
+      developed: "What was built",
+      audience: "Who it's for",
+      features: "Key features",
+      result: "Outcome",
+      stack: "Technologies",
+    },
     featured: {
-      eyebrow: "Own product",
-      title: "Building products, not just projects.",
+      eyebrow: "Featured product",
+      title: "When the project needs more than a website",
       paragraphs: [
-        "Beyond client solutions, I also build my own digital products.",
-        "That lets me apply a full product mindset — from idea to launch — with the same care I bring to every client.",
+        "EvuFlow is a full digital product I build — proof that I also ship platforms, not just pages.",
+        "The same care for design, performance, and experience that I bring to a professional website.",
       ],
       visit: "Visit site",
       items: {
         evuflow: {
           name: "EvuFlow",
           status: "In development",
-          paragraphs: [
-            "AI-powered body analysis platform built to identify posture patterns, body asymmetry, and movement — delivering personalized recommendations for health and training.",
-            "The project spans software architecture, AI, user experience, and full-stack development, reflecting how I approach building modern digital products.",
+          developed:
+            "An AI-powered body intelligence platform for health and training professionals.",
+          audience:
+            "Anyone who needs a clearer read of a client's or patient's body — without relying on the eye alone.",
+          features: [
+            "Posture and asymmetry analysis",
+            "Muscle map and progress tracking",
+            "Personalized recommendations",
+            "Web and mobile experience",
           ],
+          result:
+            "A complete digital product — from analysis to guidance — showing the capacity to go beyond an institutional website.",
         },
       },
     },
     cta: {
-      title: "The technologies behind every project.",
+      title: "Want a website with this same quality?",
       description:
-        "Explore the technologies and tools I use to build modern, clear websites and systems ready for your business day to day.",
-      button: "Explore Tech Stack",
+        "The technical foundation is there so your project is born at the right size — from a professional site to a fuller product.",
+      button: "Request a quote",
     },
   },
   about: {
     meta: {
-      title: "About",
+      title: "About the developer",
       description:
-        "Front-End Engineer with close support for small businesses, micro-entrepreneurs, and independent professionals. Remote, based in Brazil.",
+        "Francine Soares is a freelance Front-End developer in Florianópolis and São José. She builds professional websites, landing pages, and digital solutions for professionals and companies.",
     },
     hero: {
       eyebrow: "About me",
-      title: "Top-tier skills, close support",
+      title: "A developer for your website — not an agency",
       subtitle:
-        "I've been a front-end engineer for over 6 years. I help small businesses and micro-entrepreneurs get a website or system without the bureaucracy — plain language and deliveries you can actually follow.",
+        "I'm Francine Soares, a Front-End developer with experience building digital products and solutions. Direct support, plain language, and deliveries you can follow.",
     },
     approach: {
       title: "What it's like to work with me",
       paragraphs: [
-        "I start by understanding your business: who your customers are, what you offer, and what needs solving right now. From there, I propose something proportional — no pushing features you won't use.",
-        "You get updates along the way, understand what's being built, and can ask questions without feeling out of your depth. Timeline and cost agreed upfront, no surprises at the end.",
-        "Behind every delivery is solid practice with React, TypeScript, and Next.js — applied carefully to the size of your project, not the size of a large company.",
+        "You talk to the person who will build the site. I understand your business, propose what makes sense now, and build at the right size — no agency package being pushed.",
+        "I keep you updated along the way, in plain language. Timeline and price agreed before we start.",
+        "Behind every delivery is practice with React, Angular, TypeScript, Node.js, and also AI and automations — applied to the size of your project.",
       ],
     },
-    viewStack: "View full tech stack",
+    viewStack: "See the technologies I use",
   },
   contact: {
     meta: {
-      title: "Contact",
+      title: "Request a quote",
       description:
-        "Reach out to get a quote for a website, ask about a project, or talk about job opportunities.",
+        "Request a quote for a professional website, landing page, or web development. Serving Florianópolis, São José, and remote clients.",
     },
     hero: {
       eyebrow: "Contact",
       title: "Tell me what you need",
       subtitle:
-        "Whether it's a quick question, a quote, or just saying hi to see if we're a good fit — send a message through the form and I'll reply by email.",
+        "It can be a new website, a landing page, or a quick question. Send a message through the form and I'll reply by email.",
     },
     form: {
       name: "Name",
@@ -493,10 +523,10 @@ export const en: Dictionary = {
       email: "Email",
       emailPlaceholder: "you@email.com",
       subject: "Subject",
-      subjectPlaceholder: "Quote, question, partnership…",
+      subjectPlaceholder: "Professional website, landing page, quote…",
       message: "Message",
-      messagePlaceholder: "Tell me a bit about what you need.",
-      submit: "Send message",
+      messagePlaceholder: "Tell me a bit about your business and what you need.",
+      submit: "Request a quote",
       submitting: "Sending…",
       success: "Message sent. I'll get back to you by email soon.",
       sendAnother: "Send another message",
@@ -508,11 +538,13 @@ export const en: Dictionary = {
       linkedIn: "LinkedIn",
       github: "GitHub",
     },
+    whatsappMessage:
+      "Hi Francine! I'd like to create a professional website and talk about it.",
   },
   footer: {
     brand: {
       description:
-        "I build custom websites, systems, and digital products for small businesses, micro-entrepreneurs, and independent professionals.",
+        "Front-End developer. I build professional websites, landing pages, and digital solutions for professionals and small businesses.",
     },
     sections: {
       navigation: "Navigation",
@@ -522,18 +554,16 @@ export const en: Dictionary = {
     nav: {
       home: "Home",
       services: "Services",
-      solutions: "Solutions",
       projects: "Projects",
       about: "About",
       contact: "Contact",
     },
     services: {
-      landingPages: "Landing Pages",
-      institutionalSites: "Institutional Websites",
-      webSystems: "Web Systems",
-      applications: "Applications",
-      aiIntegrations: "AI Integrations",
-      processAutomation: "Process Automation",
+      professionalSites: "Professional website",
+      landingPages: "Landing page",
+      businessSites: "Business website",
+      maintenance: "Maintenance",
+      automationAi: "Automation & AI",
     },
     contact: {
       form: "Contact form",
@@ -542,9 +572,8 @@ export const en: Dictionary = {
       github: "GitHub",
     },
     cta: {
-      title: "Ready to build your next project?",
-      subtitle:
-        "Get in touch and receive a no-obligation quote.",
+      title: "Ready to get your idea online?",
+      subtitle: "Tell me what you need and receive a no-obligation quote.",
       button: "Request a quote",
     },
     bottom: {
@@ -557,9 +586,9 @@ export const en: Dictionary = {
     available: "Available for projects",
     profile: "profile",
     metrics: {
-      based: { label: "Based", value: "Remote · Brazil" },
+      based: { label: "Based", value: "Florianópolis · São José" },
       stack: { label: "Stack", value: "React · TypeScript · Next.js" },
-      focus: { label: "Focus", value: "Product · engineering · AI" },
+      focus: { label: "Focus", value: "Websites · products · AI" },
     },
   },
   localeSwitcher: {
@@ -569,10 +598,10 @@ export const en: Dictionary = {
   },
   techStack: {
     hero: {
-      eyebrow: "Stack & Expertise",
-      title: "Tech Stack & Expertise",
+      eyebrow: "Technologies",
+      title: "Tools I use every day",
       subtitle:
-        "The technologies I use to create clear, fast, well-built websites and systems — sized right for small businesses and micro-entrepreneurs.",
+        "The stack behind fast, secure, easy-to-maintain websites — sized right for your business.",
     },
     categories: {
       frontend: {
@@ -721,7 +750,7 @@ export const en: Dictionary = {
       title: "Professional experience",
       highlights: [
         "6+ years building production applications",
-        "Focus on websites and systems for local businesses and micro-entrepreneurs",
+        "Focus on websites and digital products for professionals and companies",
         "Clean code, fast websites, and experiences built for end users",
       ],
       systemsTitle: "Experience across systems for:",
