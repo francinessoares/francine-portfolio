@@ -53,7 +53,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={cn("dark font-sans antialiased", geistSans.variable)}
     >
-      <body className="overflow-x-hidden bg-surface text-foreground">
+      <body className="bg-surface text-foreground">
         <JsonLd />
         <LocaleProvider>
           <SiteChrome>{children}</SiteChrome>

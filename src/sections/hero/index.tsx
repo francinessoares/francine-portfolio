@@ -50,7 +50,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="hero-safe-padding relative flex items-start overflow-x-hidden pb-[64px] sm:pb-[80px]"
+      className="hero-safe-padding relative flex items-start overflow-x-clip pb-[64px] sm:pb-[80px]"
     >
       <link
         rel="preload"

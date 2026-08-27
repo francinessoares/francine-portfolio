@@ -153,9 +153,11 @@
   }
   body {
     @apply bg-background text-foreground;
+    overflow-x: clip;
   }
   html {
     @apply font-sans scroll-smooth;
+    overflow-x: clip;
   }
 
   @media (prefers-reduced-motion: reduce) {

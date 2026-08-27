@@ -9,7 +9,7 @@ export function TechStackSection() {
   return (
     <section
       id="stack"
-      className="relative scroll-mt-[72px] overflow-x-hidden"
+      className="relative scroll-mt-[72px] overflow-x-clip"
       aria-labelledby="stack-heading"
     >
       <PageBackground variant="stack" />
