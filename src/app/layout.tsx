@@ -54,8 +54,8 @@ export default function RootLayout({
       className={cn("dark font-sans antialiased", geistSans.variable)}
     >
       <body className="overflow-x-hidden bg-surface text-foreground">
+        <JsonLd />
         <LocaleProvider>
-          <JsonLd />
           <SiteChrome>{children}</SiteChrome>
         </LocaleProvider>
       </body>

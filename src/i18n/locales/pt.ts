@@ -2,9 +2,9 @@ import type { Dictionary } from "@/i18n/types";
 
 export const pt: Dictionary = {
   meta: {
-    title: "Criação de sites profissionais",
+    title: "Criação de sites em Florianópolis",
     description:
-      "Crio sites profissionais, landing pages e soluções digitais para profissionais liberais e pequenas empresas. Desenvolvimento web em Florianópolis e São José.",
+      "Crio sites profissionais e landing pages para profissionais e pequenas empresas. Desenvolvimento web em Florianópolis e São José.",
     keywords:
       "criação de sites, desenvolvimento de sites, site profissional, landing page, desenvolvimento web, criação de site para empresas, desenvolvedora freelancer, desenvolvimento de sites em Florianópolis, desenvolvimento de sites em São José",
   },
@@ -330,9 +330,9 @@ export const pt: Dictionary = {
   },
   services: {
     meta: {
-      title: "Serviços de criação de sites",
+      title: "Criação de sites e landing pages",
       description:
-        "Criação de sites profissionais, landing pages e sites para empresas. Desenvolvimento web para profissionais liberais e pequenos negócios em Florianópolis e São José.",
+        "Site profissional a partir de R$ 1.500 e landing page a partir de R$ 900. Desenvolvimento web para profissionais e empresas em Florianópolis e São José.",
     },
     hero: {
       eyebrow: "Serviços",
@@ -430,9 +430,9 @@ export const pt: Dictionary = {
   },
   projects: {
     meta: {
-      title: "Projetos e portfólio",
+      title: "Portfólio de desenvolvimento web",
       description:
-        "Portfólio de desenvolvimento web: sites, produtos digitais e aplicações — incluindo o EvuFlow, plataforma de análise corporal com IA.",
+        "Projetos de criação de sites e produtos digitais, incluindo o EvuFlow. Portfólio da desenvolvedora Francine Soares em Florianópolis.",
     },
     hero: {
       eyebrow: "Portfólio",
@@ -485,9 +485,9 @@ export const pt: Dictionary = {
   },
   about: {
     meta: {
-      title: "Sobre a desenvolvedora",
+      title: "Desenvolvedora Front-End em Florianópolis",
       description:
-        "Francine Soares é desenvolvedora Front-End freelancer em Florianópolis e São José. Cria sites profissionais, landing pages e soluções digitais para profissionais e empresas.",
+        "Francine Soares é desenvolvedora Front-End freelancer em Florianópolis e São José. Cria sites profissionais, landing pages e soluções digitais sob medida.",
     },
     hero: {
       eyebrow: "Sobre mim",
@@ -507,9 +507,9 @@ export const pt: Dictionary = {
   },
   contact: {
     meta: {
-      title: "Solicitar orçamento",
+      title: "Orçamento para criação de site",
       description:
-        "Peça um orçamento para criação de site profissional, landing page ou desenvolvimento web. Atendimento em Florianópolis, São José e remoto.",
+        "Solicite orçamento para criação de site profissional, landing page ou desenvolvimento web. Atendimento em Florianópolis, São José e remoto.",
     },
     hero: {
       eyebrow: "Contato",
@@ -597,6 +597,11 @@ export const pt: Dictionary = {
     en: "EN",
   },
   techStack: {
+    meta: {
+      title: "Tecnologias para desenvolvimento de sites",
+      description:
+        "React, Next.js, TypeScript e Node.js na criação de sites profissionais, landing pages e produtos digitais.",
+    },
     hero: {
       eyebrow: "Tecnologias",
       title: "Ferramentas que uso no dia a dia",

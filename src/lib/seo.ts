@@ -7,28 +7,53 @@ type PageMetadataInput = {
   description: string;
   path?: string;
   keywords?: string;
+  absoluteTitle?: boolean;
+  ogType?: "website" | "profile";
+  index?: boolean;
 };
 
 export const socialImage = {
   url: siteConfig.ogImage,
-  alt: `${siteConfig.name} — criação de sites profissionais`,
+  width: 1055,
+  height: 1491,
+  alt: `${siteConfig.name} — criação de sites profissionais em Florianópolis`,
 } as const;
+
+const indexableRobots: Metadata["robots"] = {
+  index: true,
+  follow: true,
+  googleBot: {
+    index: true,
+    follow: true,
+    "max-image-preview": "large",
+    "max-snippet": -1,
+    "max-video-preview": -1,
+  },
+};
 
 export function createPageMetadata({
   title,
   description,
   path = "",
   keywords,
+  absoluteTitle = false,
+  ogType = "website",
+  index = true,
 }: PageMetadataInput): Metadata {
   const url = `${siteUrl}${path}`;
-  const fullTitle = `${title} — ${siteConfig.name}`;
+  const fullTitle = absoluteTitle ? title : `${title} — ${siteConfig.name}`;
 
   return {
-    title,
+    title: absoluteTitle ? { absolute: title } : title,
     description,
     keywords: keywords
       ? keywords.split(",").map((item) => item.trim())
       : undefined,
+    authors: [{ name: siteConfig.name, url: siteUrl }],
+    creator: siteConfig.name,
+    publisher: siteConfig.name,
+    category: "technology",
+    robots: index ? indexableRobots : { index: false, follow: true },
     alternates: {
       canonical: url,
     },
@@ -38,7 +63,7 @@ export function createPageMetadata({
       url,
       siteName: siteConfig.name,
       locale: "pt_BR",
-      type: "website",
+      type: ogType,
       images: [socialImage],
     },
     twitter: {
@@ -55,6 +80,15 @@ export const rootMetadata: Metadata = {
   title: {
     default: siteTitle,
     template: `%s — ${siteConfig.name}`,
+  },
+  applicationName: siteConfig.name,
+  authors: [{ name: siteConfig.name, url: siteUrl }],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
+  category: "technology",
+  robots: indexableRobots,
+  verification: {
+    google: "qKbevewQ7IeBfr4P14PVPPt52Dw_liSXDLpG6Z456qU",
   },
   icons: {
     icon: [

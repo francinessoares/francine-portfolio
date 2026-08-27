@@ -7,8 +7,8 @@ import { TechStackSection } from "@/sections/tech-stack";
 const dict = getDictionary(defaultLocale);
 
 export const metadata: Metadata = createPageMetadata({
-  title: dict.techStack.hero.title,
-  description: dict.techStack.hero.subtitle,
+  title: dict.techStack.meta.title,
+  description: dict.techStack.meta.description,
   path: "/stack",
 });
 

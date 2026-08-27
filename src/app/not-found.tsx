@@ -1,11 +1,20 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 
 import { outlineButtonClass } from "@/components/primitives/button-styles";
 import { PageShell } from "@/components/layout/page-shell";
 import { Button } from "@/components/ui/button";
 import { defaultLocale, getDictionary } from "@/i18n";
+import { createPageMetadata } from "@/lib/seo";
 
 const copy = getDictionary(defaultLocale).errors.notFound;
+
+export const metadata: Metadata = createPageMetadata({
+  title: copy.title,
+  description: copy.description,
+  path: "/404",
+  index: false,
+});
 
 export default function NotFound() {
   return (

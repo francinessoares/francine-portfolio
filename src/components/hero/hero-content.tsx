@@ -12,12 +12,11 @@ export function HeroContent() {
 
   return (
     <>
-      <motion.div variants={variants.item} className="mb-[18px]">
-        <span className="inline-flex items-center gap-[8px] rounded-[999px] border border-white/[0.08] bg-white/[0.03] px-[12px] py-[6px] text-[11px] font-medium tracking-[0.14em] text-fg-tertiary uppercase">
-          <span className="size-[6px] rounded-full bg-accent-light shadow-[0_0_8px_rgba(168,85,247,0.85)]" />
-          {t.hero.badge}
-        </span>
-      </motion.div>
+      <motion.div
+        variants={variants.item}
+        className="mb-[18px] h-[30px]"
+        aria-hidden
+      />
 
       <motion.h1
         variants={variants.headline}

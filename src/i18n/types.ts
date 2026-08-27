@@ -307,6 +307,10 @@ export type Dictionary = {
     en: string;
   };
   techStack: {
+    meta: {
+      title: string;
+      description: string;
+    };
     hero: {
       eyebrow: string;
       title: string;

@@ -2,9 +2,9 @@ import type { Dictionary } from "@/i18n/types";
 
 export const en: Dictionary = {
   meta: {
-    title: "Professional website design",
+    title: "Website design in Florianópolis",
     description:
-      "I build professional websites, landing pages, and digital solutions for independent professionals and small businesses. Web development in Florianópolis and São José, Brazil.",
+      "I build professional websites and landing pages for independent professionals and small businesses. Web development in Florianópolis and São José, Brazil.",
     keywords:
       "website design, web development, professional website, landing page, business website, freelance web developer, website development Florianópolis, website development São José",
   },
@@ -330,9 +330,9 @@ export const en: Dictionary = {
   },
   services: {
     meta: {
-      title: "Website design services",
+      title: "Website and landing page design",
       description:
-        "Professional websites, landing pages, and business sites. Web development for independent professionals and small businesses in Florianópolis and São José.",
+        "Professional websites from R$ 1,500 and landing pages from R$ 900. Web development for professionals and companies in Florianópolis and São José.",
     },
     hero: {
       eyebrow: "Services",
@@ -430,9 +430,9 @@ export const en: Dictionary = {
   },
   projects: {
     meta: {
-      title: "Projects and portfolio",
+      title: "Web development portfolio",
       description:
-        "Web development portfolio: websites, digital products, and applications — including EvuFlow, an AI-powered body analysis platform.",
+        "Website and digital product projects, including EvuFlow. Portfolio of developer Francine Soares in Florianópolis.",
     },
     hero: {
       eyebrow: "Portfolio",
@@ -485,9 +485,9 @@ export const en: Dictionary = {
   },
   about: {
     meta: {
-      title: "About the developer",
+      title: "Front-End developer in Florianópolis",
       description:
-        "Francine Soares is a freelance Front-End developer in Florianópolis and São José. She builds professional websites, landing pages, and digital solutions for professionals and companies.",
+        "Francine Soares is a freelance Front-End developer in Florianópolis and São José. She builds professional websites, landing pages, and custom digital solutions.",
     },
     hero: {
       eyebrow: "About me",
@@ -507,7 +507,7 @@ export const en: Dictionary = {
   },
   contact: {
     meta: {
-      title: "Request a quote",
+      title: "Quote for a professional website",
       description:
         "Request a quote for a professional website, landing page, or web development. Serving Florianópolis, São José, and remote clients.",
     },
@@ -597,6 +597,11 @@ export const en: Dictionary = {
     en: "EN",
   },
   techStack: {
+    meta: {
+      title: "Technologies for website development",
+      description:
+        "React, Next.js, TypeScript, and Node.js used to build professional websites, landing pages, and digital products.",
+    },
     hero: {
       eyebrow: "Technologies",
       title: "Tools I use every day",

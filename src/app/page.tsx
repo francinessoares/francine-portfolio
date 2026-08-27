@@ -1,64 +1,32 @@
 import type { Metadata } from "next";
-import dynamic from "next/dynamic";
 
+import { FaqJsonLd } from "@/components/seo/json-ld";
+import { HomeBenefitsSection } from "@/sections/home/benefits-section";
+import { HomeBeyondSection } from "@/sections/home/beyond-section";
+import { HomeContactSection } from "@/sections/home/contact-section";
+import { HomeFaqSection } from "@/sections/home/faq-section";
+import { HomePortfolioSection } from "@/sections/home/portfolio-section";
+import { HomeProcessSection } from "@/sections/home/process-section";
+import { HomeServicesSection } from "@/sections/home/services-section";
+import { HomeAboutSection } from "@/sections/home/about-section";
 import { defaultLocale, getDictionary } from "@/i18n";
 import { createPageMetadata } from "@/lib/seo";
 import { Hero } from "@/sections/hero";
 
-const HomeServicesSection = dynamic(
-  () =>
-    import("@/sections/home/services-section").then(
-      (m) => m.HomeServicesSection,
-    ),
-);
-const HomeBenefitsSection = dynamic(
-  () =>
-    import("@/sections/home/benefits-section").then(
-      (m) => m.HomeBenefitsSection,
-    ),
-);
-const HomeProcessSection = dynamic(
-  () =>
-    import("@/sections/home/process-section").then(
-      (m) => m.HomeProcessSection,
-    ),
-);
-const HomePortfolioSection = dynamic(
-  () =>
-    import("@/sections/home/portfolio-section").then(
-      (m) => m.HomePortfolioSection,
-    ),
-);
-const HomeAboutSection = dynamic(
-  () =>
-    import("@/sections/home/about-section").then((m) => m.HomeAboutSection),
-);
-const HomeBeyondSection = dynamic(
-  () =>
-    import("@/sections/home/beyond-section").then((m) => m.HomeBeyondSection),
-);
-const HomeFaqSection = dynamic(
-  () => import("@/sections/home/faq-section").then((m) => m.HomeFaqSection),
-);
-const HomeContactSection = dynamic(
-  () =>
-    import("@/sections/home/contact-section").then(
-      (m) => m.HomeContactSection,
-    ),
-);
-
 const dict = getDictionary(defaultLocale);
 
 export const metadata: Metadata = createPageMetadata({
-  title: dict.meta.title,
+  title: "Francine Soares | Criação de sites em Florianópolis",
   description: dict.meta.description,
   keywords: dict.meta.keywords,
   path: "/",
+  absoluteTitle: true,
 });
 
 export default function Home() {
   return (
     <main id="main-content" className="relative bg-surface">
+      <FaqJsonLd />
       <Hero />
       <HomeServicesSection />
       <HomeBenefitsSection />

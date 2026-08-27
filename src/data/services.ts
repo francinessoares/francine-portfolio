@@ -12,12 +12,13 @@ export type ServicePackage = {
   id: ServiceId;
   featured?: boolean;
   icon: LucideIcon;
+  minPriceBRL?: number;
 };
 
 export const servicePackages: ServicePackage[] = [
-  { id: "professionalSite", featured: true, icon: Globe },
-  { id: "landingPage", icon: LayoutTemplate },
-  { id: "businessSite", icon: Building2 },
+  { id: "professionalSite", featured: true, icon: Globe, minPriceBRL: 1500 },
+  { id: "landingPage", icon: LayoutTemplate, minPriceBRL: 900 },
+  { id: "businessSite", icon: Building2, minPriceBRL: 2500 },
   { id: "maintenance", icon: Wrench },
   { id: "automationAi", icon: Bot },
 ];
